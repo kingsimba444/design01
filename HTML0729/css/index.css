@@ -1,0 +1,77 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    color: #3D3D3D;
+    font-weight: 400;
+    letter-spacing: -0.06em;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+/* body에 기본 글자의 스타일을 설정 -
+   body안에 있는 모든 태그는 글자의 스타일을 상속 받는다 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    width: 1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+h1 {
+    font-size: 25px;
+    color: #1D1D1D;
+    font-weight: 700;
+    margin: 60px 0 29px 0;
+}
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 22px 0 5px 0;
+}
+p {
+    margin: 5px 0 23px 0;
+}
+.color {
+    background: #F4F4F4;
+    padding: 1px 0 45px 0;
+    margin: 45px 0 0 0;
+}
+ul {
+    list-style: none;
+    display: flex;
+}
+h3 {
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+.system {
+    display: flex;
+}
+li {
+    width: 300px;
+    height: 315px;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 251px 0 0 40px;
+    box-sizing: border-box;
+}
+.teal {
+    background: #003A5F;
+}
+.blue {
+    background: #71C5E8;
+    margin: 0 20px 0 0;
+}
+.green {
+    background: #71DBD4;
+    margin: 0 20px 0 0;
+}
+.yellow {
+    background: #F8E08E;
+}
+.pri {
+    margin: 0 40px 0 0;
+}
