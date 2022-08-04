@@ -7,16 +7,33 @@ body, section, p, div, ul, li, h1, h2, h3, h4, h5, h6, nav {
 ul, li {
     list-style: none; /* ul 태그 옆에 동그라미 삭제 */
 }
+em, address {
+    font-style: normal;
+    /* em태그가 기본적으로 글자가 기울어져 있음. 이를 해결 */ 
+}
+button {
+    background-color: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    cursor: pointer; /* 마우스를 오버하면 손바닥 모양으로 변경 */
+
+}
+.clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.clearfix{display:block;}
 body {
     color: #3d3d3d;
     line-height: 1.5;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
     font-weight: 400;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.07em;
 }
 a {
-    color: #3d3d3d;
+    color: inherit;
+    /* 브라우저가 정의하는 파란색은 적용하지 않고, 부모요소가 정의한 색상을 따르겠다는 뜻 */
     text-decoration: none;
 }
 .wrapper {
@@ -48,11 +65,14 @@ header nav ul li a {
 
 .visual {
     background-image: url(../images/visual_bg.png);
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     height: 750px;
 }
 .visual strong {
+    /* strong 인라인태그여서 magin이 적용X, block 요소로 번경 */
+    display: block;
+    padding: 255px 0 0 0;
     color: #ffffff;
     font-size: 30px;
     font-weight: 400;
@@ -63,9 +83,145 @@ header nav ul li a {
     font-size: 50px;
     font-weight: 400;
 }
-.visual p span {
+.visual p em {
+    font-weight: 700px;
+}
+
+.promotion .art {
+    margin: 143px 0 86px 0;
+}
+.promotion .art img {
+    float: left;
+}
+.promotion .art .inner {
+    float: left;
+    margin: 57px 0 0 80px;
+}
+.promotion .lee {
+    margin: 0 0 193px 0;
+}
+/* 두 요소에 float: right를 주면 코딩순서와 역순으로 요소들이 오른쪽에 정렬 */ 
+.promotion .lee img {
+    float: right;
+}
+.promotion .lee .inner {
+    float: right;
+    margin: 57px 80px 0 0px;
+}
+.promotion h2 {
+    color: #3D3D3D;
+    font-size: 50px;
     font-weight: 700;
 }
-.visual .wrapper {
-    padding: 255px 0 0 0;
+.promotion p {
+    margin: 16px 0 41px 0;
+}
+.promotion p strong {
+    display: block;
+    margin: 0 0 7px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.promotion a {
+    display: inline-block;
+    float: left;
+    padding: 5px 14px;
+    margin: 0 5px 0 0;
+    border: 1px solid #999999;
+}
+
+.bbs {
+    background-image: url(../images/bbs_bg.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.bbs .notice {
+    /* notice 글자는 대부분 흰색 - 내부요소에 스타일을 상속 */
+    color: #ffffff;
+}
+
+.bbs .notice .tit {
+    float: left;
+    margin: 107px 0 0 0;
+}
+.bbs .notice .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+}
+.bbs .notice .tit p {
+    margin: 22px 0 32px 0;
+}
+.bbs .notice .tit a {
+    display: inline-block;
+    padding: 5px 27px;
+    border: 1px solid #ffffff;
+}
+.bbs .notice ul {
+    float: right;
+    width: 770px;
+    margin: 152px 0 0 0;
+}
+.bbs .notice ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.bbs .notice ul li.first {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.bbs .notice ul li a {
+    padding: 20px;
+}
+.bbs .notice ul li a strong {
+    float: left;
+    font-size: 15px;
+    font-weight: 400;
+}
+.bbs .notice ul li a span {
+    float: right;
+    margin: 1px 0 0 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.bbs .movie {
+    margin: 75px 0 0 0;
+}
+.bbs .movie h2 {
+    color: #ffffff;
+    margin: 0 0 18px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.bbs .movie ul li {
+    float: left;
+    width: 400px;
+    margin: 0 40px 0 0;
+}
+.bbs .movie ul li.last {
+    margin: 0;
+}
+.bbs .movie ul li a {
+    display: block;
+}
+.bbs .movie ul li a span {
+    display: block;
+    margin: 12px 0 3px 0;
+}
+.bbs .movie ul li a strong {
+    display: block;
+    color: #1D1D1D;
+    font-size: 20px;
+    font-weight: 700;
+}
+footer {
+    margin: 74px 0 0 0;
+    background-color: #0A0A0A;
+    color: rgba(255, 255, 255, 0.8);
+}
+footer .inner {
+    float: left;
+    margin: 84px 0 45px 0;
+}
+footer button {
+    float: right;
+    width: 160px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
 }
