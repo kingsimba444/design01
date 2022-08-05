@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR);
+body, section, p, div, ul, li, h1, h2, h3, h4, h5, h6, nav, button, header, footer {
+    /* body, section 등의 모든 태그의 모든 여백 삭제 */
+    padding: 0;
+    margin: 0;
+}
+ul, li {
+    list-style: none; /* ul 태그 옆에 동그라미 삭제 */
+}
+
+
+.clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.clearfix{display:block;}
+body {
+    min-width: 1280px;
+    /* wrapper에서 준 넓이를 body에 최소 넓이로 줌 - 가로스크롤을 해도 배경이 정상적으로 나오게 처리 */
+    color: #3d3d3d;
+    line-height: 1.5;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.07em;
+}
+a {
+    color: inherit;
+    /* 브라우저가 정의하는 파란색은 적용하지 않고, 부모요소가 정의한 색상을 따르겠다는 뜻 */
+    text-decoration: none;
+}
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.visual h2 {
+    color: #1D1D1D;
+    margin: 60px 0 20px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+.visual strong {
+    color: #07B53B;
+    font-size: 20px;
+    font-weight: 700;
+}
+.visual p {
+    margin: 10px 0 20px 0;
+}
+.visual a {
+    float: left;
+    display: inline-block;
+    margin: 10px 0 20px 0;
+    padding: 9px 43px;
+    border: 1px solid #666666;
+}
+.visual a.last {
+    color: #07B53B;
+    margin: 10px 0 0 5px;
+    border: 1px solid #07B53B;
+}
+.visual img {
+    margin: 40px 0 70px 0;
+}
+
+.market {
+    margin: 0 0 255px 0;
+    background-image: url(../images/lego2_background.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+.market h2 {
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+.market p {
+    color: #ffffff;
+    text-align: center
+}
+.market .line {
+    text-align: center;
+}
+.market a {
+    color: #ffffff;
+    display: inline-block;
+    margin: 24px 0 41px 0 ;
+    padding: 8px 43px;
+    border: 1px solid #ffffff;
+}
+.market .lego2 {
+    text-align: center;
+}
