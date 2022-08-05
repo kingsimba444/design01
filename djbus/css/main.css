@@ -71,6 +71,10 @@ header nav ul li a {
     background-repeat: no-repeat;
     height: 750px;
 }
+.visual h2 {
+    display: none;
+    /* 해당 태그를 사용하지 않은 것처럼 숨김 - 공간을 차지하지 않음 */
+}
 .visual strong {
     /* strong 인라인태그여서 magin이 적용X, block 요소로 번경 */
     display: block;
@@ -86,7 +90,7 @@ header nav ul li a {
     font-weight: 400;
 }
 .visual p em {
-    font-weight: 700px;
+    font-weight: 700;
 }
 
 .promotion .art {
