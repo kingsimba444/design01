@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR);
-body, section, p, div, ul, li, h1, h2, h3, h4, h5, h6, nav {
+body, section, p, div, ul, li, h1, h2, h3, h4, h5, h6, nav, button, header, footer {
     /* body, section 등의 모든 태그의 모든 여백 삭제 */
     padding: 0;
     margin: 0;
@@ -24,6 +24,8 @@ button {
 .clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
 body {
+    min-width: 1280px;
+    /* wrapper에서 준 넓이를 body에 최소 넓이로 줌 - 가로스크롤을 해도 배경이 정상적으로 나오게 처리 */
     color: #3d3d3d;
     line-height: 1.5;
     font-family: 'Noto Sans KR', sans-serif;
@@ -212,16 +214,50 @@ header nav ul li a {
     font-weight: 700;
 }
 footer {
-    margin: 74px 0 0 0;
+    overflow: hidden; /* footer 하단에 생성된 의도하지 않은 여백 삭제를 위해 */
+    margin: 70px 0 0 0;
     background-color: #0A0A0A;
     color: rgba(255, 255, 255, 0.8);
 }
 footer .inner {
     float: left;
-    margin: 84px 0 45px 0;
+    margin: 60px 0 70px 0;
+}
+footer .fnav li {
+    float: left;
+}
+footer .fnav li a {
+    display: block;
+    padding: 0 14px;
+}
+footer .fnav li.privacy a {
+    /* li 중에서 privacy 클래스명을 갖은 li의 내부에 있는 a */
+    padding-left: 0;
+    font-weight: 700;
+}
+footer .info {
+    margin: 45px 0 10px 0;
+}
+footer .info address {
+    display: inline;
+}
+footer .info span {
+    display: inline-block;
+    margin: 0 0 0 24px;
 }
 footer button {
+    /* button 태그에 넓이와 높이를 주면 글자가 상하좌우 가운데 정렬됨 */
     float: right;
     width: 160px;
+    height: 38px;
+    padding: 6px 14px 9px 14px;
+    margin: 94px;
     border: 1px solid rgba(255, 255, 255, 0.8);
+}
+footer button strong {
+    float: left;
+    font-weight: 400;
+}
+footer button span {
+    float: right;
 }
