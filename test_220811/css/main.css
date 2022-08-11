@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+KR);
+/* main.css에 default.css 삽입 - 호출 */
+@import url(default.css);
+
+
+.business h2 {
+    padding: 80px 0 20px 0;
+    font-size: 45px;
+    text-align: center;
+}
+
+.business {
+    padding: 0 0 150px 0;
+}
+.business ul {
+    margin: 0 0 80px 0;
+}
+.business ul li {
+    float: left;
+    margin: 0 20px 80px 0;
+    width: 290px;
+    height: 346px;
+}
+.business ul li a {
+    display: block;
+    color: #3d3d3d;
+}
+.business ul li a img {
+    width: 100%;
+    box-sizing: border-box;
+}
+.business ul li a strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.business ul li a span {
+    display: block;
+}
+
+.tech {
+    margin: ;
+    height: 762px;
+    background-color: #F4F4F4;
+}
+.tech h2 {
+    padding: 100px 0 0 0;
+    font-size: 45px;
+    text-align: center;
+}
+
+.tech ul {
+    padding: 20px 0 0 0;
+}
+.tech ul li {
+    float: left;
+    margin: 0 40px 150px 0;
+}
+.tech ul li:last-child {
+    margin: 0;
+}
+.tech ul li a {
+    display: block;
+    width: 620px;
+    height: 514px;
+    padding: 170px 0 0 15px;
+    text-align: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+.tech ul li.tech01 a {
+    background-image: url(../images/tech01.png);
+}
+.tech ul li.tech02 a {
+    background-image: url(../images/tech02.png);
+}
+
+.tech ul li a strong {
+    display: block;
+    line-height: 1.125;
+    margin: 13px 0 13px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+.tech ul li a span {
+    display: block;
+}
