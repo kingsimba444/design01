@@ -1,1 +1,125 @@
 @import url(default.css);
+
+.service .tit {
+    text-align: center;
+}
+.service .tit h2 {
+    margin: 41px 0 23px 0;
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 400;
+}
+.service .tit strong {
+    margin: 0 0 23px 0 ;
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+}
+.service .tit p {
+    margin: 0 0 112px 0;
+}
+.service .tit p span {
+    /* p태그 안에서 임의로 줄바꿈을 주기 위해서 span태그로 묶고 block으로 지정 */
+    display: block;
+}
+.service ul li {
+    position: relative;
+    float: left;
+    width: 290px;
+    padding-top: 70px;
+    margin: 0 40px 80px 0;
+}
+.service ul li:nth-child(4),
+.service ul li:nth-child(8) {
+    margin-right: 0;
+}
+.service ul li:nth-child(5) {
+    clear: left;
+    /* 2줄 이상을 float로 정렬할 때 두번째줄 첫번쨰 요소에 필수값으로 줌 */
+}
+.service ul li::before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #3d3d3d;
+    color: #ffffff;
+    line-height: 50px;
+    /* 행간을 높이와 동일하게 - 글자가 위아래 가운데 */
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    content: "";
+}
+.service ul li:nth-child(1)::before {
+    content: "1";
+}
+.service ul li:nth-child(2)::before {
+    content: "2";
+}
+.service ul li:nth-child(3)::before {
+    content: "3";
+}
+.service ul li:nth-child(4)::before {
+    content: "4";
+}
+.service ul li:nth-child(5)::before {
+    content: "5";
+}
+.service ul li:nth-child(6)::before {
+    content: "6";
+}
+.service ul li:nth-child(7)::before {
+    content: "7";
+}
+.service ul li:nth-child(8)::before {
+    content: "8";
+}
+.service ul li h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px){
+    .service .tit {
+        text-align: left;
+    }
+    .service .tit h2 {
+        margin: 41px 0 17px 0;
+        font-size: 30px;
+    }
+    .service .tit strong {
+        display: block;
+        margin: 0 0 17px 0 ;
+        font-size: 15px;
+    }
+    .service .tit p {
+        margin: 0 0 78px 0;
+    }
+    .service .tit p span {
+        display: inline; /* 모바일에서는 다시 줄바꿈 주지 않음 */
+    }
+
+    .service ul li {
+        float: none;
+        width: auto;
+        padding-top: 49px;
+        margin: 0 0 70px 0;
+    }
+    .service ul li::before {
+        width: 35px;
+        height: 35px;
+        border-radius: 18px;
+        line-height: 35px;
+        /* 행간을 높이와 동일하게 - 글자가 위아래 가운데 */
+        font-size: 20px;
+    }
+    .service ul li h3 {
+        margin-bottom: 9px;
+        font-size: 17px;
+    }
+}

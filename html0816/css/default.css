@@ -40,5 +40,20 @@ html, body {
     width: 1280px;
     margin: 0 auto;
 }
+@media screen and (max-width:640px){
+    /* 브라우저 사이즈 640px 이하부터는 이 안에 정의된 css가 적용됨 
+      640px 이상(초과)일 때는 이 css가 적용되지 않음 */
+      html, body {
+        min-width: auto;
+        /* 디바이스 크기에 맞춰서 알아서 100% 
+            - pc에서 넓이를 제한했기 때문에 넓이 제한을 풀려고 주는 값 */
+        font-size: 13px;
+    }
+    /* 컨텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+}
 .clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
