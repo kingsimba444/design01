@@ -526,3 +526,31 @@ footer .finfo {
 footer .copyright {
     color: rgba(255, 255, 255, 0.8);
 }
+
+@media screen and (max-width:640px){
+    footer{ 
+        padding: 35px 0 66px 0;
+    }
+    footer .family {
+        float: none;
+    }
+    footer .family button {
+        width: 125px;
+        height: 30px;
+        padding: 0 5px 0 10px;
+    }
+    footer .inner {
+        float: none;
+    }
+    footer .fnav {
+        margin: 30px 0 0 0;
+    }
+    footer .fnav li::after {
+        top: 5px;
+        height: 10px;
+    }
+    footer .finfo {
+        margin: 50px 0 10px 0;
+        color: rgba(255, 255, 255, 0.8);
+    }
+} /* media 종료 */
