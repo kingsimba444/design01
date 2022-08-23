@@ -1,0 +1,19 @@
+@font-face {
+	font-family: 'EY'; /* body에서 font-family로 서체를 부를 이름 - 마음대로 지어도 됨 */
+	font-style: normal;
+	font-weight: 400; /* 폰트별 두께 숫자 */
+    src: url(../fonts/Eulyoo1945-Regular.eot);
+	src: url(../fonts/Eulyoo1945-Regular.eot/?#iefix) format('embedded-opentype'),
+	     url(../fonts/Eulyoo1945-Regular.woff) format('woff2'),
+	     url(../fonts/Eulyoo1945-Regular.woff2) format('woff');
+}
+
+@font-face {
+	font-family: 'EY';
+	font-style: normal;
+	font-weight: 700;
+    src: url(../fonts/Eulyoo1945-SemiBold.eot);
+	src: url(../fonts/Eulyoo1945-SemiBold.eot/?#iefix) format('embedded-opentype'),
+	     url(../fonts/Eulyoo1945-SemiBold.woff) format('woff2'),
+	     url(../fonts/Eulyoo1945-SemiBold.woff2) format('woff');
+}
