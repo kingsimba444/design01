@@ -29,10 +29,85 @@ header h1 a {
 }
 header .gnb {
     float: left;
+    margin: 7px 0 0 0;
+}
+header .gnb button {
+    display: none; /* 모바일에서만 표시 - 메뉴 여는 버튼 */
+}
+header .gnb ul li {
+    float: left;
+}
+header .gnb ul li a {
+    display: block;
+    padding: 25px 25px;
+    font-size: 20px;
 }
 header .tnb {
     float: right;
+    margin: 18px 5px 0 0;
 }
+header .tnb ul li {
+    float: left;
+}
+header .tnb ul li button {
+}
+header .tnb ul li button span {
+    display: none; /* 설명문구 숨김 */
+}
+header .tnb ul li button i {
+    padding: 12px;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+@media screen and (max-width:640px){
+    header {
+        height: 45px;
+    }
+    header h1 {
+        margin: 12px 0 0 0;
+    }
+    header h1 a {
+        width: 114px;
+        height: 20px;
+    }
+    header .gnb {
+        float: right;
+        margin: 7px 0 0 12px;
+    }
+    /* 
+        h1 / gnb / tnb / 
+        코딩 순서가 위와 같을 때
+        모든 요소에 float: right를 주면
+        화면에 나타나는 순서는
+        tnb / gnb / h1이 된다.
+        --> float: right를 먼저 선언한 요소가 오른쪽 자리를 선점
+    */
+    header .gnb button {
+        display: block; /* 모바일에서만 표시 - 메뉴 여는 버튼 */
+    }
+    header .gnb button span {
+        display: none
+    };
+    header .gnb button i {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    header .gnb ul {
+        display: none;
+    }
+    header .tnb {
+        margin: 10px 0 0 12px;
+    }
+    header .tnb ul li.mypage {
+        display: none;
+    }
+    header .tnb ul li button i {
+        padding: 0;
+        font-size: 20px;
+        font-weight: 300;
+    }
+} /* media 종료 */
 
 .visual {
     height: 870px;
@@ -77,5 +152,179 @@ header .tnb {
     }
     .visual .txt_mobile {
         display: block;
+    }
+} /* media 종료 */
+
+.book {
+    margin: 105px 0 106px 0;
+}
+.book .tit {
+    float: left;
+}
+.book .tit h2 {
+    margin: 8px 0 11px;
+    color: #1d1d1d;
+    font-size: 50px;
+    font-weight: 700;
+}
+.book .tit .btn {
+    margin: 20px 0 0 0;
+}
+.book .tit .btn button {
+    float: left;
+    margin-right: 15px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #666666;
+}
+.book .tit .btn button span {
+    display: none;
+}
+.book .tit .btn button i {
+    margin: 5px 0 0 0;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+/*
+    컨텐츠 영역 밖으로 나가는 리스트 - 스크롤 (모바일)
+    1. ul을 감싸는 div가 있어야 함
+    2. ul을 감싸는 div는 overflow: auto 이어야함 (모바일)
+      넓이와 높이를 입력
+    3. ul은 li 전체의 넓이를 가져야 함 ---> 모든 li 한줄로 좌우로 들어가야 함
+      postion: absolute (모바일) - 좌우로 슬라이드는 absolute만 가능
+*/
+
+.book .list {
+    margin-left: 330px;
+}
+/*
+    왼쪽 요소는 float: left를 줌
+    오른쪽 요소는 margin-left로 왼쪽 요소의 넓이 만큼을 여백으로 줌
+    오른쪽 요소는 block임
+    오른쪽 요소가 왼쪽 요소를 인지하지 못하고 위로 올라옴
+*/
+.book .list ul {
+    width: 2270px; /* 모든 li가 한줄로 들어갈 수 있는 넓이 */
+}
+.book .list ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+
+.book .list ul li a {
+    display: block;
+}
+.book .list ul li a img {
+    border: 1px solid #666666;
+    /* box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.2); */
+}
+.book .list ul li a .subject {
+    display: block;
+    margin: 12px 0 5px;
+    font-size: 20px;
+    font-weight: 700;
+    /* 무조건 1줄로 표시 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.book .list ul li a .writer {
+    display: block;
+    color: #666666;
+    /* 무조건 1줄로 표시 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.book .list ul li a .cnt {
+    display: block;
+    margin: 10px 0 0 0;
+    /* 여러줄 */
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+}
+
+@media screen and (max-width:640px) {
+    .book {
+        margin: 58px 0 58px 0;
+    }
+    .book .tit {
+        float: none;
+    }
+    .book .tit h2 {
+        float: left;
+        margin: 0;
+        font-size: 30px;
+    }
+    .book .tit p {
+        display: none; /* 모바일 숨김 */
+    }
+    .book .tit .btn {
+        float: right;
+        margin: 10px 0 0 0;
+    }
+    .book .tit .btn button {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    .book .tit .btn button span {
+        display: none;
+    }
+    .book .tit .btn button i {
+        margin: 1px 0 0 0;
+        font-size: 15px;
+    }
+    .book .list {
+        overflow-y: hidden;
+        /* 가로스크롤바가 생성되면, 가로스크롤 만큼 높이가 줄어서
+           세로스크롤바가 생성되기도 함, 그걸 방지 */
+        overflow-x: auto; 
+        width: calc(100% + 20px);
+        /*
+            calc는 넓이나 높이의 수치를 계산할 때 사용
+            대부분 %와 px를 혼용할 때 사용
+            list에 100%를 주면 wrapper가 좌우에 여백 20px을
+            준 안쪽으로 넓이가 생성된다.
+            그런데 오른쪽만 콘텐츠 영역 밖으로 나가고자 하면
+            clac(100% + 20px)
+        */
+        padding: 10px 0;
+        margin-left: 0; 
+    }    
+    .book .list ul {
+        width: 1320px; /* 모든 li가 한줄로 들어갈 수 있는 넓이 */
+    }
+    .book .list ul li {
+        width: 200px;
+        margin: 0 20px 0 0;
+    }
+    .book .list ul li a img {
+        width: 100%;
+    }
+    .book .list ul li a .subject {
+        margin: 10px 0 3px;
+        font-size: 15px;
+        font-weight: 700;
+        /* 
+        1줄 -> 2줄
+        white-space: normal;
+        line-height:1.5;
+        height: 3em;
+        */
+    }
+    .book .list ul li a .writer {
+        display: block;
+        color: #666666;
+        /* 무조건 1줄로 표시 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .book .list ul li a .cnt {
+        display: none;
     }
 } /* media 종료 */
