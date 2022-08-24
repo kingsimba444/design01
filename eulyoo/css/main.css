@@ -328,3 +328,115 @@ header .tnb ul li button i {
         display: none;
     }
 } /* media 종료 */
+
+.interview {
+    padding: 0 0 210px 0;
+}
+.interview h2 {
+    padding: 0 0 45px 0;
+    color: #1d1d1d;
+    font-size: 50px;
+    font-weight: 700;
+}
+.interview .colgroup {
+    position: relative; /* pic_box 정렬의 기준점 */
+}
+.interview .pic_box {
+    position: absolute;
+    left: 0;
+    top: 30px;
+}
+.interview .cnt_box {
+    height: 495px;
+    margin: 0 0 0 70px;
+    background-color: #BC9D70;
+    color: #ffffff;
+}
+.interview .cnt_box .inner {
+    padding: 1px 20px 40px 20px
+}
+.interview .cnt_box h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+.interview .cnt_box p {
+    margin: 20px 0 20px 0;
+}
+.interview .cnt_box a {
+    display: block;
+    width: 175px;
+    height: 45px;
+    line-height: 40px;
+    white-space: nowrap;
+    /* 버튼디자인에서 글자를 높이의 위아래 가운데 배치하기 위해서는
+      제일 쉬운 방법인 행간을 높이값과 동일하게 주는 것이다. */
+    border: 1px solid #ffffff;
+}
+.interview .cnt_box a span {
+    float: left;
+    margin: 0 0 0 14px;
+}
+.interview .cnt_box a i {
+    float: right;
+    margin: 8px 6px 0 0;
+}
+
+@media screen and (max-width:640px) {
+    .interview {
+        padding: 0 0 58px 0;
+    }
+    .interview h2 {
+        font-size: 15px;
+        padding: 0 0 12px 0;
+        color: #1d1d1d;
+        font-size: 30px;
+    }
+    .interview .pic_box {
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+    .interview .pic_box::after{
+        position: absolute;
+        left: -20px;
+        bottom: -1px;
+        width: calc(100% + 40px);
+        height: 40%;
+        background-color: #BC9D70;
+        content: "";
+    }
+    .interview .pic_box img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+    }
+    .interview .cnt_box {
+        width: calc(100% + 40px);
+        margin: 0 0 0 -20px;
+        height: auto;
+        /* margin: 0; */
+    }
+    .interview .cnt_box .inner {
+        padding: 12px 20px 26px 20px;
+    }
+    .interview .cnt_box h3 {
+        margin: 12px 0 0 0;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .interview .cnt_box p {
+        margin: 12px 0 12px 0;
+    }
+    .interview .cnt_box p span {
+        display: none;
+    }
+    .interview .cnt_box a {
+        width: 116px;
+        height: 26px;
+        line-height: 26px;
+        white-space: nowrap;
+    }
+    .interview .cnt_box a i {
+        margin: 5px 3px 0 0;
+    }
+}
