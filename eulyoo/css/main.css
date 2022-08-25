@@ -10,6 +10,7 @@ header {
     height: 100px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     color: #ffffff;
+    transition: background-color 0.5s;
 }
 header h1 {
     float: left;
@@ -59,6 +60,21 @@ header .tnb ul li button i {
     font-size: 35px;
     font-weight: 300;
 }
+/* header에 fixed클래스가 추가되었을 때의 디자인 */
+
+
+header.fixed {
+    position: fixed; /* 스크롤을 내려도 그 위치 그대로 */
+    z-index: 100;
+    border-bottom: none;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #1D1D1D;
+}
+header.fixed h1 a {
+    background: url(../images/logo.svg) no-repeat center center / 100%;
+}
+
 
 @media screen and (max-width:640px){
     header {
@@ -73,7 +89,7 @@ header .tnb ul li button i {
     }
     header .gnb {
         float: right;
-        margin: 7px 0 0 12px;
+        margin: 9px 0 0 12px;
     }
     /* 
         h1 / gnb / tnb / 
