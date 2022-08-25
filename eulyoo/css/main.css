@@ -330,7 +330,7 @@ header .tnb ul li button i {
 } /* media 종료 */
 
 .interview {
-    padding: 0 0 210px 0;
+    padding: 0 0 105px 0;
 }
 .interview h2 {
     padding: 0 0 45px 0;
@@ -353,7 +353,7 @@ header .tnb ul li button i {
     color: #ffffff;
 }
 .interview .cnt_box .inner {
-    padding: 1px 20px 40px 20px
+    padding: 30px 40px 40px 590px
 }
 .interview .cnt_box h3 {
     font-size: 20px;
@@ -374,7 +374,7 @@ header .tnb ul li button i {
 }
 .interview .cnt_box a span {
     float: left;
-    margin: 0 0 0 14px;
+    margin: 2px 0 0 14px;
 }
 .interview .cnt_box a i {
     float: right;
@@ -425,7 +425,7 @@ header .tnb ul li button i {
         font-weight: 400;
     }
     .interview .cnt_box p {
-        margin: 12px 0 12px 0;
+        margin: 12px 0 0 0;
     }
     .interview .cnt_box p span {
         display: none;
@@ -436,7 +436,241 @@ header .tnb ul li button i {
         line-height: 26px;
         white-space: nowrap;
     }
+    .interview .cnt_box a span {
+        margin: 0px 0 0 14px;
+    }
     .interview .cnt_box a i {
-        margin: 5px 3px 0 0;
+        margin: 0px 3px 0 0;
     }
 }
+
+.news .tit h2 {
+    float: left;
+    /* padding: 0 0 45px 0; */
+    color: #1d1d1d;
+    font-size: 50px;
+    font-weight: 700;
+}
+.news .tit .btn {
+    float: right;
+    margin: 15px 0 0 0;
+}
+.news .tit .btn button {
+    float: left;
+    margin-right: 15px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #666666;
+}
+.news .tit .btn button span {
+    display: none;
+}
+.news .tit .btn button i {
+    margin: 5px 0 0 0;
+    font-size: 24px;
+    font-weight: 300;
+}
+.news .list {
+    padding: 30px 0 0 0;
+}
+.news .list ul {
+    /* li넓이 290 + 여백 40 = 330 * 8개 */
+    width: 2640px;
+    margin: 0 0 0 -330px;
+}
+.news .list ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a img {
+    width: 100%;
+    border: 1px solid #666666;
+    /* box-shadow: ; */
+}
+.news .list ul li a .subject {
+    display: block;
+    margin: 15px 0 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+
+    /* 무조건 1줄
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    /* 무조건 2줄
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden; */
+
+    /* 최대 2줄 */
+    line-height: 1.5;
+    max-height: 3em;
+    overflow: hidden;
+}
+.news .list ul li a .cnt {
+    display: block;
+    /* 최대 2줄 */
+    line-height: 1.5;
+    max-height: 4.6em;
+    overflow: hidden;
+}
+
+@media screen and (max-width:640px){
+    .news .tit h2 {
+        font-size: 30px;
+    }
+    .news .tit .btn {
+        margin: 10px;
+    }
+    .news .tit .btn button {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    .news .tit .btn button i {
+        margin: 1px 0 0 0;
+        font-size: 15px;
+    }
+    .news .list {
+        overflow-y: hidden;
+        overflow-x: auto;
+        width: calc(100% + 40px);
+        padding: 10px 0 10px 0;
+        /*
+            왼쪽으로 20px 이동
+            첫번째
+            position: relative;
+            left: -20px;
+            
+            두번째
+            margin: 0 0 0 -20px;
+        */
+        margin: 0 0 0 -20px;
+    }
+    .news .list ul {
+        /* li넓이 200 + 여백 20 = 220 * 8개 */
+        width: 1760px;
+        margin: 0 0 0 20px;
+    }
+    .news .list ul li {
+        width: 200px;
+        margin: 0 20px 0 0;
+    }
+    .news .list ul li a .subject {
+        margin: 12px 0 0 0;
+        font-size: 15px;
+    
+        /* 무조건 1줄
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+        /* 무조건 2줄
+        line-height: 1.5;
+        height: 3em;
+        overflow: hidden; */
+    
+        /* 최대 2줄
+        line-height: 1.5;
+        max-height: 3em;
+        overflow: hidden; */
+    }
+    .news .list ul li a .cnt {
+        display: none;
+    }
+} /* media 종료 */
+
+footer {
+    padding: 72px 0 130px 0;
+    margin: 110px 0 0 0;
+    background-color: #3E3E3F;
+    color: rgba(255, 255, 255, 0.8);
+}
+footer .flogo {
+    float: left;
+}
+footer .flogo img {
+    width: 175px;
+    opacity: 0.8;
+}
+footer .fnav {
+    float: left;
+    margin: 0 78px 0 154px;
+}
+footer .fnav ul li a {
+    display: block;
+    line-height: 25px;
+}
+footer .sns {
+    float: right;
+    /* 글자 없애기 */
+    font-size: 0;
+    line-height: 0;
+}
+footer .sns a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+footer .sns a.insta{
+    background: url(../images/sns_insta.svg) no-repeat center center;
+}
+footer .sns a.facebook{
+    background: url(../images/sns_facebook.svg) no-repeat center center;
+}
+footer .sns a.naver{
+    background: url(../images/sns_naver.svg) no-repeat center center;
+}
+footer .copyright {
+    float: left;
+    line-height: 25px;
+}
+
+@media screen and (max-width:640px){
+    footer {
+        padding: 26px 0 44px 0;
+        margin: 58px 0 0 0;
+        text-align: center;
+    }
+    footer .flogo {
+        float: none;
+    }
+    footer .flogo img {
+        width: 102px;
+    }
+    footer .fnav {
+        float: none;
+        margin: 18px 0 16px 0;
+    }
+    footer .fnav ul li a {
+        line-height: 22px;
+    }
+    footer .sns {
+        float: none;
+    }
+    footer .sns a {
+        width: 30px;
+        height: 30px;
+    }
+    footer .sns a.insta{
+        background-size: 20px auto;
+        /* background-size : %로 주면 background가 들어간 영역의 넓이의
+          몇 %로 적용됨. 원래 배경 이미지의 비율로 계산 X */
+    }
+    footer .sns a.facebook {
+        background-size: 12px auto;
+    }
+    footer .sns a.naver{
+        background-size: 20px auto;
+    }
+    footer .copyright {
+        margin: 18px 0 0 0;
+        float: none;
+        line-height: 20px;
+    }
+} /* media 종료 */
