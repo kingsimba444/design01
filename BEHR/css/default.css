@@ -39,8 +39,6 @@ button {
 html, body {
     color: #3d3d3d;
     line-height: 1.5;
-    font-family: 'Montserrat', sans-serif;
-font-family: 'Noto Sans KR', sans-serif;
     font-family: 'Montserrat', 'Noto Sans KR', 'Nanum Gothic', 'Malgun Gothic', 'Apple SD Gothic', 'Apple SD Neo', 'dotum', sans-serif;
     /* 폰트 적영 우선순위
       을유 웹폴트 우선적용, - 만약에 웹폰트가 지원되지 않으면 그 다음에 선언된 폰트가 적용됨 
@@ -51,7 +49,7 @@ font-family: 'Noto Sans KR', sans-serif;
     word-break: keep-all;
 }
 #wrap { /* id="wrap" */
-    overflow: hidden;
+    /* overflow: hidden; */
     min-width: 1280px;
     /* 브라우저에 가로스크롤이 생성되었을 때 배경이 잘리지 않기 위해 최소 넓이를 줌 */
 }
