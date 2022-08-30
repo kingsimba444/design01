@@ -40,4 +40,19 @@ $(document).ready(function(){
             $('header').removeClass('fixed')
         }
     }
+
+    /* 
+        header nav에 마우스를 올리면
+        header에 open 클래스를 추가함
+    */
+    $('header nav > ul').on('mouseenter focusin', function(){
+        $('header').addClass('open')
+    })
+    $('header').on('mouseleave', function(){
+        $('header').removeClass('open')
+    })
+    $('header nav > ul > li:last-child > ul > li:last-child').on('focusout', function(){
+        $('header').removeClass('open')
+    })
+
 })

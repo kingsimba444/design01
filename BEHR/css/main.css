@@ -210,7 +210,7 @@ header.open nav > ul > li > ul { /* 2차 메뉴 li */
 }
 .product h2 {
     position: sticky;
-    top: 0;
+    top: 120px;
     left: 0;
     float: left;
     font-size: 55px;
