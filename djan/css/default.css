@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
 
 /* 모든 태그에 브라우저에서 주는 여백을 삭제 */
-body, header, footer, div, nav, section, h1, h2, h3, h4, h5, button, a, ul, li, address, strong, span, em, p, i {
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, button, a, ul, ol, li, address, strong, span, em, p, i, dl, dt, dd {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -19,7 +19,7 @@ em, address {
     font-style: normal;
 }
 /* 항목 앞에 동그라미 삭제 */
-ul, li {
+ul, ol, li {
     list-style: none;
 }
 button {

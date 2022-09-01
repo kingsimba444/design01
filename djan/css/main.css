@@ -1,1 +1,359 @@
 @import url('default.css');
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+header .logo {
+    float: left;
+    margin: 25px 55px 0 0;
+    font-size: 0;
+    line-height: 0;
+}
+header .gnb {
+    float: left;
+}
+header .gnb > ul > li {
+    float: left;
+    width: 230px;
+    text-align: center;
+}
+header .gnb > ul > li > a {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 100px; 
+    /* header의 높이가 100px - 글자를 header 위아래 가운데 */
+    white-space: nowrap;
+    /* 행간으로 위아래 여백을 처리해버리는 경우
+        절대 2줄이 되지 못하도록 white-space: nowrap(줄바꿈 금지)을 줌 */
+}
+header .gnb > ul > li > ul {
+    /* 2차 메뉴 */
+    display: none;
+}
+header .gnb .gnb_open {
+    display: none; /* 모바일 버튼 */
+}
+header .gnb .gnb_close {
+    display: none; /* 모바일 버튼 */
+}
+header .tnb {
+    float: right;
+    margin: 35px 0 0 0;
+}
+header .tnb a {
+    display: block;
+    float: left;
+    margin: 0 0 0 10px;
+}
+header .tnb a span {
+    display: none;
+}
+header .tnb a i {
+    font-size: 30px;
+}
+
+@media screen and (max-width:640px){
+    header {
+        height: 45px;
+    }
+    header .logo {
+        margin: 0;
+    }
+    header .logo a img {
+        width: 72px;
+    }
+    header .gnb {
+        float: right;
+        margin: 12px 0 0 0;
+    }
+    header .gnb > ul {
+        display: none;
+    }
+    header .gnb .gnb_open {
+        display: block; /* 모바일 버튼 */
+    }
+    header .gnb .gnb_open span {
+        display: none;
+    }
+    header .gnb .gnb_open i {
+        font-size: 20px;
+    }
+    header .tnb {
+        display: none;
+    }
+} /* header media 종료 */
+
+.visual {
+    position: relative;
+    height: 1000px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+.visual .inner {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    /* margin: -320px 0 0 0 ; */
+    transform: translate(0, -325px);
+}
+.visual h2 {
+    margin: 0 0 1px 0;
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 1.45;
+}
+.visual h2 strong {
+    font-weight: 700;
+}
+.visual a {
+    display: inline-block;
+    padding: 7px 5px 0 0;
+    font-weight: 400;
+    border-bottom: 1px solid #ffffff;
+}
+
+@media screen and (max-width:640px){
+    .visual {
+        height: 760px;
+        background-position: left 12% center;
+        text-align: center;
+    }
+    .visual .inner {
+        /* margin: -320px 0 0 0 ; */
+        transform: translate(0, -210px);
+    }
+    .visual h2 {
+        margin: 0 0 15px 0;
+        font-size: 25px;
+    }
+    .visual a {
+        font-size: 13px;
+    }
+} /* visual media 종료 */
+
+.care .inner {
+    position: relative; /* more 정렬의 기준 */
+}
+.care .tit {
+    margin: 105px 0 80px 0;
+}
+.care .tit h2 {
+    float: left;
+    color: #3D3D3D;
+    font-size: 60px;
+    font-weight: 700;
+}
+.care .tit p {
+    float: left;
+    margin: 57px 0 0 23px;
+}
+.care .more {
+    position: absolute;
+    right: 0;
+    top: 45px;
+}
+.care .more a {
+    display: block;
+    width: 120px;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid #3d3d3d;
+}
+.care .more span {
+    float: left;
+}
+.care .more a i {
+    float: right;
+    font-size: 20px;
+    margin: 4px 0 0 0;
+}
+.care .more a:hover {
+    color: #00AE4D;
+    border-bottom-color: #00AE4D;
+}
+.care ul li {
+    float: left;
+    width: 440px;
+    margin: 0 40px 80px 0;
+}
+.care ul li:nth-child(3),
+.care ul li:nth-child(6) {
+    margin-right: 0;
+}
+.care ul li:nth-child(2),
+.care ul li:nth-child(5) {
+    margin-top: 60px;
+}
+.care ul li a {
+    display: block;
+}
+/* 
+    마우스 오버 시 이미지 확대
+    1. 이미지만 감싸는 별도의 영역이 필요
+    2. 해당 영역은 overflow:hidden;과 높이 설정이 필요
+        (높이는 100%)
+    3. 감싸는 영역에서 font-size: 0; line-height: 0;으로 이미지 하단에 발생하는 행간을 삭제해야 함
+    4. 이미지에 미리 (오버 전) transition을 줘서 자연스럽게 확대되도록 해야 함
+    5. 오버 후 이미지를 transform: scale3d(확대값, 확대값, 1)을 준다.
+*/
+.care ul li a span {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 20px;
+    /* 이미지도 하단에 행간이 적용되어 여백이 발생함
+        이미지 하단 행간을 삭제하려면 감싸는 요소에 글자크기, 행간을 0 줘야함 */
+    font-size: 0;
+    line-height: 0;
+}
+.care ul li a span img {
+    transition: 0.5s;
+}
+.care ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+    /* scale3d에서 1.2는 좌우 넓이 배율
+    마지막 1은 축 - 1을 줘야 가운데에서 늘어남 */
+}
+.care ul li a:hover span {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.care ul li a dl {
+    margin: 35px 0 0 20px;
+    line-height: 30px;
+}
+.care ul li a dl dt {
+    font-weight: 700;
+    float: left;
+}
+.care ul li a dl dd {
+    position: relative;
+    display: block;
+    margin: 0 0 0 90px;
+}
+.care ul li a dl dd::before {
+    position: absolute;
+    left: -18px;
+    top: 10px;
+    width: 1px;
+    height: 10px;
+    background-color: #cccccc;
+    content: "";
+}
+
+@media screen and (max-width:640px){
+    .care .tit {
+        margin: 50px 0 30px 0;
+    }
+    .care .tit h2 {
+        float: none;
+        font-size: 30px;
+    }
+    .care .tit p {
+        float: none;
+        margin: 3px 0 0 0;
+    }
+    .care .more {
+        position: relative;
+        right: auto;
+        top: auto;
+        text-align: center;
+    }
+    .care .more a {
+        display: inline-block;
+        width: 120px;
+        height: 25px;
+        line-height: 23px;
+        border: 1px solid #3d3d3d;
+        border-radius: 13px;
+        padding: 0 10px 0 15px;
+    }
+    .care .more a i {
+        margin: 2px 0 0 0;
+    }
+    .care ul li {
+        float: none;
+        width: auto;
+        margin: 0 0 40px 0;
+    }
+    .care ul li:nth-child(2),
+    .care ul li:nth-child(5) {
+        margin-top: 0;
+    }
+    .care ul li:nth-child(4),
+    .care ul li:nth-child(5),
+    .care ul li:nth-child(6) {
+        display: none;
+    }
+    .care ul li a span img {
+        width: 100%;
+    }
+    .care ul li a dl {
+        margin: 10px 0 0 10px;
+        line-height: 20px;
+    }
+    .care ul li a dl dd {
+        margin: 0 0 0 80px;
+    }
+    .care ul li a dl dd::before {
+        left: -16px;
+        top: 6px;
+        height: 8px;
+    }
+}
+.step {
+    height: 750px;
+    background: url(../images/step_bg.png) no-repeat center center / cover;
+    color: #ffffff;
+}
+.step .tit {
+    padding: 150px 0 70px;
+}
+.step .tit h2 {
+    float: left;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 700;
+}
+.step .tit p {
+    float: left;
+    margin: 57px 0 0 23px;
+}
+.step .ctrl {
+    display: none;
+}
+.step .list ol li {
+    float: left;
+    width: 200px;
+    height: 210px;
+    padding: 20px 20px 0 20px;
+    margin: 0 40px 0 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.step .list ol li:last-child {
+    margin-right: 0;
+}
+.step .list ol li strong {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+}
+.step .list ol li h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 10px 0 20px 0;
+}
+.step .list ol li p {
+    color: rgba(255, 255, 255, 0.8);
+}
