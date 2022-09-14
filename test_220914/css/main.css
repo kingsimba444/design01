@@ -1,0 +1,223 @@
+@import url('default.css');
+
+h1 {
+    display: none;
+}
+
+.visual {
+    height: 850px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #ffffff;
+}
+.visual h2 {
+    padding: 280px 0 0 0;
+    font-size: 75px;
+    font-weight: 400;
+}
+.visual h2 strong {
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px){
+    .visual {
+        height: 350px;
+    }
+    .visual h2 {
+        padding: 60px 0 0 0;
+        font-size: 35px;
+    }
+} /* visual media 종료 */
+
+.works {
+    height: 245px;
+    background-color: #F39800;
+    color: #ffffff;
+    text-align: center;
+}
+.works h2 {
+    font-size: 50px;
+    margin: 0 0 10px 0;
+    padding: 53px 0 0 0;
+    font-weight: 700;
+}
+.works span {
+    display: block;
+}
+
+@media screen and (max-width:640px){
+    .works {
+        height: 148px;
+    }
+    .works h2 {
+        font-size: 25px;
+        margin: 0 0 13px 0;
+        padding: 36px 0 0 0;
+    }
+    .works span {
+        display: inline;
+    }
+} /* works media 종료 */
+
+.biz h2 {
+    display: none;
+}
+.biz ul li {
+    float: left;
+    width: 33.33%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #ffffff;
+}
+.biz ul li.mark {
+    background-image: url(../images/biz01.png);
+}
+.biz ul li.comm {
+    background-image: url(../images/biz02.png);
+}
+.biz ul li.biz {
+    background-image: url(../images/biz03.png);
+}
+.biz ul li a {
+    display: block;
+    height: 300px;
+    text-align: center;
+    padding: 83px 0 0 0;
+}
+.biz ul li a i {
+    font-size: 50px;
+}
+.biz ul li a strong {
+    display: block;
+    margin: 18px 0 0 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px){
+    .biz {
+        background-color: #F39800;
+    }
+    .biz ul li {
+        float: none;
+        width: auto;
+    }
+    .biz ul li a {
+        height: 150px;
+        padding: 29px 0 0 0;
+    }
+    .biz ul li a i {
+        font-size: 30px;
+    }
+    .biz ul li a strong {
+        margin: 6px 0 0 0;
+        font-size: 20px;
+        font-weight: 700;
+    }
+} /* biz media 종료 */
+
+.news {
+    margin: 0 0 30px 0;
+}
+.news h2 {
+    margin: 52px 0 0 0;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+.news strong {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    max-height: 3em;
+    overflow: hidden;
+}
+.news .data span {
+    display: block;
+    margin: 10px 0 10px 0;
+    color: #666666;
+}
+.news .data p {
+    font-weight: 400;
+}
+.news ul li {
+    float: left;
+    margin: 36px 0 0 0;
+    width: 33.33%;
+}
+
+@media screen and (max-width:640px){
+    .news h2 {
+        margin: 39px 0 30px 0;
+        font-size: 25px;
+    }
+    .news strong {
+        font-size: 17px;
+        font-weight: 700;
+    }
+    .news ul li {
+        float: none;
+        width: auto;
+        margin: 0 0 0 0;
+    }
+    .news ul li p {
+        margin: 0 0 15px;
+    }
+    .news ul li a .date p:first-child::after {
+        right: -8px;
+        top: 5px;
+        height: 10px;
+        content: "";
+    }
+} /* news media 종료 */
+
+footer {
+    background-color: #3D3D3D;
+    color: rgba(255, 255, 255, 0.8);
+}
+footer .fnav {
+    padding: 60px 0 0 0;
+}
+footer .fnav li {
+    position: relative;
+    float: left;
+    margin: 0 34px 0 0;
+}
+footer .fnav li::after {
+    position: absolute;
+    right: -19px;
+    top: 7px;
+    width: 1px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    content: "";
+}
+footer .fnav li:last-child::after {
+    display: none;
+}
+footer .finfo {
+    margin: 5px 0 0 0;
+}
+footer .copyright {
+    padding: 35px 0 80px 0;
+}
+
+@media screen and (max-width:640px){fnav {
+        padding: 60px 0 0 0;
+    }
+    footer .fnav li {
+        margin: 0 30px 0 0;
+    }
+    footer .fnav li::after {
+        position: absolute;
+        right: -17px;
+        top: 6px;
+        height: 8px;
+    }
+    footer .finfo {
+        margin: 5px 0 0 0;
+    }
+    footer .copyright {
+        padding: 35px 0 80px 0;
+    }
+} /* footer media 종료 */

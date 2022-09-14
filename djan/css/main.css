@@ -148,7 +148,7 @@ header.fixed .tnb {
 
 @media screen and (max-width:640px){
     .visual {
-        height: 760px;
+        height: 350px;
         background-position: left 12% center;
         text-align: center;
     }
