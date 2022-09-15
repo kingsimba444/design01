@@ -1,0 +1,53 @@
+@import url('default.css');
+@import url('common.css');
+
+/* 메인에만 존재하는 디자인 스타일 */
+
+.visual {
+    background: url(../images/main/visual_bg.png) no-repeat center center / cover;
+    color: #ffffff;
+}
+.visual .cnt_h {
+    position: relative;
+    height: 1000px;
+}
+/*
+    cnt_h는 visual 의 높이와 동일
+    그 높이값을 기준으로 컨텐츠를 위아래 가운데 배치하기 위해서
+    absolute top 50%에서 시작
+    그리고 위아래 이동값을 줌
+    (cnt_h의 높이가 변해도 위아래 가운데로 정렬됨)
+*/
+.visual .cnt_h .inner {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 125px);
+    /* margin-top: -125px; */
+}
+.visual h2 {
+    padding: 0 0 36px 0;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1;
+}
+.visual p {
+    font-size: 20px;
+}
+
+@media screen and (max-width:640px){
+    .visual .cnt_h {
+        height: 640px;
+    }
+    .visual .cnt_h .inner {
+        top: calc(50% - 88px);
+        /* margin-top: -88px; */
+    }
+    .visual h2 {
+        padding: 0 0 20px 0;
+        font-size: 35px;
+    }
+    .visual p {
+        font-size: 15px;
+    }
+} /* visual 반응형 종료 */
+
