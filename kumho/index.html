@@ -7,11 +7,18 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/main.js"></script>
     <title>금호건설</title>
 </head>
 <body>
     <div id="wrap">
+        <!-- 
+            스크롤 내릴 때 header 상단에 고정 -- fixed 클래스 추가
+            메뉴에 마우스를 오버했을 때 - menu_open 클래스를 추가
+
+            모바일 메뉴가 열렸을 때 - menu_mobile 클래스를 추가
+        -->
         <header class="header">
             <h1 class="logo"><a href="index.html">금호건설</a></h1>
             <nav class="gnb">
@@ -20,7 +27,7 @@
                 </button>
                 <ul>
                     <li>
-                        <a href="contents/about.html">회사소개</a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
+                        <a href="contents/about.html"><span>회사소개</span></a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
                         <ul> <!-- 2차 메뉴 -->
                             <li><a href="contents/about.html">기업정보</a></li>
                             <li><a href="contents/ceo.html">CEO인사말</a></li>
@@ -31,7 +38,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="contents/manageA03.html">지속가능경영</a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
+                        <a href="contents/manageA03.html"><span>지속가능경영</span></a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
                         <ul> <!-- 2차 메뉴 -->
                             <li><a href="contents/manageA03.html">윤리경영</a></li>
                             <li><a href="contents/manageB01.html">품질경영</a></li>
@@ -41,7 +48,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="contents/businessList.html">사업분야</a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
+                        <a href="contents/businessList.html"><span>사업분야</span></a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
                         <ul> <!-- 2차 메뉴 -->
                             <li><a href="contents/architecture.html">건축사업</a></li>
                             <li><a href="contents/civil.html">토목사업</a></li>
@@ -51,7 +58,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="contents/corpInfo01.html">투자정보</a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
+                        <a href="contents/corpInfo01.html"><span>투자정보</span></a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
                         <ul> <!-- 2차 메뉴 -->
                             <li><a href="contents/corpInfo01.html">기업지배구조</a></li>
                             <li><a href="contents/managementInfo.html">경영정보</a></li>
@@ -61,14 +68,14 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="contents/recruitmentGuide.html">인재채용</a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
+                        <a href="contents/recruitmentGuide.html"><span>인재채용</span></a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
                         <ul> <!-- 2차 메뉴 -->
                             <li><a href="contents/recruitmentGuide.html">직무가이드</a></li>
                             <li><a href="contents/recruitmentTip.html">채용/면접 Tip</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="contents/reportList.html">홍보센터</a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
+                        <a href="contents/reportList.html"><span>홍보센터</span></a> <!-- 1차 메뉴 (첫 번째 하위 메뉴로 이동) -->
                         <ul> <!-- 2차 메뉴 -->
                             <li><a href="contents/news.html">금호뉴스</a></li>
                             <li><a href="contents/sellList.html">분양뉴스</a></li>
@@ -79,18 +86,26 @@
                         </ul>
                     </li>
                 </ul>
-                <button class="open" title="메뉴닫기">
+                <button class="close" title="메뉴닫기">
                     <i class="material-symbols-rounded">close</i>
                 </button>
             </nav>
             <div class="lang">
-                <button class="open" title="언어선택 열기">KOR</button>
+                <button class="open" title="언어선택 열기">
+                    <i class="material-symbols-rounded">language</i>
+                    <span>KOR</span>
+                    <i class="material-symbols-rounded">expand_more</i>
+                </button>
                 <ul>
                     <!-- 현재 선택되어 있는 언어는 class active 추가 -->
                     <li class="active"><a href="#n">KOR</a></li>
                     <li><a href="#n">ENG</a></li>
                 </ul>
-                <button class="close" title="언어선택 닫기">KOR</button>
+                <button class="close" title="언어선택 닫기">
+                    <i class="material-symbols-rounded">language</i>
+                    <span>KOR</span>
+                    <i class="material-symbols-rounded">expand_less</i>
+                </button>
             </div>
         </header>
         <section class="visual">
