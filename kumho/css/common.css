@@ -328,6 +328,12 @@ html, body {
         -webkit-font-smoothing: antialiased;
         content: "\e5cf";
     }
+
+    /* hover이 요소를 클릭해도 스타일이 적용됨 */
+    .header .gnb > ul > li:hover > a > span::after {
+        display: none;
+    }
+
     .header .gnb > ul > li > ul {
         display: none; /* 2차 메뉴 */
         position: relative;
