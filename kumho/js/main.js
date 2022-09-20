@@ -17,4 +17,21 @@ $(document).ready(function(){
         console.log('window의 높이' + winH);
     });
 
+    /*
+        .biz .list ul li에 마우스를 오버하면
+        .biz .list ul에 over 클래스를 추가
+        마우스를 오버한 li에만 active 클래스를 추가
+
+        --> 아웃 : 반대로 실행
+    */
+    $('.biz .list ul li').on('mouseenter', function(){
+        $('.biz .list ul').addClass('over');
+        $(this).addClass('active');
+    });
+
+    $('.biz .list ul li').on('mouseleave', function(){
+        $('.biz .list ul').removeClass('over');
+        $(this).removeClass('active');
+    });
+
 }); // document.ready 종료

@@ -121,10 +121,158 @@
                 </div>
             </div>
         </section>
-        <section class="biz"></section>
-        <section class="news"></section>
-        <sections class="link"></section>
-        <footer class="footer"></footer>
+        <section class="biz">
+            <div class="tit clearfix">
+                <div class="wrapper">
+                    <h2>Area of Business</h2>
+                    <a href="contents/businessArch.html">
+                        <span>사업실적보기</span>
+                        <i class="material-symbols-rounded">arrow_forward</i>
+                    </a>
+                    <!-- 사업분야의 더보기가 아니라 관련 링크이기 때문에 ul li 하단에 있지 않아도 됨 -->
+                </div>
+            </div>
+            <!--
+                하나의 li에 마우스를 오버하면 오버한 li는 사이즈가 커짐
+                오버하지 않은 나머지 li들은 배경이 어두워지고, 글자가 투명해짐, 넓이도 줄어들고
+                1. 전체를 감싸는 ul에 over라는 클래스를 추가
+                2. 마우스를 오버한 li에만 active 클래스를 추가
+                3. 오버하지 않은 나머지 li의 스타일 - not 선택자
+            -->
+            <div class="list">
+                <ul>
+                    <li class="arch">
+                        <a href="contents/architecture.html">
+                            <strong>Architecture</strong>
+                            <span>빌딩 개발에서 도시개발로 이어지는<br />
+                                금호건설의 건축사업</span>
+                        </a>
+                    </li>
+                    <li class="civil">
+                        <a href="contents/civil.html">
+                            <strong>Civil</strong>
+                            <span>도시와 국토를 잇는 공간 예술,<br />
+                                금호건설의 토목사업</span>
+                        </a>
+                    </li>
+                    <li class="housing">
+                        <a href="contents/housing.html">
+                            <strong>Housing</strong>
+                            <span>전국 곳곳에서 신주거단지 조성으로<br />
+                                고객의 높은 신뢰를 얻어온 금호</span>
+                        </a>
+                    </li>
+                    <li class="plant">
+                        <a href="contents/plant.html">
+                            <strong>Plant<br />
+                            Enviroment</strong>
+                            <span>산업발전의 기틀을 다지는 환경경영을<br />
+                                실천하는 환경/플랜트산업</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="news">
+            <div class="wrapper">
+                <div class="inner"><!-- 더보기의 정렬의 기준 -->
+                    <h2>KUMHO E&C NEWS</h2>
+                    <ul>
+                        <li>
+                            <a href="contents/news.html">
+                                <strong class="subject">금호건설, 독립유공자 후손·다문화가정 아동 후원 나서</strong>
+                                <span class="cnt">금호건설이 ‘2022 815 런’ 캠페인을 후원하고 다문화가정 아동에게 지원금을 전달하는 등 사회공헌 활동에 나섰다. 금호건설은 독립유공자 후손의 주거환경 개선을 지원하는 ‘2022 815 런’ 캠페인에 기부금</span>
+                                <span class="date">2022-08-16</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contents/news.html">
+                                <strong class="subject">금호건설, 성남 분당구·인천 서구서 주택사업 잇단 수주</strong>
+                                <span class="cnt">금호건설[002990]은 성남시 분당구와 인천광역시 서구에서 주택 사업을 연이어 수주했다고 1일 밝혔다. 금호건설은 지난달 21일 성남시 분당구 야탑동 민간 참여 공동주택 사업의 우선협상대상자로 선정된 </span>
+                                <span class="date">2022-08-01</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contents/news.html">
+                                <strong class="subject">금호건설, 제5회 어울림 음악회 개최 "취약계층 아동 지원 취지"</strong>
+                                <span class="cnt">금호건설이 서울 성북구 길음동 소재 꿈빛극장에서 지난 19일 '제5회 어울림 음악회'를 개최했다고 20일 밝혔다. 어울림 음악회는 문화 취약계층 아동들의 문화생활을 지원하기 위해 기획된 음악공연으로 금</span>
+                                <span class="date">2022-07-20</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="more"><!-- 모바일에서 a 태그를 가운데 정렬시킬 영역 -->
+                        <a href="contents/news.html">
+                            <span>더보기</span>
+                            <i class="material-symbols-rounded">arrow_forward</i>
+                        </a>
+                    </div>
+                </div>    
+            </div>
+        </section>
+        <section class="link">
+            <div class="wrapper">
+                <h2>세계 속의 한국, 한국 속의 세계를 건설하기 위해
+                    <span>새 천년의 초일류기업으로 거듭 태어나겠습니다.</span></h2>
+                <ul>
+                    <li>
+                        <a href="contents/manageA03.html">
+                            <i class="material-symbols-rounded">potted_plant</i>
+                            <div class="inner">
+                                <h3>Sustainable management</h3>
+                                <p>지속가능경영 <span>바로가기</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contents/corpInfo01.html">
+                            <i class="material-symbols-rounded">price_change</i>
+                            <div class="inner">
+                                <h3>Financial information</h3>
+                                <p>투자정보 <span>바로가기</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://webzine.kumhoenc.com" target="_blank" title="새창"">
+                            <!-- 도메인이 다른, 사이트로 연결할 때는 새창으로 열리도록 연결함 -->
+                            <i class="material-symbols-rounded">menu_book</i>
+                            <div class="inner">
+                                <h3>KUMHO E&C Webzine</h3>
+                                <p>웹진 <span>바로가기</span></p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="family">
+                    <div class="inner">
+                        <button class="btn_open" title="그룹사 바로가기 열기">
+                            <span>그룹사 바로가기</span>
+                            <i class="material-symbols-rounded">expand_more</i>
+                        </button>
+                        <ul>
+                            <!-- family site는 모두 다른 사이트이기 때문 target="_blank" -->
+                            <li><a href="#n" target="_blank" title="새창으로 열림">금호고속</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">금호터미널</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">금호문화재단</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">아시아나항공</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">아시아나IDT</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">에어부산</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">아시아나에어포트</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">아시아나세이버</a></li>
+                            <li><a href="#n" target="_blank" title="새창으로 열림">에어서울</a></li>
+                        </ul>
+                        <button class="btn_close" title="그룹사 바로가기 닫기">
+                            <span>그룹사 바로가기</span>
+                            <i class="material-symbols-rounded">expand_less</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
