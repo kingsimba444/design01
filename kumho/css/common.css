@@ -401,7 +401,7 @@ html, body {
     .header .lang ul {
         display: block;
         position: relative;
-        left: autl;
+        left: auto;
         top: auto;
         width: auto;
         height: auto;
@@ -577,7 +577,7 @@ html, body {
         width: 190px;
     }
     .footer .family button {
-        padding: 0 10x 0 20px;
+        padding: 0 10px 0 20px;
     }
     .footer .family button i {
         font-size: 15px;
