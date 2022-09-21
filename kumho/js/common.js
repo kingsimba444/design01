@@ -33,64 +33,78 @@ $(document).ready(function(){
         .header .lang .close 클릭하면
         --> .header .lang 에 lang_open 클래스를 삭제
     */ 
-        $('.header .lang .open').on('click', function(){
-            $('.header .lang').addClass('lang_open');
-        });
-        $('.header .lang .close').on('click', function(){
-            $('.header .lang').removeClass('lang_open');
-        });
-    
-        /*
-            메뉴(.header .gnb > ul > li > a)에 마우스를 오버했을 때
-            header에 menu_open 클래스 추가
-    
-            메뉴(.header)에 마우스를 아웃을 때(벗어났을 때)
-            header에 menu_open 클래스 삭제
-        */
-        $('.header .gnb > ul > li > a').on('mouseenter focusin', function(){
-            if(pcMobile == 'pc') {
-                $('.header').addClass('menu_open');
-            }
-        });
-    
-        $('.header').on('mouseleave', function(){
-            $('.header').removeClass('menu_open');
-        });
-    
-        $('.header .gnb > ul > li:last-child > ul > li:last-child > a').on('focusout', function(){
-            $('.header').removeClass('menu_open');
-        });
-    
-        /*
-            .header .gnb .open 클릭하면
-            header에 menu_mobile 클래스 추가
-    
-            .header .gnb .close 클릭하면
-            header에 menu_mobile 클래스 삭제
-        */
-    
-        $('.header .gnb .open').on('click', function(){
-            if(pcMobile == 'mobile') {
-                $('.header').addClass('menu_mobile');
-            }
-        })
+    $('.header .lang .open').on('click', function(){
+        $('.header .lang').addClass('lang_open');
+    });
+    $('.header .lang .close').on('click', function(){
+        $('.header .lang').removeClass('lang_open');
+    });
 
-        $('.header .gnb .close').on('click', function(){
-            $('.header').removeClass('menu_mobile');
-        })
+    /*
+        메뉴(.header .gnb > ul > li > a)에 마우스를 오버했을 때
+        header에 menu_open 클래스 추가
 
-        /*
-            1차 메뉴를 클릭해서
-                닫혀있으면 li에 sub_open 클래스를 추가
-                열려있으면 li에 sub_open 클래스를 삭제
-            --> toggle 
-        */
-        $('.header .gnb > ul > li').on('click', function(e){
-            if(pcMobile == 'mobile') {
-                e.preventDefault();
-                /* 1차 메뉴를 클릭했을 때 a href로 페이지가 이동하는 현상을 막기 */
-                $(this).toggleClass('sub_open');
-            }
-        });
+        메뉴(.header)에 마우스를 아웃을 때(벗어났을 때)
+        header에 menu_open 클래스 삭제
+    */
+    $('.header .gnb > ul > li > a').on('mouseenter focusin', function(){
+        if(pcMobile == 'pc') {
+            $('.header').addClass('menu_open');
+        }
+    });
 
-})
+    $('.header').on('mouseleave', function(){
+        $('.header').removeClass('menu_open');
+    });
+
+    $('.header .gnb > ul > li:last-child > ul > li:last-child > a').on('focusout', function(){
+        $('.header').removeClass('menu_open');
+    });
+
+    /*
+        .header .gnb .open 클릭하면
+        header에 menu_mobile 클래스 추가
+
+        .header .gnb .close 클릭하면
+        header에 menu_mobile 클래스 삭제
+    */
+
+    $('.header .gnb .open').on('click', function(){
+        if(pcMobile == 'mobile') {
+            $('.header').addClass('menu_mobile');
+        }
+    })
+
+    $('.header .gnb .close').on('click', function(){
+        $('.header').removeClass('menu_mobile');
+    })
+
+    /*
+        1차 메뉴를 클릭해서
+            닫혀있으면 li에 sub_open 클래스를 추가
+            열려있으면 li에 sub_open 클래스를 삭제
+        --> toggle 
+    */
+    $('.header .gnb > ul > li').on('click', function(e){
+        if(pcMobile == 'mobile') {
+            e.preventDefault();
+            /* 1차 메뉴를 클릭했을 때 a href로 페이지가 이동하는 현상을 막기 */
+            $(this).toggleClass('sub_open');
+        }
+    });
+
+    /*
+        .footer .family .btn_open를 클릭하면
+        .footer .family에 open 클래스 추가
+        .footer .family .btn_close를 클릭하면
+        .footer .family에 open 클래스 삭제
+    */
+    $('.footer .family .btn_open').on('click', function(){
+        $('.footer .family').addClass('open');
+    });
+
+    $('.footer .family .btn_close').on('click', function(){
+        $('.footer .family').removeClass('open');
+    });
+
+}) // document.write
