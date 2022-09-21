@@ -1,0 +1,177 @@
+@import url('default.css');
+@import url('common.css');
+@import url('contents.css');
+
+/* 서브 레이아웃 - sub_visual, 서브메뉴 등의 서브 공통 디자인 */
+
+.sub_visual {
+    height: 350px;
+    background-image: url(../images/sub/sub01_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*
+    sub페이지는 1차 메뉴마다 배경이미지 교체됨
+    sub1/sub2 - 메뉴마다 별도의 class를 추가
+    --> 그래도 기본적으로 sub_visual에는
+        배경이미지를 하나 지정해야함
+        대부분 회사소개의 배경을 줌
+*/
+.sub_visual.sub1 {
+    background-image: url(../images/sub/sub01_bg.png);
+}
+.sub_visual.sub2 {
+    background-image: url(../images/sub/sub02_bg.png);
+}
+.sub_visual.sub3 {
+    background-image: url(../images/sub/sub03_bg.png);
+}
+.sub_visual.sub4 {
+    background-image: url(../images/sub/sub04_bg.png);
+}
+.sub_visual.sub5 {
+    background-image: url(../images/sub/sub05_bg.png);
+}
+.sub_visual.sub6 {
+    background-image: url(../images/sub/sub06_bg.png);
+}
+.sub_visual p {
+    padding: 168px 0 0 0;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+@media screen and (max-width:640px){
+    .sub_visual {
+        height: 150px;
+        /*
+            sub 전체에 영향을 끼치는 요소라
+            페이지마다 높이가 다르면 안됨
+        */
+    }
+    .sub_visual p {
+        padding: 70px 0 0 0;
+        font-size: 17px;
+    }
+} /* sub_visual 반응형 종료 */
+
+.lnb {
+    height: 50px;
+    line-height: 50px;
+    /*
+        높이가 제한되고 요소들이 좌우로 배치되어 있는 디자인은
+        높이만큼 행간을 줌
+    */
+    background-color: #ED1C24;
+    color: #ffffff;
+}
+.lnb .lnb_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.lnb .menu {
+    display: flex;
+}
+.lnb .menu .home {
+    display: block;
+    width: 50px;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+.lnb .menu .home i {
+    display: block;
+    margin: 10px 0 0 0;
+}
+.lnb .menu .depth {
+    position: relative;
+    width: 200px;
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+.lnb .menu .depth button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* button 안에 있는 span과 i를 좌우 끝에 배치 - 위아래 가운데 */
+    width: 100%;
+    padding: 0 12px 0 20px;
+}
+.lnb .menu .depth button i {
+    font-size: 30px;
+}
+.lnb .menu .depth ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #3d3d3d;
+}
+.lnb .menu .depth ul li.now a,
+.lnb .menu .depth ul li a:hover {
+    color: #ED1C24;
+    font-weight: 700;
+}
+.lnb .menu .depth ul li a {
+    display: block;
+    padding: 0 0 0 20px;
+    line-height: 40px;
+}
+.lnb .menu .depth .btn_close {
+    display: none;
+}
+/*
+    1차 메뉴/2차 메뉴가 열렸을 때
+    1. btn_open 사라짐
+    2. ul이 나타남
+    3. btn_close 나타남
+*/
+.lnb .menu .depth.open .btn_open {
+    display: none;
+}
+.lnb .menu .depth.open ul {
+    display: block;
+}
+.lnb .menu .depth.open .btn_close {
+    display: flex;
+}
+.lnb .lnb_btn ul {
+    display: flex;
+}
+.lnb .lnb_btn ul li {
+    width: 50px;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+.lnb .lnb_btn ul li:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+.lnb .lnb_btn ul li button {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    display: block;
+}
+.lnb .lnb_btn ul li button i {
+    margin: 10px 0 0 0;
+    font-size: 25px;
+}
+
+.container {
+    min-height: 300px;
+    /*
+        초기에 코딩할 때 메쥬별 빈페이지를 만들고 코딩함
+        물론 나중에 콘텐츠가 들어가겠지만,
+        초기에 콘텐츠가 없으면 header/footer에 열리는 콘텐츠가 잘리는 현상이 발생한다
+        그래서 최소높이를 주고 코딩함
+    */
+}
+.container .sub_tit h2 {
+    font-size: 45px;
+    color: #1d1d1d;
+    font-weight: 700;
+}
