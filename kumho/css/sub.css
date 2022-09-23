@@ -58,6 +58,12 @@
 } /* sub_visual 반응형 종료 */
 
 .lnb {
+    position: relative;
+    z-index: 90;
+    /*
+        lnb가 콘텐츠에 깔리지 않도록 하기 위해서 z-index를 줌
+        콘텐츠에 z-index를 주면 절대 90 초과를 주면 안됨
+    */
     height: 50px;
     line-height: 50px;
     /*
@@ -159,7 +165,72 @@
 .lnb .lnb_btn ul li button i {
     margin: 10px 0 0 0;
     font-size: 25px;
-}
+} 
+
+@media screen and (max-width:640px){
+    .lnb {
+        height: 40px;
+        line-height: 40px;
+    }
+    .lnb .wrapper {
+        margin: 0; /* wrapper의 기본 여백을 lnb에서는 삭제 */
+    }
+    .lnb .menu {
+        width: calc(100% - 40px);
+    }
+    .lnb .menu .home {
+        width: 40px;
+        border-left: 0;
+    }
+    .lnb .menu .home i {
+        margin: 8px 0 0 0;
+    }
+    /*
+        lnb_wrap - 100%
+            - menu  100% - 40px
+                - 자식에게는 menu의 넓이가 100%
+                - home  40px 고정
+                - depth 1차 메뉴 : (100% - 35px)의 절반
+                - depth 2차 메뉴 : 
+            - lnb_btn   40px 고정
+
+        home, lnb_btn의 넓이는 고정
+        depth의 넓이는 가변 - 전체넓이(100%)에서 home, lnb_btn의 넓이를 뺀 나머지의 절반씩
+    */
+    .lnb .menu .depth {
+        width: calc((100% - 35px) / 2);
+    }
+    .lnb .menu .depth button {
+        padding: 0 8px 0 12px;
+    }
+    .lnb .menu .depth button i {
+        font-size: 30px;
+    }
+    .lnb .menu .depth ul {
+        top: 40px;
+    }
+    .lnb .menu .depth ul li a {
+        padding: 0 0 0 16px;
+        line-height: 35px;
+    }
+    .lnb .lnb_btn ul li.print {
+        display: none; /* 모바일 인쇄 버튼 없음 */
+    }
+    .lnb .lnb_btn ul li {
+        width: 40px;
+        border-left: 0;
+    }
+    .lnb .lnb_btn ul li:last-child {
+        border-right: 0;
+    }
+    .lnb .lnb_btn ul li button {
+        height: 40px; /* lnb 높이 */
+    }
+    .lnb .lnb_btn ul li button i {
+        margin: 10px 0 0 0;
+        font-size: 20px;
+    }
+} /* lnb 반응형 종료 */
 
 .container {
     min-height: 300px;
@@ -170,8 +241,28 @@
         그래서 최소높이를 주고 코딩함
     */
 }
+.container .sub_tit {
+    margin: 88px 0 15px 0;
+}
 .container .sub_tit h2 {
     font-size: 45px;
     color: #1d1d1d;
     font-weight: 700;
 }
+.container #contents {
+    margin: 0 0 140px 0;
+}
+
+@media screen and (max-width:640px){
+    .container .sub_tit {
+        margin: 42px 0 30px 0;
+    }
+    .container .sub_tit h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+    .container #contents {
+        margin: 0 0 52px 0;
+    }
+} /* container 반응형 종료 */
+
