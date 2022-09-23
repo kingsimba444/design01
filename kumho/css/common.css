@@ -186,9 +186,10 @@ html, body {
 }
 .header .lang button {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     /* button 내부 요소 i 와 span 태그를 좌우 정렬, 위아래 가운데 배치 */
+    padding: 0 7px 0 10px;
     width: 115px;
     height: 35px;
     border: 1px solid rgba(255, 255, 255, 0.2);
