@@ -1,0 +1,196 @@
+@import url('default.css');
+
+.social {
+    height: 800px;
+    padding: 207px 0 0 0;
+    background: url(../images/social_bg.png) no-repeat center center / cover;
+    color: #ffffff;
+    text-align: center;
+}
+.social strong {
+    font-size: 15px;
+    font-weight: 700;
+    border-top: 1px solid #ffffff;
+}
+.social h2 {
+    padding: 11px 0 6px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.social p {
+    margin: 0 0 70px 0;
+}
+.social span {
+    display: block;
+}
+.social ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+.social ul li i {
+    font-size: 30px;
+}
+
+@media screen and (max-width:640px){
+    .social {
+        height: auto;
+        padding: 70px;
+    }
+    .social strong {
+        font-size: 13px;
+    }
+    .social h2 {
+        padding: 9px 0 6px 0;
+        font-size: 25px;
+    }
+    .social p {
+        margin: 0 0 42px;
+    }
+    .social span {
+        display: none;
+    }
+    .social ul li i {
+        font-size: 15px;
+    }
+} /* social media 종료 */
+
+.recruit {
+    height: 800px;
+    padding: 136px 0 0 0;
+    background: url(../images/recruit_bg.png) no-repeat center center / cover;
+    color: #ffffff;
+    text-align: center;
+}
+.recruit .line {
+    font-size: 15px;
+    font-weight: 700;
+    border-top: 1px solid #ffffff;
+}
+.recruit h2 {
+    padding: 11px 0 6px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.recruit p {
+    margin: 0 0 70px 0;
+}
+.recruit ul {
+    float: left;
+}
+.recruit .notice {
+    margin-right: 40px;
+    width: 510px;
+    height: 316px;
+    background: url(../images/recruit_sub.png) no-repeat center center / cover;
+    padding: 51px 0 0 50px;
+    text-align: left;
+}
+.recruit .notice strong {
+    font-size: 30px;
+    font-weight: 700;
+}
+.recruit .notice p {
+    margin: 18px 0 56px 0;
+}
+.recruit .notice a {
+    display: inline-block;
+}
+.recruit .notice span {
+    float: left;
+}
+.recruit .notice a i {
+    margin: 3px 0 0 10px;
+    font-size: 16px;
+}
+.recruit ul li {
+    float: left;
+}
+.recruit .common {
+    margin-right: 20px;
+    width: 230px;
+    height: 316px;
+    color: #3d3d3d;
+    background-color: #ffffff;
+    padding: 51px 0 0 50px;
+    text-align: left;
+}
+.recruit .common:last-child {
+    margin: 0;
+}
+.recruit .common strong {
+    font-size: 30px;
+    font-weight: 700;
+}
+.recruit .common p {
+    margin: 18px 0 56px 0;
+}
+.recruit .common a {
+    display: inline-block;
+}
+.recruit .common span {
+    float: left;
+}
+.recruit .common a i {
+    margin: 3px 0 0 10px;
+    font-size: 16px;
+}
+
+@media screen and (max-width:640px){
+    .recruit {
+        height: auto;
+        padding: 71px 0 0 0;
+    }
+    .recruit .line {
+        font-size: 13px;
+    }
+    .recruit h2 {
+        padding: 9px 0 6px 0;
+        font-size: 25px;
+    }
+    .recruit p {
+        margin: 0 0 23px 0;
+    }
+    .recruit .notice {
+        margin-right: 0;
+        width: 320px;
+        height: 146px;
+        padding: 22px 0 0 20px;
+    }
+    .recruit .notice strong {
+        font-size: 20px;
+    }
+    .recruit .notice p {
+        margin: 9px 0 0 0;
+    }
+    .recruit .notice a {
+        display: none;
+    }
+    .recruit .notice span {
+        display: none;
+    }
+    .recruit .notice a i {
+        display: none;
+    }
+    .recruit .common {
+        margin-right: 216px;
+        width: 96px;
+        height: 60px;
+        padding: 0 0 0 19px;
+        text-align: center;
+    }
+    .recruit .common strong {
+        font-size: 15px;
+    }
+    .recruit .common p {
+        display: none;
+    }
+    .recruit .common a {
+        display: none;
+    }
+    .recruit .common span {
+        display: none;
+    }
+    .recruit .common a i {
+        display: none;
+    }
+} /* recruit media 종료 */
