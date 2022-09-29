@@ -10,6 +10,7 @@ html, body {
       apple sd gothic - 아이폰에서 지원하는 폰트 */
     font-size: 15px;
     font-weight: 400;
+    -webkit-font-smoothing: antialiased;
     /* letter-spacing: -0.05em; */
     word-break: keep-all; /* 단어별 줄바꿈 */
 }

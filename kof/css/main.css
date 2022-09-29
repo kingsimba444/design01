@@ -115,4 +115,129 @@
     .visual .search button.btn i {
         font-size: 13px;
     }
+} /* visual 반응형 종료 */
+
+.part {
+    margin: 92px 0 0 0;
+}
+.part h2 {
+    position: relative;
+    margin: 0 0 20px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.part h2::before {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 35px;
+    height: 2px;
+    background-color: #1d1d1d;
+    content: "";
+}
+.part .list ul {
+    width: 2400px;
+    /*
+        모든 li의 넓이 + 여백을 합한 넓이
+        li의 넓이 440px + 오른쪽 여백 40px = 480px * li의 숫자 5 = 2400
+    */
+    margin-left: -480px; /* 하나의 li의 넓이 + 여백 */
+}
+.part .list ul li {
+    float: left;
+    width: 440px;
+    margin: 0 40px 0 0;
+}
+.part .list ul li a {
+    display: block;
+}
+.part .list ul li a .pic {
+    overflow: hidden; /* 마우스 오버시 이미지가 확대 되는데 영역 밖으로 이미지가 나가지 않도록 */
+    font-size: 0;
+    list-style: none;0
+    /* 이미지 하단에 발생하는 여백 삭제 */
+}
+.part .list ul li a h3 {
+    margin: 20px 0 15px 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+.part .list ul li a p {
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+}
+.part .list ul li a .pic img {
+    width: 100%;
+    transition: 0.5s;
+}
+/* 마우스 오버했을 때 */
+.part .list ul li a:hover .pic img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.part .more {
+    position: absolute;
+    right: 0;
+    top: 37px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 133px;
+    height: 30px;
+    padding: 0 10px 0 15px;
+    border: 1px solid #666666;
+    border-radius: 15px;
+}
+.part .more span {
+    color: #666666;
+}
+.part .more i {
+    color: #666666;
+    font-size: 15px;
+}
+
+@media screen and (max-width:640px){
+    .part {
+        margin: 35px 0 0 0;
+    }
+    .part h2 {
+        margin: 0 0 15px 0;
+        font-size: 25px;
+    }
+    .part h2::before {
+        width: 20px;
+    }
+    .part .list {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 10px; /* 가로 스크롤바가 글자에 겹쳐서 */
+    }
+    .part .list ul {
+        width: 1104px;
+        /*
+            모든 li의 넓이 + 여백을 합한 넓이
+            li의 넓이 208px + 오른쪽 여백 16px = 224px * li의 숫자 5 = 1120
+        */
+        margin-left: 0; /* 모바일은 첫 번째 li부터 나타남 */
+    }
+    .part .list ul li {
+        width: 208px;
+        margin: 0 16px 0 0;
+    }
+    .part .list ul li:last-child {
+        margin-right: 0;
+    }
+    .part .list ul li a h3 {
+        margin: 20px 0 10px 0;
+        font-size: 15px;
+    }
+    .part .more {
+        top: 5px;
+        justify-content: center;
+        width: 30px;
+        padding: 0;
+    }
+    .part .more span {
+        display: none; /* 글자 숨기기 */
+    }
 }
