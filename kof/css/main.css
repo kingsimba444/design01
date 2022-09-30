@@ -175,6 +175,7 @@
 .part .list ul li a:hover .pic img {
     transform: scale3d(1.2, 1.2, 1);
 }
+
 .part .more {
     position: absolute;
     right: 0;
@@ -476,3 +477,258 @@
         display: flex;
     }
 } /* notice 반응형 종료 */
+
+.book {
+    position: relative;
+    padding: 50px 0 0 0;
+}
+.book::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 360px;
+    background-color: #004E9F;
+    content: "";
+}
+.book h2 {
+    position: relative;
+    margin: 0 0 40px 0;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 700;
+}
+.book h2::before {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 35px;
+    height: 2px;
+    background-color: #ffffff;
+    content: "";
+}
+.book .more {
+    position: absolute;
+    right: 0;
+    top: 37px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 133px;
+    height: 30px;
+    padding: 1px 10px 0 15px;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    color: #ffffff;
+}
+.book .more span {
+    color: #ffffff;
+}
+.book .more i {
+    color: #ffffff;
+    font-size: 15px;
+}
+.book .more:hover {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    color: #004E9F;
+}
+.book .more:hover span {
+    color: #004E9F;
+}
+.book .more:hover i {
+    color: #004E9F;
+}
+.book .list ul {
+    /* 
+        첫 번째 li의 넓이 680px + 여백 30px +
+        두 번째 ~ 마지막 li의 넓이 240px + 여백 30px = (240 * 4 = 960) + (30 * 4 = 120) = 
+    */
+    width: 1790px;
+}
+.book .list ul li {
+    float: left;
+    width: 240px;
+    margin: 20px 30px 0 0;
+}
+.book .list ul li a {
+    display: block;
+}
+.book .list ul li a .pic {
+    overflow: hidden;
+    border: 1px solid #cccccc;
+    font-size: 0;
+    line-height: 0;
+}
+.book .list ul li a .pic img {
+    width: 100%; /* pic의 넓이만큼 들어감 */
+    transition: 0.5s;
+}
+.book .list ul li a:hover .pic img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.book .list ul li a .cnt h3 {
+    margin: 20px 0 0 0;
+    font-size: 20px;
+    font-weight: 700;
+    /* 무조건 2줄 */
+    overflow: hidden;
+    line-height: 1.5;
+    height: 3em;
+}
+.book .list ul li a .cnt p {
+    display: none;
+}
+/* 첫 번째 li만 스타일이 다름 */
+.book .list ul li:first-child {
+    width: 680px;
+    margin-top: 0;
+}
+.book .list ul li:first-child a .pic {
+    float: left;
+    width: 290px;
+}
+.book .list ul li:first-child a .cnt {
+    padding: 10px 0 0 0;
+    margin: 0 0 0 320px;
+    color: #ffffff;
+}
+.book .list ul li:first-child a .cnt h3 {
+    margin: 0;
+    font-size: 25px;
+}
+.book .list ul li:first-child a .cnt p {
+    display: block;
+    margin: 20px 0 0 0;
+}
+
+@media screen and (max-width:640px){
+    .book {
+        padding: 40px 0 0 0;
+    }
+    .book::before {
+        height: 200px;
+    }
+    .book h2 {
+        margin: 0 0 15px 0;
+        font-size: 25px;
+    }
+    .book h2::before {
+        width: 20px;
+    }
+    .book .more {
+        top: 5px;
+        justify-content: center;
+        width: 30px;
+        padding: 0;
+    }
+    .book .more span {
+        display: none; /* 글자 숨기기 */
+    }
+    .book .list {
+        overflow-x: auto; /* 좌우 */
+        overflow-y: hidden; /* 위아래 */
+
+    }
+    .book .list ul {
+        /* 첫 번째 li의 넓이 152px + 여백 16px = 168px * 5 = 840px - 16px */
+        width: 824px;
+        padding-bottom: 10px;
+    }
+    .book .list ul li {
+        width: 152px;
+        margin: 0 16px 0 0;
+    }
+    .book .list ul li:last-child {
+        margin-right: 0;
+    }
+    .book .list ul li a .cnt h3 {
+        margin: 10px 0 0 0;
+        font-size: 15px;
+    }
+    /* 첫 번째 li만 스타일이 다름 */
+    .book .list ul li:first-child {
+        width: 152px;
+    }
+    .book .list ul li:first-child a .pic {
+        float: none;
+        width: auto;
+    }
+    .book .list ul li:first-child a .cnt {
+        padding: 0;
+        margin: 0;
+        color: #3D3D3D;
+    }
+    .book .list ul li:first-child a .cnt h3 {
+        margin: 10px 0 0 0;
+        font-size: 15px;
+    }
+    .book .list ul li:first-child a .cnt p {
+        display: none;
+    }
+} /* book 반응형 종료 */
+
+.banner {
+    margin: 90px 0 170px 0;
+}
+.banner ul li {
+    float: left;
+    width: 680px;
+    margin: 0 40px 0 0;
+    color: #ffffff;
+}
+.banner ul li:last-child {
+    margin-right: 0;
+}
+.banner ul .edu {
+    background-color: #68A5D6;
+}
+.banner ul .people {
+    background-color: #0059A8;
+}
+.banner ul li a {
+    position: relative;
+    display: block;
+    height: 160px;
+    padding: 40px 0 0 40px;
+}
+.banner ul li a i {
+    position: absolute;
+    right: 50px;
+    top: 45px;
+    font-size: 70px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.banner ul li a h2 {
+    margin: 0 0 15px 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px){
+    .banner {
+        margin: 40px 0 56px 0;
+    }
+    .banner ul li {
+        float: none;
+        width: auto;
+        margin: 0 0 20px 0;
+    }
+    .banner ul li:last-child {
+        margin-bottom: 0;
+    }
+    .banner ul li a {
+        position: relative;
+        display: block;
+        height: auto;
+        padding: 20px 0 28px 20px;
+    }
+    .banner ul li a i {
+        display: none;
+    }
+    .banner ul li a h2 {
+        margin: 0 0 7px 0;
+        font-size: 20px;
+    }
+} /* banner 반응형 종료 */
