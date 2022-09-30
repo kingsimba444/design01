@@ -118,7 +118,7 @@
 } /* visual 반응형 종료 */
 
 .part {
-    margin: 92px 0 0 0;
+    margin: 100px 0 0 0;
 }
 .part h2 {
     position: relative;
@@ -163,9 +163,9 @@
     font-weight: 700;
 }
 .part .list ul li a p {
+    overflow: hidden;
     line-height: 1.5;
     height: 3em;
-    overflow: hidden;
 }
 .part .list ul li a .pic img {
     width: 100%;
@@ -184,7 +184,7 @@
     align-items: center;
     width: 133px;
     height: 30px;
-    padding: 0 10px 0 15px;
+    padding: 1px 10px 0 15px;
     border: 1px solid #666666;
     border-radius: 15px;
 }
@@ -194,6 +194,17 @@
 .part .more i {
     color: #666666;
     font-size: 15px;
+}
+.part .more:hover {
+    border: 1px solid #004E9F;
+    background-color: #004E9F;
+    color: #ffffff;
+}
+.part .more:hover span {
+    color: #ffffff;
+}
+.part .more:hover i {
+    color: #ffffff;
 }
 
 @media screen and (max-width:640px){
@@ -240,4 +251,228 @@
     .part .more span {
         display: none; /* 글자 숨기기 */
     }
+} /* part 반응형 종료 */
+
+.notice {
+    height: 570px;
+    /*
+        가장 큰 요소인 공지사항 리스트가 absolute임
+        절대 높이를 알 수가 없음
+    */
+    margin: 100px 0 0 0;
 }
+.notice ul.notice_wrap {
+    position: relative; /* detail, more 기준 */
+}
+.notice ul.notice_wrap > li {
+    float: left;
+    margin: 0 44px 0 0;
+}
+.notice ul li h2 {
+    color: #999999;
+    font-size: 45px;
+    font-weight: 700;
+}
+.notice ul li.active h2 {
+    position: relative;
+    color: #3d3d3d;
+}
+.notice ul li.active h2::before {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 35px;
+    height: 2px;
+    background-color: #1d1d1d;
+    content: "";
+}
+.notice ul li .detail {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    width: 100%;
+}
+.notice ul li.active .detail {
+    display: block;
+}
+.notice ul li .detail ul {
+    /*
+        넓이가 모든 li를 포함할 수 있도록
+        (li의 넓이 440 + 여백 40) * li의 숫자 5 = 2400
+    */
+    width: 2400px;
+    margin-left: -480px; /* 하나의 li의 넓이와 여백값 */
+}
+.notice ul li .detail ul li {
+    float: left;
+    width: 440px;
+    margin: 0 40px 0 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+    transition: transform 0.5s;
+    /* transition 자연스럽게 변하는 효과를 하나의 속성에만 적용 */
+}
+.notice ul li .detail ul li a {
+    display: block;
+    height: 360px;
+    padding: 40px 20px 0 20px;
+}
+.notice ul li .detail ul li a .date {
+    display: block;
+    color: #666666;
+}
+.notice ul li .detail ul li a h3 {
+    margin: 25px 0 25px 0;
+    font-size: 25px;
+    font-weight: 700;
+    /* 무조건 2줄 */
+    overflow: hidden;
+    line-height: 1.2;
+    height: 2.4em;
+}
+.notice ul li .detail ul li a p {
+    margin: 0 0 40px 0;
+    /* 무조건 3줄 */
+    overflow: hidden;
+    line-height: 1.5;
+    height: 4.5em;
+}
+.notice ul li .detail ul li a .btn {
+    display: flex;
+    align-items: center;
+    color: #666666;
+}
+.notice ul li .detail ul li a .btn i {
+    margin: 3px 0 0 10px;
+    font-size: 15px;
+}
+/* 공지사항에 마우스를 올렸을 때 */
+.notice ul li .detail ul li:hover {
+    border-color: #004E9F;
+    background-color: #004E9F;
+    color: #ffffff;
+    /*
+        오버했을 때 li가 왼쪽 상단으로 이동
+        - 다른 요소에 영향을 끼치면 안됨
+    */
+    transform: translate(0, -10px);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+.notice ul li .detail ul li:hover a .date {
+    color: #ffffff;
+}
+.notice ul li .detail ul li:hover a .btn {
+    color: #ffffff;
+}
+.notice ul li .more {
+    position: absolute;
+    right: 0;
+    top: 37px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 133px;
+    height: 30px;
+    padding: 1px 10px 0 15px;
+    border: 1px solid #666666;
+    border-radius: 15px;
+}
+.notice ul li .more span {
+    color: #666666;
+}
+.notice ul li .more i {
+    color: #666666;
+    font-size: 15px;
+}
+.notice ul li .more:hover {
+    border: 1px solid #004E9F;
+    background-color: #004E9F;
+    color: #ffffff;
+}
+.notice ul li .more:hover span {
+    color: #ffffff;
+}
+.notice ul li .more:hover i {
+    color: #ffffff;
+}
+.notice ul li.active .more {
+    display: flex;
+}
+
+@media screen and (max-width:640px){
+    .notice {
+        height: 320px;
+        margin: 60px 0 0 0;
+    }
+    .notice ul.notice_wrap > li {
+        margin: 0 25px 0 0;
+    }
+    .notice ul li h2 {
+        font-size: 25px;
+    }
+    .notice ul li.active h2::before {
+        width: 20px;
+    }
+    .notice ul li .detail {
+        top: 50px;
+        padding-bottom: 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .notice ul li .detail ul {
+        /*
+            넓이가 모든 li를 포함할 수 있도록
+            (li의 넓이 208 + 여백 16) * li의 숫자 5 = 1120
+        */
+        width: 1104px; /* 1120 - 여백 1개 값 */
+        margin-left: 0;
+    }
+    .notice ul li .detail ul li {
+        width: 208px;
+        margin: 0 16px 0 0;
+    }
+    .notice ul li .detail ul li:last-child {
+        margin-right: 0;
+    }
+    .notice ul li .detail ul li a {
+        height: 220px;
+        padding: 25px 20px 0 20px;
+    }
+    .notice ul li .detail ul li a .date {
+        display: block;
+        color: #666666;
+    }
+    .notice ul li .detail ul li a h3 {
+        margin: 15px 0 15px 0;
+        font-size: 15px;
+    }
+    .notice ul li .detail ul li a p {
+        margin: 0 0 15px 0;
+        /* 무조건 3줄 */
+        overflow: hidden;
+        line-height: 1.5;
+        height: 3em;
+    }
+    .notice ul li .detail ul li a .btn i {
+        margin: 1px 0 0 10px;
+        font-size: 10px;
+    }
+    /* 공지사항에 마우스를 올렸을 때 */
+    .notice ul li .detail ul li:hover {
+        transform: translate(0, 0);
+    }
+    .notice ul li .more {
+        top: 5px;
+        justify-content: center;
+        width: 30px;
+        padding: 0;
+    }
+    .notice ul li .more span {
+        display: none; /* 글자 숨기기 */
+    }
+    .notice ul li.active .more {
+        display: flex;
+    }
+} /* notice 반응형 종료 */
