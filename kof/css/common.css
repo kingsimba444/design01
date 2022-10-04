@@ -340,3 +340,136 @@ aside.top button span {
 aside.top button i {
     font-size: 20px;
 }
+
+@media screen and (max-width:640px){
+    aside.top {
+        bottom: 160px;
+    }
+    aside.top button {
+        width: 40px;
+        height: 30px;
+    }
+    aside.top button i {
+        font-size: 15px;
+    }
+} /* aside 모바일 스타일 */
+
+.footer {
+    background-color: #242D36;
+    color: rgba(255, 255, 255, 0.2);
+}
+.footer .sns {
+    position: absolute;
+    right: 0;
+    top: 50px;
+}
+.footer .sns ul li {
+    float: left;
+    margin: 0 0 0 10px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.footer .sns ul li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    /* img를 a 영역에 위아래/좌우 가운데 배치하기 위해서 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .flogo {
+    float: left;
+    margin: 40px 100px 0 0;
+}
+.footer .flogo img {
+    width: 100px;
+}
+.footer .inner {
+    float: left;
+    margin: 40px 0 0 0;
+}
+.footer .fnav li {
+    position: relative;
+    float: left;;
+    margin: 0 40px 0 0;
+}
+.footer .fnav li::after {
+    position: absolute;
+    right: -21px;
+    top: 5px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    content: "";
+}
+.footer .fnav li:last-child::after {
+    display: none;
+}
+.footer .finfo {
+    margin: 45px 0 8px 0;
+}
+.footer .finfo span {
+    display: inline-block;
+    /*
+        전화번호나 팩스처럼 짧은 span 태그로 묶인 요소들이 display:inline-block을 주면
+        모바일에서 전화번호, 팩스가 2줄로 분리되어 나타나지 않음
+    */
+    margin: 0 38px 0 0;
+}
+.footer .copyright {
+    padding: 0 0 90px 0;
+}
+
+@media screen and (max-width:640px){
+    .footer .sns {
+        position: relative;
+        right: auto;
+        top: auto;
+        height: 60px;
+        /* ul을 가운데 정렬 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer .sns::after {
+        position: absolute;
+        left: -20px;
+        bottom: 0;
+        width: calc(100% + 40px);
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+        content: "";
+    }
+    .footer .sns ul li {
+        margin: 0 0 0 10px;
+        border: 0;
+    }
+    .footer .flogo {
+        float: none;
+        margin: 20px 0 40px 0;
+    }
+    .footer .flogo img {
+        width: 85px;
+    }
+    .footer .inner {
+        float: none;
+        margin: 0;
+    }
+    .footer .fnav li {
+        margin: 0 34px 5px 0;
+    }
+    .footer .fnav li::after {
+        right: -19px;
+        top: 4px;
+        height: 10px;
+    }
+    .footer .finfo {
+        margin: 30px 0 20px 0;
+    }
+    .footer .finfo span {
+        margin: 0 20px 5px 0;
+    }
+    .footer .copyright {
+        padding: 0 0 60px 0;
+    }
+}

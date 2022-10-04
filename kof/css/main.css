@@ -706,6 +706,17 @@
     font-weight: 700;
 }
 
+@media screen and (min-width:641px){
+    /* pc 버전에서만 적용 */
+    .banner ul li {
+        transition: 0.5s;
+    }
+    .banner ul li:hover {
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+        transform: translate(-10px, -10px);
+    }
+}
+
 @media screen and (max-width:640px){
     .banner {
         margin: 40px 0 56px 0;
