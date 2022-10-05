@@ -2,7 +2,7 @@
 /* 모든 태그의 스타일 초기화 */
 
 /* 모든 태그에 브라우저에서 주는 여백을 삭제 */
-body, header, footer, div, nav, section, h1, h2, h3, h4, h5, button, a, ul, ol, li, address, strong, span, em, p, i, dl, dt, dd, form, fieldset, legend, input, textarea, select {
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, button, a, ul, ol, li, address, strong, span, em, p, i, dl, dt, dd, form, fieldset, legend, input, textarea, select, table, caption, colgroup, col, thead, tbody, tfoot, tr, th, td {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -42,4 +42,7 @@ button {
     background-color: transparent; /* 투명 */
     border: 0;
     cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
+}
+table caption {
+    display: none;
 }

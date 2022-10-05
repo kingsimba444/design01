@@ -15,6 +15,15 @@
     <title>한국해양재단</title>
 </head>
 <body>
+    <div class="skip_nav">
+        <!--
+            스킵네비게이션 - tab으로 홈페이지에 접근했을 때 나타나는 바로가기 링크
+            반드시 내부로 이동해야함
+            <a href="#contents"></a> ==> 클릭하는 경우 <div id="contents">로 이동
+        -->
+        <a href="#contents">본문내용 바로가기</a> <!-- 내부링크 id="contents"로 이동 -->
+        <a href="#gnb">메인메뉴 바로가기</a>
+    </div>
     <div id="wrap">
         <!--
             스크롤을 내려서 header가 상단 고정될 때 fixed 클래스 추가
@@ -23,7 +32,7 @@
         -->
         <header class="header">
             <h1 class="logo"><a href="index.html">한국해양재단 KOREA OCEAN FOUNDAITON</a></h1>
-            <nav class="gnb">
+            <nav class="gnb" id="gnb">
                 <button class="gnb_open"><span>메뉴열기</span><i class="fa-solid fa-bars"></i></button>
                 <ul>
                     <li>
@@ -93,7 +102,7 @@
                 <button class="gnb_close"><span>메뉴닫기</span><i class="fa-solid fa-xmark"></i></button>
             </nav>
         </header>
-        <section class="visual">
+        <section class="visual" id="contents">
             <!--
                 visual은 높이가 100% 그 안에 들어가는 텍스트는 위아래 가운데일 때
                 visual의 자식으로 텍스트를 감싼 div가 있는게 좋다.
