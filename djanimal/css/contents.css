@@ -158,57 +158,47 @@
     }
     .cnt_introduce .txt_wrap {
         margin: 20px 0 0 0;
-        height: 585px;
+        height: 400px;
     }
     .cnt_introduce .txt_wrap .colgroup1 {
         float: none;
-        width: 600px;
-        padding: 0 50px 0 50px;
+        width: auto;
+        padding: 0;
     }
     .cnt_introduce .txt_wrap .colgroup1 h4 {
-        margin: 50px 0 0 0;
-        font-size: 30px;
-        font-weight: 700;
-        color: #00AE4D;
-        text-align: center;
+        margin: 20px 0 0 0;
+        font-size: 20px;
     }
     .cnt_introduce .txt_wrap .colgroup1 p {
-        margin: 30px 0 0 0;
-        padding: 0 50px 0 50px;
+        margin: 20px 0 0 0;
+        padding: 0;
     }
     .cnt_introduce .txt_wrap .colgroup2 {
-        float: left;
-        width: 660px;
-        padding: 0 50px 0 50px;
+        float: none;
+        width: auto;
+        padding: 0;
     }
     .cnt_introduce .txt_wrap .colgroup2 h4 {
-        margin: 50px 0 0 0;
-        font-size: 30px;
-        font-weight: 700;
-        color: #00AE4D;
-        text-align: center;
+        margin: 20px 0 0 0;
+        font-size: 20px;
     }
     .cnt_introduce .txt_wrap .colgroup2 p {
-        margin: 30px 0 0 0;
-        padding: 0 50px 0 50px;
+        margin: 20px 0 0 0;
+        padding: 0;
     }
     .cnt_introduce .pride {
-        padding: 0 0 165px 0;
+        padding: 0;
     }
     .cnt_introduce .pride h3 {
-        margin: 50px 0 30px 0;
-        font-size: 50px;
-        font-weight: 700;
-        color: #00AE4D;
-        text-align: center;
+        margin: 20px 0 20px 0;
+        font-size: 30px;
     }
     .cnt_introduce .pride .color {
-        height: 165px;
-        background-color: #00AE4D;
-        color: #ffffff;
+        margin: 0 0 20px 0;
+        height: auto;
     }
     .cnt_introduce .pride .color p {
-        padding: 55px 240px 0 240px;
-        text-align: center;
+        padding: 20px 20px 20px 20px;
+        text-align: left;
     }
 } /* cnt_introduce 반응형 종료 */
