@@ -1,0 +1,214 @@
+/* .cnt_introduce {
+    text-align: center;
+} */
+.cnt_introduce .intro h3 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #00AE4D;
+    text-align: center;
+}
+.cnt_introduce .intro p {
+    margin: 30px 0 30px 0;
+    padding: 0 240px 0 240px;
+    text-align: center;
+}
+.cnt_introduce .bg1 {
+    margin: 0 0 50px 0;
+    background: url(../images/contents/intro_pic1.png) no-repeat center center / cover;
+    height: 360px;
+}
+.cnt_introduce .change h4 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #00AE4D;
+    text-align: center;
+}
+.cnt_introduce .change p {
+    margin: 30px 0 30px 0;
+    padding: 0 240px 0 240px;
+    text-align: center;
+}
+
+.cnt_introduce .pic ul li {
+    float: left;
+    margin: 0 40px 0 0;
+}
+.cnt_introduce .pic ul li:last-child {
+    margin-right: 0;
+}
+.cnt_introduce .pic ul li.bg2 {
+    background: url(../images/contents/intro_pic2.png) no-repeat center center / cover;
+    width: 440px;
+    height: 250px;
+}
+.cnt_introduce .pic ul li.bg3 {
+    background: url(../images/contents/intro_pic3.png) no-repeat center center / cover;
+    width: 440px;
+    height: 250px;
+}
+.cnt_introduce .pic ul li.bg4 {
+    background: url(../images/contents/intro_pic4.png) no-repeat center center / cover;
+    width: 440px;
+    height: 250px;
+}
+
+
+.cnt_introduce .dj h4 {
+    margin: 50px 0 0 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #00AE4D;
+    text-align: center;
+}
+.cnt_introduce .dj p {
+    margin: 30px 0 30px 0;
+    padding: 0 240px 0 240px;
+    text-align: center;
+}
+.cnt_introduce .txt_wrap {
+    margin: 50px 0 0 0;
+    height: 330px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+.cnt_introduce .txt_wrap .colgroup1 {
+    float: left;
+    width: 600px;
+    padding: 0 50px 0 50px;
+}
+.cnt_introduce .txt_wrap .colgroup1 h4 {
+    margin: 50px 0 0 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #00AE4D;
+    text-align: center;
+}
+.cnt_introduce .txt_wrap .colgroup1 p {
+    margin: 30px 0 0 0;
+    padding: 0 50px 0 50px;
+}
+.cnt_introduce .txt_wrap .colgroup2 {
+    float: left;
+    width: 660px;
+    padding: 0 50px 0 50px;
+}
+.cnt_introduce .txt_wrap .colgroup2 h4 {
+    margin: 50px 0 0 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #00AE4D;
+    text-align: center;
+}
+.cnt_introduce .txt_wrap .colgroup2 p {
+    margin: 30px 0 0 0;
+    padding: 0 50px 0 50px;
+}
+.cnt_introduce .pride {
+    padding: 0 0 165px 0;
+}
+.cnt_introduce .pride h3 {
+    margin: 50px 0 30px 0;
+    font-size: 50px;
+    font-weight: 700;
+    color: #00AE4D;
+    text-align: center;
+}
+.cnt_introduce .pride .color {
+    height: 165px;
+    background-color: #00AE4D;
+    color: #ffffff;
+}
+.cnt_introduce .pride .color p {
+    padding: 55px 240px 0 240px;
+    text-align: center;
+}
+
+@media screen and (max-width:640px){
+    .cnt_introduce .intro h3 {
+        font-size: 30px;
+    }
+    .cnt_introduce .intro p {
+        margin: 20px 0 20px 0;
+        padding: 0;
+        text-align: left;
+    }
+    .cnt_introduce .bg1 {
+        height: 150px;
+    }
+    .cnt_introduce .change h4 {
+        font-size: 20px;
+    }
+    .cnt_introduce .change p {
+        margin: 20px 0 50px 0;
+        padding: 0;
+        text-align: left;
+    }
+    
+    .cnt_introduce .pic ul li {
+        display: none;
+    }
+    
+    .cnt_introduce .dj h4 {
+        font-size: 20px;
+    }
+    .cnt_introduce .dj p {
+        margin: 20px 0 30px 0;
+        padding: 0;
+        text-align: left;
+    }
+    .cnt_introduce .txt_wrap {
+        margin: 20px 0 0 0;
+        height: 585px;
+    }
+    .cnt_introduce .txt_wrap .colgroup1 {
+        float: none;
+        width: 600px;
+        padding: 0 50px 0 50px;
+    }
+    .cnt_introduce .txt_wrap .colgroup1 h4 {
+        margin: 50px 0 0 0;
+        font-size: 30px;
+        font-weight: 700;
+        color: #00AE4D;
+        text-align: center;
+    }
+    .cnt_introduce .txt_wrap .colgroup1 p {
+        margin: 30px 0 0 0;
+        padding: 0 50px 0 50px;
+    }
+    .cnt_introduce .txt_wrap .colgroup2 {
+        float: left;
+        width: 660px;
+        padding: 0 50px 0 50px;
+    }
+    .cnt_introduce .txt_wrap .colgroup2 h4 {
+        margin: 50px 0 0 0;
+        font-size: 30px;
+        font-weight: 700;
+        color: #00AE4D;
+        text-align: center;
+    }
+    .cnt_introduce .txt_wrap .colgroup2 p {
+        margin: 30px 0 0 0;
+        padding: 0 50px 0 50px;
+    }
+    .cnt_introduce .pride {
+        padding: 0 0 165px 0;
+    }
+    .cnt_introduce .pride h3 {
+        margin: 50px 0 30px 0;
+        font-size: 50px;
+        font-weight: 700;
+        color: #00AE4D;
+        text-align: center;
+    }
+    .cnt_introduce .pride .color {
+        height: 165px;
+        background-color: #00AE4D;
+        color: #ffffff;
+    }
+    .cnt_introduce .pride .color p {
+        padding: 55px 240px 0 240px;
+        text-align: center;
+    }
+} /* cnt_introduce 반응형 종료 */

@@ -172,12 +172,18 @@
                         <div class="table_wrap">
                             <table>
                                 <caption>이사장, 당연직이사, 선임직이사 등의 임원들의 성명/소속 및 직위/주요 약력 현황을 표시한 표</caption>
+                                <colgroup> <!-- 각 칸의 열의 너비값을 지정 -->
+                                    <col width="15%">
+                                    <col width="15%">
+                                    <col width="30%">
+                                    <col> <!-- 하나의 넓이를 주지 않으면, 100%에서 나머지 넓이를 뺀 값이 들어감 -->
+                                </colgroup>
                                 <thead>
                                     <tr>
                                         <th scope="col">직위</th>
                                         <th scope="col">성명</th>
                                         <th scope="col">소속 및 직위</th>
-                                        <th scope="col">약력</th>
+                                        <th scope="col">주요 약력</th>
                                     </tr>
                                 </thead>
                                 <tbody>
