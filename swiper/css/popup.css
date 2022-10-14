@@ -1,0 +1,72 @@
+@import url(default.css);
+@import url(common.css);
+
+.popup ul li {
+    position: relative;
+}
+.popup ul li .txt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #ffffff;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+.popup ul li .txt strong {
+    display: block;
+    margin: 0 0 28px 0;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.popup ul li .txt span {
+    font-weight: 700;
+}
+.popup ul li .txt p {
+    font-size: 30px;
+}
+
+.visual1 .ctrl_prev,
+.visual1 .ctrl_next {
+    position: absolute;
+    top: calc(50% - 75px);
+    z-index: 10;
+    font-size: 0;
+    line-height: 0;
+}
+.visual1 .ctrl_prev {
+    left: 5%;
+}
+.visual1 .ctrl_next {
+    right: 5%;
+}
+.visual1 .ctrl_prev::before,
+.visual1 .ctrl_next::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    width: 74px;
+    height: 149px;
+    background: url(../images/popup_arrow.svg) no-repeat center center / contain;
+    content: "";
+}
+.visual1 .ctrl_next::before {
+    left: auto;
+    right: 0;
+    transform: rotate(180deg);
+}
+.visual1 .ctrl_group {
+    position: absolute;
+    left: calc(50% - 126px); /* 넓이의 절반 */
+    bottom: 5%;
+    z-index: 10;
+    width: 253px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 25px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
