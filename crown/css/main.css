@@ -1,6 +1,109 @@
 @import url(default.css);
 @import url(common.css);
 
+.popup {
+    height: 400px;
+}
+.popup .popup_round {
+    position: absolute;
+    right: calc(50% + 700px);
+    top: 0;
+    z-index: 100;
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+}
+.popup .popup_round::before {
+    position: absolute;
+    right: -80px;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    background: url(../images/main/popup_round.svg) no-repeat left top / contain;
+    transform: rotate(90deg);
+    content: "";
+}
+.popup .popup_round::after {
+    position: absolute;
+    right: -80px;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    background: url(../images/main/popup_round.svg) no-repeat left top / contain;
+    content: "";
+}
+.popup h2 {
+    display: none;
+}
+.popup ul li a img {
+    /* popup에서 높이를 제한해줘야 그 높이에 꽉 맞는 이미지가 가운데로 정렬 */
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.popup ul li a .mobile {
+    display: none;
+}
+
+@media screen and (max-width:1440px){
+    .popup .popup_round {
+        right: auto;
+        left: 0;
+        width: 20px; /* 흰 색의 넓이 */
+    }
+}
+
+@media screen and (max-width:1200px){
+    .popup {
+        height: 380px;
+    }
+    .popup .popup_round::before {
+        right: -60px;
+        width: 60px;
+        height: 60px;
+    }
+    .popup .popup_round::after {
+        right: -60px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .popup {
+        height: 370px;
+    }
+    .popup .popup_round::before {
+        right: -40px;
+        width: 40px;
+        height: 40px;   
+    }
+    .popup .popup_round::after {
+        right: -40px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width:640px){
+    .popup {
+        height: 340px;
+    }
+    .popup ul li a .pc {
+        display: none;
+    }
+    .popup ul li a .mobile {
+        display: block;
+    }
+    .popup .popup_round {
+        display: none;
+    }
+    .popup .popup_round {
+        display: none;
+    }
+}
+
 .event {
     margin: 5.2rem 0 2.333rem 0; /*6.867rem*/
 }
