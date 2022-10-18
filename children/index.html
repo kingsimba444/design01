@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <title>세이브더칠드런 보건영양</title>
+</head>
+<body>
+    <div id="wrap">
+        <header class="header"></header>
+        <div id="fullpage">
+        <!-- fullpage 효과를 줄 모든 태그를 감싸는 요소 (이름 변경 가능) -->
+            <section class="section visual">
+            <!-- 클래스 section을 주면 해당 요소는 1page (이름 변경 불가) -->
+                <h2>비주얼 영역 - 동영상 삽입</h2>
+                <!--
+                    비디오 파일이 사용자의 컴퓨터에 다운로드가 완료된 이후에 재생
+                    즉, 용량이 엄청 작아야 함.
+                -->
+                <video loop muted data-autoplay playsinline>   <!-- 비디오 자동실행 무한반복 -->
+                    <source data-src="images/main/visual.mp4" type="video/mp4">  <!-- 비디오 경로 -->
+                </video>
+            </section>
+            <section class="section count">
+                <h2>사망자수, 비율</h2>
+            </section>
+            <section class="section biz">
+                <h2>세이브더칠드런 사업소개</h2>
+            </section>
+            <section class="section news">
+                <h2>현장소식</h2>
+            </section>
+            <section class="section support">
+                <h2>지원 및 후원</h2>
+            </section>
+            <footer class="section footer fp-auto-height">
+                <!--
+                    section과 fp-auto-height 를 동시에 선언하면 footer처럼 낮은 컨텐츠를 배치할 수 있음
+                -->
+                <div><br><br>footer<br><br></div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
