@@ -89,3 +89,106 @@ html, body {
 ::-moz-selection{background:#ED1B2D;color:#fff;}
 ::-webkit-selection{background:#ED1B2D;color:#fff;} 
 
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+.header .logo {
+    float: left;
+    margin: 21px 0 0 60px;
+}
+.header .logo a {
+    display: block;
+    width: 220px;
+    height: 45px;
+    background-image: url(../images/common/logo_w.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0;
+    line-height: 0;
+}
+.header .gnb {
+    float: right;
+    margin: 0 40px 0 0;
+}
+.header .gnb .gnb_open {
+    display: none;
+}
+.header .gnb ul li {
+    float: left;
+}
+.header .gnb ul li a {
+    display: block;
+    padding: 0 42px;
+    font-size: 25px;
+    line-height: 100px; /* header의 높이값, 글자를 위아래 가운데 배치하기 위해 */
+}
+
+/* header가 고정일 때 */
+.header.black {
+    border-bottom: 1px solid #cccccc;
+    /* background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
+    color: #1d1d1d;
+}
+.header.black .logo a {
+    background-image: url(../images/common/logo.svg);
+}
+
+/*
+    1440 - 
+    1200 - 
+    1000 - 
+    800 - 
+    640 - 
+*/
+@media screen and (max-width:1200px){
+    .header .gnb ul li a {
+        padding: 0 30px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .header {
+        height: 60px;
+    }
+    .header .logo {
+        margin: 15px 0 0 20px;
+    }
+    .header .logo a {
+        width: 128px;
+        height: 26px;
+    }
+    .header .gnb {
+        margin: 0;
+    }
+    .header .gnb .gnb_open {
+        display: block;
+        padding: 22px 20px 18px 20px;
+    }
+    .header .gnb .gnb_open span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin-bottom: 4px;
+        border-radius: 1px; /* 높이의 절반 */
+        background-color: #ffffff;
+        font-size: 0;
+        line-height: 0;
+
+    }
+    .header .gnb ul {
+        display: none;
+    }
+    .header.black .gnb .gnb_open span {
+        background-color: #1d1d1d;
+    }
+}
