@@ -70,11 +70,16 @@
 }
 
 .count {
+    padding: 50px 0 0 0;
+    /*
+        컨텐츠가 header의 높이와 무관하게 위아래 가운데 배치되어
+        약간 상단여백이 부족해보임 - 그래서 상단 여백을 추가로 줌
+    */
     background-color: #926d49;
     color: #ffffff;
 }
 .count .tit {
-    margin: 0 0 0 120px; 
+    margin: 0 0 0 8.6%; /* 120 / 1400 * 100 = 1400px 영역에서 여백의 비율 */
 }
 .count .tit h2 {
     margin: 0 0 35px 0;
@@ -90,13 +95,13 @@
 .count .rate {
     position: absolute;
     left: calc(50% + 140px);
-    top: 50%;
+    top: calc(50% + 25px);
     width: 50%;
     transform: translate(0, -50%);
 }
 .count .rate li {
     position: relative;
-    padding: 0 0 50px 0;
+    margin: 0 0 70px 0;
 }
 .count .rate li:last-child {
     margin-bottom: 0;
@@ -136,37 +141,39 @@
     content: "";
 } */
 
-@media screen and (max-width:1440px){
-    .count .tit {
-        margin: 0;
-    }
-}
-
 @media screen and (max-width:1200px){
+    .count .tit {
+        margin: 0 0 0 3%;
+    }
     .count .tit h2 {
         font-size: 30px;
     }
     .count .rate {
-        left: calc(50% + 50px);
+        left: 55%;
+    }
+    .count .rate li {
+        margin: 0 0 50px 0;
+    }
+    .count .rate li::after {
+        top: 57px;
     }
     .count .rate li .num strong {
-        font-size: 50px;
+        font-size: 40px;
     }
     .count .rate li .num span {
-        font-size: 20px;
+        font-size: 25px;
     }
 }
 
-@media screen and (max-width:640px){
+@media screen and (max-width:800px){
     .count {
         padding: 34px 0 66px 0;
     }
     .count .tit {
-        margin: 0 0 40px 0;
+        margin: 0 0 50px 0;
     }
     .count .tit h2 {
         margin: 0 0 15px 0;
-        font-size: 25px;
     }
     .count .tit p span {
         display: inline;
@@ -175,22 +182,21 @@
         position: relative;
         left: auto;
         top: auto;
-        width: auto;
+        width: calc(100% + 20px);
         transform: translate(0, 0);
     }
     .count .rate li {
-        position: relative;
-        padding: 0 0 40px 0;
+        margin: 0 0 30px 0;
     }
     .count .rate li::after {
         top: 55px;
-        width: 120%;
     }
     .count .rate li .num strong {
         font-size: 40px;
     }
     .count .rate li .num span {
-        padding: 0 5px 0 10px;
+        background-color: #926d49;
+        padding: 0 10px 0 5px 0;
         font-size: 20px;
     }
     /* .count .rate li .num span::after {
@@ -202,25 +208,317 @@
         background-color: #cccccc;
         content: "";
     } */
-}
+} /* count 반응형 종료 */
+
+@media screen and (max-width:640px){
+    .count .tit h2 {
+        font-size: 25px;
+    }
+    .count .rate li .num strong {
+        font-size: 40px;
+    }
+    .count .rate li .num span {
+        background-color: #926d49;
+        padding: 0 10px 0 5px 0;
+        font-size: 20px;
+    }
+} /* count 반응형 종료 */
 
 
 
 .biz {
     background-color: #f9f6f2;
 }
+.biz .biz_wrap {
+    display: flex;
+    align-items: center;
+}
+.biz img {
+    width: calc(100% - 640px); /* wrapper 1440, 그 안에 이미지가 760 = 760 / 1440 * 100 = 52.78% */
+}
+.biz .inner {
+    width: 27%; /* 390 / 1440 * 100 = 27% */
+    margin: 0 0 0 80px;
+}
+.biz a strong {
+    display: block;
+}
+.biz a h2 {
+    margin: 5px 0 15px 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.biz a .exp {
+    margin: 10px 0 45px 0;
+    color: #666666;
+}
+.biz a .more {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #666666;
+    border-radius: 50%; /* 정사각형에 border-radius: 50%를 주면 사이즈에 상관없이 원이 됨 */
+    transition: 0.5s;
+}
+.biz a .more::before {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: 50%;
+    height: 1px;
+    background-color: #666666;
+    content: "";
+}
+.biz a .more::after {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    width: 1px;
+    height: 50%;
+    background-color: #666666;
+    content: "";
+}
+.biz a:hover .more {
+    transform: rotate(270deg);
+}
+
+@media screen and (max-width:1200px){
+    .biz img {
+        width: calc(100% - 480px); /* wrapper 1440, 그 안에 이미지가 760 = 760 / 1440 * 100 = 52.78% */
+    }
+    .biz .inner {
+        width: 400px; /* 390 / 1440 * 100 = 27% */
+        margin: 0 0 0 40px;
+    }
+    .biz a h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .biz img {
+        width: calc(100% - 380px); /* wrapper 1440, 그 안에 이미지가 760 = 760 / 1440 * 100 = 52.78% */
+    }
+    .biz .inner {
+        width: 300px; /* 390 / 1440 * 100 = 27% */
+        margin: 0 0 0 40px;
+    }
+    .biz a .exp {
+        margin-bottom: 0;
+    }
+    .biz a .more {
+        display: none;
+    }
+}
+
+@media screen and (max-width:640px){
+    .biz {
+        padding: 30px 0 40px 0;
+    }
+    .biz .biz_wrap {
+        display: block;
+    }
+    .biz img {
+        width: 100%;
+    }
+    .biz .inner {
+        width: auto;
+        margin: 17px 0 0 0;
+    }
+    .biz a h2 {
+        margin: 10px 0 20px 0;
+        font-size: 25px;
+    }
+    .biz a .exp {
+        margin: 5px 0 0 0;
+    }
+    .biz a .more {
+        display: none;
+    }
+}
+
+
 
 .news {
     background-color: #fbeeed;
 }
-
-.support {
-
+.news h2 {
+    margin: 0 55px 20px 0; /* 오른쪽에 more 버튼이 배치될 것을 감안해서 more가 들어갈 만한 영역을 여백으로 줌 */
+    font-size: 40px;
+    font-weight: 700;
 }
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a span {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+.news .list ul li a span img {
+    width: 100%;
+    transition: 0.5s;
+}
+.news .list ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .list ul li a strong {
+    display: block;
+    margin: 10px 0 0 0;
+    font-size: 20px;
+    /* 2줄 고정 */
+    line-height: 1.2;
+    height: 2.4em;
+    overflow: hidden;
+}
+.news .list .btn_paging {
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+.news .list .btn_paging span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    border: 1px solid #FF0000;
+    background-color: #ffffff;
+    opacity: 1;
+}
+.news .list .btn_paging span.swiper-pagination-bullet-active {
+    background-color: #FF0000;
+}
+.news .more {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #666666;
+    border-radius: 50%; /* 정사각형에 border-radius: 50%를 주면 사이즈에 상관없이 원이 됨 */
+    transition: 0.5s;
+    font-size: 0;
+    line-height: 0;
+    transition: 0.5s;
+}
+.news .more::before {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: 50%;
+    height: 1px;
+    background-color: #666666;
+    content: "";
+}
+.news .more::after {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    width: 1px;
+    height: 50%;
+    background-color: #666666;
+    content: "";
+}
+.news .more:hover {
+    transform: rotate(270deg);
+}
+
+@media screen and (max-width:640px){
+    .news {
+        padding: 40px 0 45px 0;
+    }
+    .news h2 {
+        margin: 0 55px 20px 0;
+        font-size: 25px;
+    }
+    .news h2 span {
+        display: block;
+    }
+    .news .list ul li a strong {
+        font-size: 15px;
+    }
+    .news .more {
+        top: 30px;
+    }
+}
+
+
+
+.support .support_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.support h2 {
+    margin: 0 0 20px 0;
+    font-size: 35px;
+    line-height: 1.2;
+}
+.support h2 strong {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+}
+.support h2 span {
+    display: block; /* pc에서만 줄바꿈 */
+}
+.support ul {
+    width: 48.6%; /* 680 / 1400 * 100 = 48.57 */
+}
+.support ul li {
+    /* ul의 넓이가 680 - li 한 개의 넓이 320px : 320 / 680 * 100 = 47.05 */
+    float: left;
+    width: calc(50% - 20px); 
+    /*
+        여백이 고정일 때 100% / li의 갯수 = 50% - (한 줄에 들어가야 하는 모든 여백의 합 (40px)) / li의 갯수
+        (100 / 2)% - (40/2)px = calc(50% - 20px)
+    */
+    
+    margin: 20px 40px 20px 0; /* 오른쪽 여백은 100 - (li 하나의 넓이 * 2)) = 5.8 */
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.support ul li:nth-child(1),
+.support ul li:nth-child(3) {
+    transform: translate(0, -65px);
+}
+.support ul li:nth-child(2),
+.support ul li:nth-child(4) {
+    margin-right: 0;
+    transform: translate(0, 65px);
+}
+.support ul li a {
+    display: block;
+    height: 210px;
+    padding: 10% 12.5%;
+    /*
+        a의 사이즈를 기준으로 %코딩 40 / 320 * 100 = 12.5, 35 / 210 * 100 = 16.66
+        가로는 브라우저의 넓이에 따라서 사이즈의 변화가 심함.
+        %로 여백을 주면 좋지만, 높이 대부분 px로 줌. 위아래 여백 px로 주는게 더 좋음
+    */
+}
+.support ul li a span {
+    display: block;
+}
+.support ul li a strong {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
 
 .footer {
 
 }
+
+
+/* fullpage 공통사항 */
+
+
 
 
 /*
@@ -293,14 +591,6 @@ body #fp-nav.black ul li .fp-tooltip::after {
     background-color: #1d1d1d;
 }
 
-/* 모바일에서는 fullpage 적용 안하는데 발생하는 오류 수정 */
-body .section .fp-overflow {
-    overflow: hidden;
-}
-
-
-
-
 
 
 .fp-watermark { /* fullpage copyright 삭제 */
@@ -308,6 +598,11 @@ body .section .fp-overflow {
 }
 
 
+
+/* 모바일에서는 fullpage 적용 안하는데 발생하는 오류 수정 */
+body .section .fp-overflow {
+    overflow: visible;
+}
 
 
 
