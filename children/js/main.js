@@ -9,6 +9,8 @@ $(document).ready(function(){
 		navigationTooltips: ['메인', '보건통계', '사업소개', '현장소식', '지원사업'], /* 툴팁 */
 		showActiveTooltip: false, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
 
+		// scrollOverflow: true,
+
 		afterLoad: function(origin, destination, direction, trigger){
 			// console.log(destination.index);
 			if((destination.index == 2) || (destination.index == 3) || (destination.index == 4) || (destination.index == 5) ) {
