@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="168.736" height="147.156" viewBox="0 0 168.736 147.156">
+  <g id="fire" transform="translate(-819.88 -230.76)">
+    <line id="선_1" data-name="선 1" y2="58.239" transform="translate(905.327 237.471)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_2" data-name="선 2" x2="50.436" y2="29.12" transform="translate(846.879 269.97)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_3" data-name="선 3" y1="29.12" x2="50.436" transform="translate(845.8 307.718)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_4" data-name="선 4" y1="58.239" transform="translate(903.17 312.966)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_5" data-name="선 5" x1="50.436" y1="29.12" transform="translate(911.181 309.586)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_6" data-name="선 6" x1="50.436" y2="29.12" transform="translate(912.26 271.839)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_7" data-name="선 7" x2="38.175" y2="62.766" transform="translate(861.58 231.566)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_8" data-name="선 8" y1="1.678" x2="73.445" transform="translate(819.892 303.226)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_9" data-name="선 9" y1="64.444" x2="35.269" transform="translate(862.56 313.232)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_10" data-name="선 10" x1="38.175" y1="62.766" transform="translate(908.742 314.344)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_11" data-name="선 11" x1="73.445" y2="1.678" transform="translate(915.16 303.772)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_12" data-name="선 12" x1="35.269" y2="64.444" transform="translate(910.667 231)" fill="none" stroke="rgba(255,255,255,0.5)" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

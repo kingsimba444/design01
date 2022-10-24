@@ -36,6 +36,42 @@
     z-index: 11;
     background-color: rgba(0, 0, 0, 0.3);
 }
+.visual .scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    z-index: 12;
+    color: #ffffff;
+    text-align: center;
+    transform: translate(-50%, 0);
+    /* 컨텐츠 넓이의 절만을 왼쪽으로 이동 */
+}
+.visual .scroll strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.visual .scroll img {
+    animation-name: scroll_move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; /* 무제한 */
+    animation-timing-function: cubic-bezier(.66,.06,.34,.88); /* 가속도 */
+
+}
+/* 
+    transition과의 차이점
+    1. 가만히 있어도 애니메이션 효과가 적용됨 (hover하거나, 클래스가 )
+    2. keyframes로 선언한 애니메이션의 재활용이 가능
+        a에도 줄 수 있고, button에도 줄 수 있고
+    3. 애니메이션 효과를 무한반복 할 수 있음
+        (transition은 단 한 번만 가능)
+ */
+@keyframes scroll_move {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(0, -20px); }
+    100% { transform: translate(0, 0); }
+}
 
 @media screen and (max-width:1440px){
     .visual h2 {
