@@ -90,6 +90,260 @@
 .tour ul li.ico4 a:hover .up_wrap {
     height: 100%;
 }
+
+.tour ul li.ico5 a:hover i {
+    animation-name: ico_rotate;
+    animation-duration: 1s; /* 애니메이션 0~100%까지를 1초 동안 실행 */
+    animation-iteration-count: infinite; /* 애니메이션을 무한 반복 */
+    animation-timing-function: linear;
+}
+@keyframes ico_rotate {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+.tour .circle_txt {
+    position: absolute;
+    right: 77px;
+    top: 30px;
+    width: 260px;
+    /*
+        회전할 오브젝트는 정사각형으로 주는 것이 좋습니다. - 원의 중심을 기준으로 회전 가능
+        정사각형이 아닌 도형을 돌리면 돌면서 위아래로 위치가 이동된다.
+    */
+    height: 260px;
+    background: url(../images/circle_txt.svg) no-repeat right bottom;
+
+    animation-name: circle_rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.tour .circle {
+    position: absolute;
+    left: -150px;
+    top: 30px;
+    width: 215px;
+    height: 215px;
+    background: url(../images/circle.svg) no-repeat center center;
+
+    animation-name: circle_rotate;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes circle_rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+.tour .fire {
+    position: absolute;
+    background: url(../images/fire.svg) no-repeat center center / contain;
+
+    animation-name: fire_ani;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.tour .fire.po1 {
+    left: -50px;
+    top: 350px;
+    width: 180px;
+    height: 180px;
+    animation-duration: 5s;
+}
+.tour .fire.po2 {
+    left: 60%;
+    top: 300px;
+    width: 100px;
+    height: 100px;
+    animation-duration: 5s;
+    animation-delay: 1s; /* delay 기간동안 애니메이션이 적용X */
+    opacity: 0;
+}
+.tour .fire.po3 {
+    right: -100px;
+    top: 30px;
+    width: 120px;
+    height: 120px;
+    animation-duration: 5s;
+    animation-delay: 1s; /* delay 기간동안 애니메이션이 적용X */
+    opacity: 0;
+}
+@keyframes fire_ani {
+    0% { opacity: 0; transform: scale3d(0, 0, 1); }
+    30% { opacity: 1; transform: scale3d(1, 1, 1); }
+    70% { opacity: 1; transform: scale3d(1, 1, 1); }
+    100% { opacity: 0; transform: scale3d(1.5, 1.5, 1); }
+}
+
+.media h2 {
+    margin: 100px 0 20px 0;
+    font-size: 50px;
+    font-weight: 700;
+
+}
+.media ul li {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    width: 440px;
+    margin: 0 40px 0 0;
+}
+.media ul li:last-child {
+    margin-right: 0;
+}
+.media ul li a {
+    display: block;
+}
+
+.media ul li.list1 a {
+    height: 370px;
+    padding: 10px 10px 0 10px;
+    border: 1px solid #cccccc;
+}
+.media ul li.list1 a .pic {
+    overflow: hidden;
+    height: 200px;
+}
+.media ul li.list1 a .pic img {
+    /*
+        감싸는 영역에서 overflow: hidden을 이미지를 제한할 때
+        이미지를 block, width/height: 100%; object-fit:cover를 주면 영역에 꽉 차게
+        위치는 좌우에 가운에 위아래 가운데에 이미지에 배치
+    */
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.media ul li.list1 a h3 {
+    margin: 20px 0 0 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+.media ul li.list1 a .over {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    padding: 30px 20px 0 20px;
+    background-color: #115598;
+    color: #ffffff;
+}
+.media ul li.list1 a .over strong {
+    display: block;
+    margin: 0 0 20px 0;
+    font-size: 25px;
+}
+.media ul li.list1 a .over .txt {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    /* 5줄 제한 */
+    overflow: hidden;
+    line-height: 1.5;
+    height: 7.5em;
+}
+.media ul li.list1 a .over .date {
+    display: block;
+    margin: 25px 0 0 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+/* 애니메이션 */
+.media ul li.list1 a .over {
+    transition: 0.5s;
+}
+.media ul li.list1 a:hover .over {
+    top: 0;
+}
+
+.media ul li.list2 a .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.media ul li.list2 a h3 {
+    position: absolute;
+    left: 10px;
+    top: 255px;
+    width: calc(100% - 20px);
+    color: #ffffff;
+    font-size: 25px;
+}
+.media ul li.list2 a p {
+    opacity: 0;
+    position: absolute;
+    left: 10px;
+    top: 350px;
+    width: calc(100% - 20px);
+    color: rgba(255, 255, 255, 0.8);
+}
+/* 마우스 오버 효과 */
+.media ul li.list2 a .pic::after {
+    transition: 0.5s;
+    opacity: 0;
+    position: absolute; /* li의 position: relative를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    content: "";
+}
+.media ul li.list2 a:hover .pic::after {
+    opacity: 1;
+}
+.media ul li.list2 a h3 {
+    transition: 0.5s;
+}
+.media ul li.list2 a p {
+    transition: 0.5s;
+}
+.media ul li.list2 a:hover h3 {
+    top: 100px;
+}
+.media ul li.list2 a:hover p {
+    opacity: 1;
+    top: 180px;
+}
+.media ul li.list3 a .pic {
+    overflow: hidden;
+    height: 195px;
+}
+.media ul li.list3 a .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.media ul li.list3 a h3 {
+    position: relative;
+    margin: 10px 0 10px 0;
+    font-size: 25px;
+}
+.media ul li.list3 a h3::after {
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #3d3d3d;
+    content: "";
+}
+.media ul li.list3 a p {
+    overflow: hidden;
+    line-height: 1.5;
+    height: 4.5em;
+}
+/* 애니메이션 */
+.media ul li.list3 a h3::after {
+    transition: 0.5s;
+}
+.media ul li.list3 a:hover h3::after {
+    width: 100%;
+}
+
 .slide {
     margin: 100px 0;
 }
@@ -136,4 +390,43 @@
 @keyframes size100 {
     0% { width: 0; }
     100% { width: 100%; }
+}
+
+.menu {
+    margin: 100px;
+}
+.menu .gnb_open {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    background-color: #3d3d3d;
+}
+.menu .gnb_open span {
+    position: absolute;
+    left: 40px;
+    width: 120px;
+    height: 10px;
+    background-color: #ffffff;
+    transition: 0.5s;
+}
+.menu .gnb_open span.line1 {
+    top: 50px;
+}
+.menu .gnb_open span.line2 {
+    top: 90px;
+}
+.menu .gnb_open span.line3 {
+    top: 130px;
+}
+.menu .gnb_open:hover span.line1 {
+    transform: translate(0, 40px) rotate(225deg);
+}
+.menu .gnb_open:hover span.line2 {
+    transform: translate(-170px, 0);
+    opacity: 0;
+}
+.menu .gnb_open:hover span.line3 {
+    transform: translate(0, -40px) rotate(-225deg);
 }
