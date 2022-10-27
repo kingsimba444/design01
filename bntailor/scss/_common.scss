@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap'); /* 본명조 */
 
 html, body {
-    color: #3d3d3d;
+    color: $basic_color;
     line-height: 1.5;
     font-family: "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     font-size: 16px;
@@ -91,3 +91,98 @@ html, body {
 ::-moz-selection{background:#cba585;color:#3e3e3f;}
 ::-webkit-selection{background:#cba585;color:#3e3e3f;}
 
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 300;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    .logo {
+        float: left;
+        margin: 29px 0 0 40px;
+    }
+    .gnb {
+        float: right;
+        margin: 0 40px 0 0;
+        .gnb_open {
+            display: none;
+        }
+        ul {
+            li {
+                float: left;
+                a {
+                    display: block;
+                    padding: 0 25px;
+                    color: $w_tit_color;
+                    font-size: 22px;
+                    line-height: 100px; /* header의 높이 */
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1440px){
+    .header .logo a img {
+        width: 130px;
+    }
+    .header .gnb ul li a {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .header .logo a img {
+        width: 120px;
+    }
+    .header .gnb ul li a {
+        padding: 0 15px;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width:1000px){ 
+    .header {
+        height: 60px;
+        .logo {
+            margin: 10px 0 0 20px;
+            a img {
+                width: 108px;
+            }
+        }
+        .gnb {
+            margin: 0;
+            .gnb_open {
+                display: block;
+                position: relative;
+                width: 60px;
+                height: 60px;
+                strong {
+                    display: none;
+                }
+                span {
+                    position: absolute;
+                    right: 19px;
+                    width: 20px;
+                    height: 2px;
+                    background-color: #fff;
+                    &.line1 {
+                        top: 21px;
+                    }
+                    &.line2 {
+                        top: 28px;
+                        width: 15px;
+                    }
+                    &.line3 {
+                        top: 35px;
+                    }
+                }
+            }
+            ul {
+                display: none;
+            }
+        }
+    }
+}

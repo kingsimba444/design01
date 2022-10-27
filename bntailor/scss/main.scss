@@ -16,7 +16,7 @@
         left: calc(50% - 700px);
         top: 50%;
         z-index: 10;
-        color: #fff;
+        color: $w_tit_color;
         transform: translate(0, -50%);
         strong {
             display: block;
@@ -150,4 +150,64 @@
             }
         }   
     }
+}
+
+.fabric {
+    position: relative;
+    padding-bottom: 190px;
+    background-color: #483D33;
+    color: $w_basic_color;
+    h2 {
+        @include zindex_top;
+        padding: 188px 0 13px 0;
+        color: $w_tit_color;
+        font-size: 30px;
+    }
+    .tit {
+        @include zindex_top;
+        @include font_serif;
+        color: $w_tit_color;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .cnt {
+        @include zindex_top;
+        margin: 50px 0;
+        width: 640px;
+    }
+    .tag {
+        @include zindex_top;
+        color: $point_color;
+        span {
+            display: inline-block;
+            margin: 0 20px 0 0;
+        }
+    }
+    .bg {
+        position: absolute;
+        overflow: hidden;
+        /*
+            bg 영역 안에는 bg보다 더 큰 이미지가 포함됨,
+            이미지는 스크롤에 따라 bg 영역 안에서 이동할 예정.
+            그래서 overflow: hidden 영역 밖에 나간 이미지는 안보이게 함
+        */
+        left: calc(50% - 100px);
+        top: 0;
+        z-index: 1;
+        width: 800px;
+        height: 800px;
+        img {
+            display: block;
+            width: 150%;
+            height: 150%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+    }
+}
+
+.product {
+    height: 2000px;
+    background-image: url(/design01/bntailor/images/main/bg_product.png);
 }
