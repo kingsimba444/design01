@@ -202,12 +202,257 @@
             width: 150%;
             height: 150%;
             object-fit: cover;
-            transition: 0.5s;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .fabric {
+        h2 {
+            padding: 160px 0 13px 0;
+            font-size: 25px;
+        }
+        .tit {
+            font-size: 35px;
+        }
+        .cnt {
+            @include zindex_top;
+            margin: 40px 0;
+            width: 560px;
+        }
+        .bg{
+            left: 0;
+            width: 100%;
+            height: 100%;
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                content: "";
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .fabric {
+        padding-bottom: 55px;
+        h2 {
+            padding: 50px 0 15px 0;
+            font-size: 20px;
+        }
+        .tit {
+            font-size: 25px;
+            .m_no {
+                display: none;
+            }
+        }
+        .cnt {
+            display: none
+        }
+        .tag {
+            margin: 22px 0 28px 0;
+            span {
+                margin: 0 10px 0 0;
+            }
+        }
+        .bg {
+            position: relative;
+            left: auto;
+            top: auto;
+            width: auto;
+            height: 250px;
+            &::after {
+                display: none;
+            }
+            img {
+                transform: translateY(0) !important; /* 애니메이션 안함 */
+                width: 150%;
+                height: 150%;
+            }
         }
     }
 }
 
 .product {
-    height: 2000px;
     background-image: url(/design01/bntailor/images/main/bg_product.png);
+    color: $w_basic_color;
+    h2 {
+        @include font_serif;
+        padding: 130px 0 50px 480px;
+        color: $w_tit_color;
+        font-size: 60px;
+        font-weight: 700;
+    }
+    .list {
+        @include clearfix;
+        position: relative;
+        .tit {
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: $w_dark_light_color;
+            font-size: 30px;
+            line-height: 1.2;
+        }
+        ul {
+            float: right;
+            li {
+                width: 440px;
+                margin-bottom: 90px;
+                a {
+                    display: block;
+                    .pic {
+                        overflow: hidden;
+                        height: 400px;
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    h3 {
+                        margin-top: -20px;
+                        color: $w_tit_color;
+                        font-size: 30px;
+                        font-weight: 700;
+                    }
+                    p {
+                        margin: 10px 0 0 0;
+                    }
+                }
+            } // li 종료
+            &.item1 {
+                margin: 252px 0 0 80px;
+            }
+        } // ul 종료
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .product {
+        h2 {
+            padding: 130px 0 40px 610px;
+            font-size: 50px;
+        }
+        .list {
+            .tit {
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: $w_dark_light_color;
+                font-size: 20px;
+                line-height: 1.2;
+            }
+            ul {
+                float: right;
+                li {
+                    width: 440px;
+                    margin-bottom: 90px;
+                    a {
+                        display: block;
+                        .pic {
+                            overflow: hidden;
+                            height: 400px;
+                            img {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        h3 {
+                            margin-top: -20px;
+                            color: $w_tit_color;
+                            font-size: 30px;
+                            font-weight: 700;
+                        }
+                        p {
+                            margin: 10px 0 0 0;
+                        }
+                    }
+                } // li 종료
+                &.item1 {
+                    margin: 252px 0 0 80px;
+                }
+            } // ul 종료
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .product {
+        h2 {
+            padding: 50px 0 40px 0;
+            font-size: 30px;
+            span {
+                display: block;
+            }
+        }
+        .list {
+            .tit {
+                display: none;
+            }
+            ul {
+                float: none;
+                li {
+                    width: auto;
+                    margin-bottom: 50px;
+                    a {
+                        .pic {
+                            overflow: hidden;
+                            height: 400px;
+                            img {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        h3 {
+                            margin-top: -45px;
+                            color: $w_tit_color;
+                            font-size: 30px;
+                            font-weight: 700;
+                        }
+                        p {
+                            margin: 10px 0 0 0;
+                        }
+                    }
+                    &:nth-child(1), &:nth-child(3), &:nth-child(5) {
+                        .pic {
+                            width: 65%;
+                            height: 100px;
+                            margin-left: 35%;
+                        }
+                        p {
+                            margin-right: 35%;
+                        }
+                    }
+                    &:nth-child(2), &:nth-child(4) {
+                        .pic {
+                            width: 65%;
+                            height: 100px;
+                            margin-right: 35%;
+                        }
+                        h3 {
+                            margin-left: 35%;
+                            text-align: right;
+                        }
+                        p {
+                            margin-left: 35%;
+                            text-align: right;
+                        }
+                    }
+                } // li 종료
+                &.item1 {
+                    margin: 0;
+                }
+            } // ul 종료
+        }
+    }
 }
