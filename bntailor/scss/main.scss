@@ -377,6 +377,8 @@
 
                 &.end {
                     position: absolute;
+                    top: auto;
+                    bottom: 100px;
                 }
             }
             ul {

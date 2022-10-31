@@ -647,6 +647,8 @@ html, body {
   }
   .product .list .tit.end {
     position: absolute;
+    top: auto;
+    bottom: 100px;
   }
   .product .list ul {
     float: right;
