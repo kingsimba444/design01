@@ -110,10 +110,15 @@ $(document).ready(function(){
             tit이 고정되는 영역 (고정되어 옆에 컨텐츠만 스크롤됨) - fixed 클래스 추가
             tit이 고정된 이후 영역 (다른 컨텐츠를 따라서 사라짐) - end 클래스 추가
     */
-    let fixObj = $('.product .list .tit');
-    let fixArea = $('.product .list');
-    let fixStart = fixArea.offset().top; // 2039
-    // console.log(fixStart);
+    let fixObj = $('.product .list .tit'); // 고정요소
+    let fixArea = $('.product .list'); // 고정요소를 감싸는 영역
+    let fixTop = 130; // css에서 fixed에 준 top 값
+    let fixBtm = 100; // css에서 end에 준 bottom 값
+    let fixStart; // fixed 시작점
+    let fixEnd; // fixed 종료점
+    
+    // console.log(fixStart, 'fixStart');
+    // console.log(fixEnd, 'fixEnd');
 
     objFixed();
 
@@ -121,21 +126,48 @@ $(document).ready(function(){
         objFixed();
     });
 
+    $(window).resize(function(){
+        objFixed();
+    });
+
     function objFixed(){
-        console.log(scrolling);
-        if(scrolling < 1910) { // 위에서부터 tit이 고정되기 전
+        fixStart = fixArea.offset().top - fixTop; // 2039 - 130
+        fixEnd = fixArea.offset().top + fixArea.height() - fixObj.height() - fixBtm - fixTop;
+        // console.log(scrolling);
+        if(scrolling < fixStart) { // 위에서부터 tit이 고정되기 전
             fixObj.removeClass('fixed');
             fixObj.removeClass('end');
         }
-        else if((scrolling >= 1910) && (scrolling < 3353)) { // tit이 고정될 때
+        else if((scrolling >= fixStart) && (scrolling < fixEnd)) { // tit이 고정될 때
             fixObj.addClass('fixed');
             fixObj.removeClass('end');
 
         }
-        else { // 고저오딘 이후
+        else { // 고정된 이후
             fixObj.removeClass('fixed');
             fixObj.addClass('end');
         }
     };
+
+    /* 인스타 팝업 */
+    const swiperInsta = new Swiper('.insta .list', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            640: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1200: {     /* 1200px 이상일때 적용 */
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+            1400: {     /* 1400px 이상일때 적용 */
+                slidesPerView: 6,
+                spaceBetween: 40,
+            },
+        },
+
+    });
 
 }) // document.ready

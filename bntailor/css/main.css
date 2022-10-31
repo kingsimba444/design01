@@ -594,6 +594,11 @@ html, body {
   position: fixed;
   top: 130px;
 }
+.product .list .tit.end {
+  position: absolute;
+  top: auto;
+  bottom: 100px;
+}
 .product .list ul {
   float: right;
 }
@@ -630,7 +635,7 @@ html, body {
 
 @media screen and (max-width: 1440px) {
   .product h2 {
-    padding: 130px 0 40px 610px;
+    padding: 130px 0 40px 450px;
     font-size: 50px;
   }
   .product .list .tit {
@@ -684,16 +689,42 @@ html, body {
     margin: 252px 0 0 80px;
   }
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1280px) {
+  .product h2 {
+    padding: 100px 0 40px 0;
+    font-size: 40px;
+  }
+  .product .list .tit {
+    display: none;
+  }
+  .product .list ul {
+    float: right;
+  }
+  .product .list ul li {
+    width: 340px;
+    margin-bottom: 50px;
+  }
+  .product .list ul li a {
+    display: block;
+  }
+  .product .list ul li a .pic {
+    overflow: hidden;
+    height: 200px;
+  }
+  .product .list ul li a p {
+    margin: 5px 0 0 0;
+  }
+  .product .list ul.item1 {
+    margin: 200px 0 0 50px;
+  }
+}
+@media screen and (max-width: 800px) {
   .product h2 {
     padding: 50px 0 40px 0;
     font-size: 30px;
   }
   .product h2 span {
     display: block;
-  }
-  .product .list .tit {
-    display: none;
   }
   .product .list ul {
     float: none;
@@ -748,5 +779,109 @@ html, body {
   }
 }
 .insta {
-  height: 1500px;
+  position: relative;
+  margin: 0 0 250px 0;
+}
+.insta h2 {
+  font-family: "Noto Serif KR", serif;
+  z-index: 10;
+  margin: 100px 0 55px 0;
+  font-size: 60px;
+  font-weight: 700;
+}
+.insta .list ul li {
+  font-size: 0; /* 이미지 하단 여백 삭제 */
+  line-height: 0;
+}
+.insta .list ul li a {
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.insta .list ul li a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.insta .list ul li:nth-child(1), .insta .list ul li:nth-child(3), .insta .list ul li:nth-child(5) {
+  padding: 30px;
+}
+.insta .bg_txt {
+  font-family: "Noto Serif KR", serif;
+  position: absolute;
+  left: 0;
+  top: 370px;
+  color: #f4f4f4;
+  font-size: 150px;
+  font-weight: 300;
+  white-space: nowrap; /* 줄바꿈 금지 */
+  -webkit-animation-name: bg_txt_ani;
+          animation-name: bg_txt_ani;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  /* 기본 ease 가속도 - 동일한 속도로 애니메이션 주려면 linear */
+}
+
+@-webkit-keyframes bg_txt_ani {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50.3%);
+  }
+  /*
+      무조건 html에서 글자를 동일한 글자를 두 번 입력
+      css 애니메이션으로 절반을 이동
+      그럼 두 번째 단락의 글자 다시 나타남
+  */
+}
+
+@keyframes bg_txt_ani {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50.3%);
+  }
+  /*
+      무조건 html에서 글자를 동일한 글자를 두 번 입력
+      css 애니메이션으로 절반을 이동
+      그럼 두 번째 단락의 글자 다시 나타남
+  */
+}
+@media screen and (min-width: 1441px) {
+  .insta .list {
+    width: calc(100% + 680px);
+    margin-left: -360px !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .insta h2 {
+    font-size: 40px;
+  }
+  .insta .bg_txt {
+    top: 400px;
+    font-size: 130px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .insta h2 {
+    margin: 80px 0 55px 0;
+  }
+  .insta .bg_txt {
+    top: 340px;
+    font-size: 110px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .insta .bg_txt {
+    top: 280px;
+    font-size: 100px;
+  }
 }
