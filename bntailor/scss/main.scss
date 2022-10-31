@@ -291,12 +291,34 @@
         @include clearfix;
         position: relative;
         .tit {
+            /*
+                position: sticky는 감싸는 요소에 overflow: hidden이 없어야 한다
+                하지만 홈페이지 전체에 id="wrap" 이 스타일이 overflow: hidden;이 들어감
+                overflow를 주지 않고 코딩은 어려움. 그래서 sticky는 사용불가
+
+                고정될 요소에 고정될 때는 position: fixed를 줘야함
+                fixed는 body와만 정렬
+                <div class="list">      -- relative
+                    <div class="tit">   -- absolute
+                </div>
+                tit기 absolute일 때는 relative를 준 list를 기준으로 정렬함.
+                하지만 fixed로 변경되면 무조건 body랑 정렬
+                정렬의 기준값이 변경됨... (left가 fixed일 떄랑 absolute일 때랑 바뀜)
+                실제 화면상에서도 left의 위치는 변경X
+                absolute일 때와 fixed일 때 위치를 동일하게 left 값을 줘야함
+
+            */
             position: absolute;
-            left: 0;
+            left: calc(50% - 700px);
             top: 0;
             color: $w_dark_light_color;
             font-size: 30px;
             line-height: 1.2;
+
+            &.fixed {
+                position: fixed;
+                top: 130px;
+            }
         }
         ul {
             float: right;
@@ -347,6 +369,15 @@
                 color: $w_dark_light_color;
                 font-size: 20px;
                 line-height: 1.2;
+
+                &.fixed {
+                    position: fixed;
+                    left: 20px;
+                }
+
+                &.end {
+                    position: absolute;
+                }
             }
             ul {
                 float: right;
@@ -455,4 +486,8 @@
             } // ul 종료
         }
     }
+}
+
+.insta {
+    height: 1500px;
 }
