@@ -1,0 +1,13 @@
+@import "_var.scss";
+@import "_default.scss";
+@import "_common.scss";
+
+/* 서브 공통 레이아웃 */
+
+.container {
+    svg {
+        path {
+            fill: #9d856d;
+        }
+    }
+}

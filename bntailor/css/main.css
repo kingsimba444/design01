@@ -209,10 +209,10 @@ html, body {
 .header .gnb .gnb_open {
   display: none;
 }
-.header .gnb ul li {
+.header .gnb .gnb_wrap ul li {
   float: left;
 }
-.header .gnb ul li a {
+.header .gnb .gnb_wrap ul li a {
   display: block;
   padding: 0 25px;
   color: #ffffff;
@@ -231,7 +231,7 @@ html, body {
   .header .logo a img {
     width: 130px;
   }
-  .header .gnb ul li a {
+  .header .gnb .gnb_wrap ul li a {
     font-size: 18px;
   }
 }
@@ -239,7 +239,7 @@ html, body {
   .header .logo a img {
     width: 120px;
   }
-  .header .gnb ul li a {
+  .header .gnb .gnb_wrap ul li a {
     padding: 0 15px;
     font-size: 17px;
   }
@@ -260,6 +260,7 @@ html, body {
   .header .gnb .gnb_open {
     display: block;
     position: relative;
+    z-index: 2;
     width: 60px;
     height: 60px;
   }
@@ -272,6 +273,7 @@ html, body {
     width: 20px;
     height: 2px;
     background-color: #fff;
+    transition: 0.3s;
   }
   .header .gnb .gnb_open span.line1 {
     top: 21px;
@@ -283,8 +285,192 @@ html, body {
   .header .gnb .gnb_open span.line3 {
     top: 35px;
   }
-  .header .gnb ul {
-    display: none;
+  .header .gnb .gnb_wrap {
+    display: block;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    max-width: 375px;
+    height: 100vh;
+    background-color: #fff;
+    color: #3d3d3d;
+    transition: right 0.5s;
+  }
+  .header .gnb .gnb_wrap ul {
+    margin: 60px 0 0 0;
+  }
+  .header .gnb .gnb_wrap ul li {
+    float: none;
+    border-bottom: 1px solid #f4f4f4;
+  }
+  .header .gnb .gnb_wrap ul li a {
+    font-family: "Noto Serif KR", serif;
+    padding: 0;
+    color: #3d3d3d;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .header .gnb .gnb_wrap ul li:first-child {
+    border-top: 1px solid #f4f4f4;
+  }
+  .header .gnb::after {
+    /*  
+        화면에 꽉 차는 배경은
+        position: fixed
+        left, right, top, bottom 사방을 모두 0으로 주면
+        left: 0, top: 0, width: 100%, height: 100%; 와 동일하게 들어감
+
+        <div class="gnb">
+            <button class="gnb_open"></button>
+            <div class="gnb_wrap"></div>
+            ::after -- gnb::after
+        </div>
+        이런 구조에서
+        gnb_open과 gnb_wrap, gnb::after의 순서를 조정할 수 있음
+        z-index는 이렇게 나란히 들어간 요소들 사이에서 높은 숫자가 위로 올라감
+
+        <button class="gnb_open"></button>
+        <div class="gnb_wrap">
+            ::after -- gnb_wrap::after
+        </div>
+        이런 구조라면 gnb_wrap::after는 gnb_wrap 안에 존재하기 때문에
+        그 밖에 있는 gnb_open, gnb_wrap과의 순서를 절대 조정 불가능함
+    */
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+  }
+  .header .gnb.mobile_open .gnb_open span {
+    width: 25px;
+    background-color: #3d3d3d;
+  }
+  .header .gnb.mobile_open .gnb_open span.line1 { /* span.line1 */
+    top: 30px;
+    transform: rotate(45deg);
+  }
+  .header .gnb.mobile_open .gnb_open span.line2 {
+    right: -25px;
+  }
+  .header .gnb.mobile_open .gnb_open span.line3 {
+    top: 30px;
+    transform: rotate(-45deg);
+  }
+  .header .gnb.mobile_open .gnb_wrap {
+    right: 0;
+  }
+  .header .gnb.mobile_open::after {
+    opacity: 1;
+  }
+}
+.footer {
+  display: block;
+  padding: 50px 0 70px 0;
+  background-color: #483D33;
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer::after {
+  display: block;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+}
+.footer .sns {
+  float: right;
+}
+.footer .sns ul li {
+  float: left;
+}
+.footer .sns ul li a {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  font-size: 0;
+  line-height: 0;
+}
+.footer .sns ul li a::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /*
+      배경이미지가 핸 개를 보이는 영역을 제한해서 써야하기 때문에
+      before, after에서 표시.
+      이 때 before, after의 사이즈는 내가 사용할 아이콘의 넓이
+      - 저장할 때 활용된 아이콘의 넓이
+  */
+  width: 40px;
+  height: 40px;
+  background-image: url(/design01/bntailor/images/common/footer_ico.svg);
+  background-repeat: no-repeat;
+  content: "";
+}
+.footer .sns ul li:first-child a {
+  border-left-width: 1px;
+}
+.footer .sns ul li.instagram a::before {
+  background-position: left top;
+}
+.footer .sns ul li.facebook a::before {
+  background-position: left -40px top;
+}
+.footer .sns ul li.naver a::before {
+  background-position: left -80px top;
+}
+.footer .inner {
+  float: left;
+}
+.footer .inner .finfo span {
+  margin: 0 38px 5px 0;
+}
+.footer .inner .copyright {
+  margin: 16px 0 0 0;
+  color: #666666;
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    padding: 55px 0 90px 0;
+  }
+  .footer .sns {
+    display: block;
+    float: none;
+    margin: 0 0 50px 0;
+  }
+  .footer .sns::after {
+    display: block;
+    clear: both;
+    content: ".";
+    visibility: hidden;
+    height: 0;
+  }
+  .footer .sns ul li {
+    float: left;
+    display: block;
+  }
+  .footer .inner {
+    float: none;
+  }
+  .footer .inner .finfo span {
+    display: block;
+    margin: 0;
+  }
+  .footer .inner .copyright {
+    margin: 25px 0 0 0;
   }
 }
 /*
@@ -320,12 +506,20 @@ html, body {
 .visual .popup { /* .visual .popup */
   height: 100vh;
 }
+.visual .popup ul li {
+  /* 현재 나타나는 팝업에 swiper가 주는 class명 */
+}
 .visual .popup ul li img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transform: scale3d(1.1, 1.1, 1);
+  transition: 2s;
+}
+.visual .popup ul li.swiper-slide-active img {
+  transform: scale3d(1, 1, 1);
 }
 .visual .popup .btn_wrap {
   display: flex;
@@ -856,12 +1050,18 @@ html, body {
   */
 }
 @media screen and (min-width: 1441px) {
+  .insta {
+    margin: 0 0 250px 0;
+  }
   .insta .list {
     width: calc(100% + 680px);
     margin-left: -360px !important;
   }
 }
 @media screen and (max-width: 1200px) {
+  .insta {
+    margin: 0 0 250px 0;
+  }
   .insta h2 {
     font-size: 40px;
   }
@@ -871,6 +1071,9 @@ html, body {
   }
 }
 @media screen and (max-width: 1000px) {
+  .insta {
+    margin: 0 0 230px 0;
+  }
   .insta h2 {
     margin: 80px 0 55px 0;
   }
@@ -880,6 +1083,9 @@ html, body {
   }
 }
 @media screen and (max-width: 800px) {
+  .insta {
+    margin: 0 0 130px 0;
+  }
   .insta .bg_txt {
     top: 280px;
     font-size: 100px;

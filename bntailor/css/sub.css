@@ -1,0 +1,479 @@
+@charset "UTF-8";
+/* 기본글자색상 */
+/* 제목에 들어가는 글자색상 */
+/* 기본회색 */
+/* 밝은 회색 */
+/* 어두운 배경의 기본 흰 글씨 */
+/* 어두운 배경의 제목 흰 글씨 */
+/*
+    scss에서 mixin은 특정 스타일의 속성명과 속성값을 모두 선언하는 방식 (여러개)
+    변수는 특정 속성값 단 한 개를 저장하는 방식 (변수 1개에 한 개의 속성값)
+    --> 변수의 값은 어느 속성에 사용하더라도 상관없음
+*/
+/* 모든 태그의 스타일 초기화 */
+/* 모든 태그에 브라우저에서 주는 여백을 삭제 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap");
+body, header, footer, div, nav, section, h1, h2, h3, h4, h5, button, a, ul, ol, li, address, strong, span, em, p, i, dl, dt, dd, form, fieldset, legend, input, textarea, select, table, caption, colgroup, col, thead, tbody, tfoot, tr, th, td {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* width/height와 padding결합되면 사이즈가 늘어남. 이걸 막는 스타일
+      padding을 줘도 width/height가 유지가 됨 */
+}
+
+/* a태그에 브라우저가 주는 기본 속성 초기화 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 브라우저에서 기울임을 주는 것을 초기화 */
+em, address {
+  font-style: normal;
+}
+
+/* 항목 앞에 동그라미 삭제 */
+ul, ol, li {
+  list-style: none;
+}
+
+/* form 태그가 문자 스타일을 상속받지 않아서 상속받게 하기 */
+form, input, select, textarea, button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  /* 서체 상속 - button은 body에서 적용한 서체를 상속받지 않음 - form관련 태그는 다 그럼 */
+}
+
+fieldset {
+  border: 0;
+}
+
+legend {
+  display: none; /* form 태그의 legend은 타이틀로 숨김 처리 */
+}
+
+button {
+  background-color: transparent; /* 투명 */
+  border: 0;
+  cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
+}
+
+table caption {
+  display: none;
+}
+
+/* 글자를 두껍게 하는 태그는 모두 일반 두께로 변형 */
+h1, h2, h3, h4, h5, h6, strong, th {
+  font-weight: 400;
+}
+
+/* 모든 페이지에 공통으로 들어가는 스타일 (header/footer) */
+/* 본명조 */
+html, body {
+  color: #3d3d3d;
+  line-height: 1.5;
+  font-family: "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  /* letter-spacing: -0.05em; */
+  word-break: keep-all; /* 단어별 줄바꿈 */
+}
+
+#wrap { /* id="wrap" */
+  overflow: hidden;
+  position: relative;
+  min-width: 320px;
+}
+
+/* 컨텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 20px;
+  margin: 0 auto;
+  /*
+      1400px 이하부터 320px까지 모든 사이즈 반응형
+      1400px일 때에도 좌우에 여백은 유지해야 함
+      (1400 이상에서 1400px 이하로 변경되는 점 - 반응형으로 전환되는 점)
+      부드럽게 여백을 유지하면서 전환
+      원래 좌우에 여백이 20px씩 들어가 있는걸로 스타일을 줌
+      1400px이 콘텐츠 영역인데 왼쪽 20 + 오른쪽 20 = 1440px이 넓이
+      padding으로 좌우에 여백을 20px씩 줌
+  */
+}
+
+@media screen and (max-width: 1000px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 640px) {
+  /* 640px 이하의 디바이스에서만 아래 css가 적용
+    pc에서는 1280px이라는 콘텐츠 고정 넓이가 존재했지만
+    모바일에서는 디바이스 넓이에 맞춰서 꽉차게 구현
+    구현방식이 달라서 고정값을 모두 삭제 */
+  html, body {
+    font-size: 13px;
+  }
+} /* media 종료 */
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+}
+
+.clearfix {
+  display: block;
+}
+
+/*
+    wrapper와 동일한 사이즈를 갖은 position: relative를 요소는
+    cnt_wrap 클래스를 줌
+*/
+.cnt_wrap {
+  position: relative;
+}
+
+.skip_nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10000000;
+  width: 100%;
+}
+
+.skip_nav a {
+  position: absolute;
+  left: 0;
+  top: -1000px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #004E9F;
+  color: #ffffff;
+  text-align: center;
+}
+
+.skip_nav a:focus {
+  top: 0;
+}
+
+/*
+    브라우저에서 글자를 드래그했을 때 드래그한 영역의 색과 글자색
+    -moz- -webkit- 이 앞에 붙은 속성은 표준화되지 않은 속성
+*/
+::-moz-selection {
+  background: #cba585;
+  color: #3e3e3f;
+}
+::selection {
+  background: #cba585;
+  color: #3e3e3f;
+}
+
+::-moz-selection {
+  background: #cba585;
+  color: #3e3e3f;
+}
+
+::-webkit-selection {
+  background: #cba585;
+  color: #3e3e3f;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 300;
+  width: 100%;
+  height: 100px;
+  transition: 0.5s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.header .logo {
+  float: left;
+  margin: 29px 0 0 40px;
+}
+.header .gnb {
+  float: right;
+  margin: 0 40px 0 0;
+}
+.header .gnb .gnb_open {
+  display: none;
+}
+.header .gnb .gnb_wrap ul li {
+  float: left;
+}
+.header .gnb .gnb_wrap ul li a {
+  display: block;
+  padding: 0 25px;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 100px; /* header의 높이 */
+}
+.header.fixed {
+  position: fixed;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1440px) {
+  .header .logo a img {
+    width: 130px;
+  }
+  .header .gnb .gnb_wrap ul li a {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .header .logo a img {
+    width: 120px;
+  }
+  .header .gnb .gnb_wrap ul li a {
+    padding: 0 15px;
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .header {
+    height: 60px;
+  }
+  .header .logo {
+    margin: 10px 0 0 20px;
+  }
+  .header .logo a img {
+    width: 108px;
+  }
+  .header .gnb {
+    margin: 0;
+  }
+  .header .gnb .gnb_open {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+  }
+  .header .gnb .gnb_open strong {
+    display: none;
+  }
+  .header .gnb .gnb_open span {
+    position: absolute;
+    right: 19px;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.3s;
+  }
+  .header .gnb .gnb_open span.line1 {
+    top: 21px;
+  }
+  .header .gnb .gnb_open span.line2 {
+    top: 28px;
+    width: 15px;
+  }
+  .header .gnb .gnb_open span.line3 {
+    top: 35px;
+  }
+  .header .gnb .gnb_wrap {
+    display: block;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    max-width: 375px;
+    height: 100vh;
+    background-color: #fff;
+    color: #3d3d3d;
+    transition: right 0.5s;
+  }
+  .header .gnb .gnb_wrap ul {
+    margin: 60px 0 0 0;
+  }
+  .header .gnb .gnb_wrap ul li {
+    float: none;
+    border-bottom: 1px solid #f4f4f4;
+  }
+  .header .gnb .gnb_wrap ul li a {
+    font-family: "Noto Serif KR", serif;
+    padding: 0;
+    color: #3d3d3d;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .header .gnb .gnb_wrap ul li:first-child {
+    border-top: 1px solid #f4f4f4;
+  }
+  .header .gnb::after {
+    /*  
+        화면에 꽉 차는 배경은
+        position: fixed
+        left, right, top, bottom 사방을 모두 0으로 주면
+        left: 0, top: 0, width: 100%, height: 100%; 와 동일하게 들어감
+
+        <div class="gnb">
+            <button class="gnb_open"></button>
+            <div class="gnb_wrap"></div>
+            ::after -- gnb::after
+        </div>
+        이런 구조에서
+        gnb_open과 gnb_wrap, gnb::after의 순서를 조정할 수 있음
+        z-index는 이렇게 나란히 들어간 요소들 사이에서 높은 숫자가 위로 올라감
+
+        <button class="gnb_open"></button>
+        <div class="gnb_wrap">
+            ::after -- gnb_wrap::after
+        </div>
+        이런 구조라면 gnb_wrap::after는 gnb_wrap 안에 존재하기 때문에
+        그 밖에 있는 gnb_open, gnb_wrap과의 순서를 절대 조정 불가능함
+    */
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+  }
+  .header .gnb.mobile_open .gnb_open span {
+    width: 25px;
+    background-color: #3d3d3d;
+  }
+  .header .gnb.mobile_open .gnb_open span.line1 { /* span.line1 */
+    top: 30px;
+    transform: rotate(45deg);
+  }
+  .header .gnb.mobile_open .gnb_open span.line2 {
+    right: -25px;
+  }
+  .header .gnb.mobile_open .gnb_open span.line3 {
+    top: 30px;
+    transform: rotate(-45deg);
+  }
+  .header .gnb.mobile_open .gnb_wrap {
+    right: 0;
+  }
+  .header .gnb.mobile_open::after {
+    opacity: 1;
+  }
+}
+.footer {
+  display: block;
+  padding: 50px 0 70px 0;
+  background-color: #483D33;
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer::after {
+  display: block;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+}
+.footer .sns {
+  float: right;
+}
+.footer .sns ul li {
+  float: left;
+}
+.footer .sns ul li a {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  font-size: 0;
+  line-height: 0;
+}
+.footer .sns ul li a::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /*
+      배경이미지가 핸 개를 보이는 영역을 제한해서 써야하기 때문에
+      before, after에서 표시.
+      이 때 before, after의 사이즈는 내가 사용할 아이콘의 넓이
+      - 저장할 때 활용된 아이콘의 넓이
+  */
+  width: 40px;
+  height: 40px;
+  background-image: url(/design01/bntailor/images/common/footer_ico.svg);
+  background-repeat: no-repeat;
+  content: "";
+}
+.footer .sns ul li:first-child a {
+  border-left-width: 1px;
+}
+.footer .sns ul li.instagram a::before {
+  background-position: left top;
+}
+.footer .sns ul li.facebook a::before {
+  background-position: left -40px top;
+}
+.footer .sns ul li.naver a::before {
+  background-position: left -80px top;
+}
+.footer .inner {
+  float: left;
+}
+.footer .inner .finfo span {
+  margin: 0 38px 5px 0;
+}
+.footer .inner .copyright {
+  margin: 16px 0 0 0;
+  color: #666666;
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    padding: 55px 0 90px 0;
+  }
+  .footer .sns {
+    display: block;
+    float: none;
+    margin: 0 0 50px 0;
+  }
+  .footer .sns::after {
+    display: block;
+    clear: both;
+    content: ".";
+    visibility: hidden;
+    height: 0;
+  }
+  .footer .sns ul li {
+    float: left;
+    display: block;
+  }
+  .footer .inner {
+    float: none;
+  }
+  .footer .inner .finfo span {
+    display: block;
+    margin: 0;
+  }
+  .footer .inner .copyright {
+    margin: 25px 0 0 0;
+  }
+}
+/* 서브 공통 레이아웃 */
+.container svg path {
+  fill: #9d856d;
+}
