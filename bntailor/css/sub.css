@@ -202,6 +202,12 @@ html, body {
   float: left;
   margin: 29px 0 0 40px;
 }
+.header .logo svg {
+  width: 162px;
+}
+.header .logo svg text {
+  fill: #fff;
+}
 .header .gnb {
   float: right;
   margin: 0 40px 0 0;
@@ -228,7 +234,7 @@ html, body {
 }
 
 @media screen and (max-width: 1440px) {
-  .header .logo a img {
+  .header .logo a svg {
     width: 130px;
   }
   .header .gnb .gnb_wrap ul li a {
@@ -236,7 +242,7 @@ html, body {
   }
 }
 @media screen and (max-width: 1200px) {
-  .header .logo a img {
+  .header .logo a svg {
     width: 120px;
   }
   .header .gnb .gnb_wrap ul li a {
@@ -251,7 +257,7 @@ html, body {
   .header .logo {
     margin: 10px 0 0 20px;
   }
-  .header .logo a img {
+  .header .logo a svg {
     width: 108px;
   }
   .header .gnb {
@@ -474,6 +480,153 @@ html, body {
   }
 }
 /* 서브 공통 레이아웃 */
-.container svg path {
-  fill: #9d856d;
+.sub_visual {
+  height: 590px;
+}
+.sub_visual .sub_visual_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 680px; /* clip-path로 위치가 정확하지 않아 배경을 별도의 요소에 줌 */
+  background-image: url(/design01/bntailor/images/sub/sub_visual1.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  -webkit-clip-path: url(#sub_visual_path);
+          clip-path: url(#sub_visual_path);
+  /*
+      html에서 입력한 svg clipPath에 지정된 id 값을 url로 연결하면 해당요소의 path값이 적용됨 
+      배경이 표시도리 영역으로 활용됨
+      path로 직접 경로를 사용했는데 안되는 경우, svg path의 크기를 변경해야 하는 경우
+      이런 방식으로 사용함
+  */
+}
+.sub_visual.sub_bg1 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_visual1.png);
+}
+.sub_visual.sub_bg2 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_visual2.png);
+}
+.sub_visual.sub_bg3 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_visual3.png);
+}
+.sub_visual.sub_bg4 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_visual4.png);
+}
+.sub_visual.sub_bg5 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_visual5.png);
+}
+.sub_visual.sub_bg6 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_visual6.png);
+}
+.sub_visual.sub_bg7 .sub_visual_bg {
+  background-image: url(/design01/bntailor/images/sub/sub_visual7.png);
+}
+.sub_visual .sub_visual_path {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.sub_visual .sub_visual_path svg {
+  width: 1px;
+  height: 1px;
+}
+.sub_visual .location {
+  display: flex;
+  padding: 236px 0 0 10px;
+  color: #3d3d3d;
+}
+.sub_visual .location span {
+  position: relative;
+  margin-right: 18px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.sub_visual .location span::after {
+  position: absolute;
+  right: -12px;
+  top: 10px;
+  width: 5px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-clip-path: polygon(20% 0%, 50% 0%, 80% 55%, 50% 100%, 20% 100%, 50% 50%);
+          clip-path: polygon(20% 0%, 50% 0%, 80% 55%, 50% 100%, 20% 100%, 50% 50%);
+  /*
+  이미지로 하는 것이 아니라 svg를 이용해서 아이콘을 그리는데,
+  여러번 반복해서 들어가는 경우
+  css에서 원하는 도형의 크기와 넓이를 주고, 배경색으로 아이콘의 색상을 주고,
+  clip-path: 로 path 값을 줌
+  장점: css로 여러 요소를 선택해서 도형을 그릴 수 있다는 장점
+  단점: 사이즈를 수정할 수 없음 (단, %로 path를 그리는 것은 가능)
+      작은 것은 적용 안됨
+      브라우저 호환성이 떨어짐 (안되는 브라우저가 있음)
+      path를 그리는 방법이 많은데, 일부는 적용이 안됨 (html에서는 되도 css에서 안됨)
+  */
+  content: "";
+}
+.sub_visual .location span:last-child::after {
+  display: none;
+}
+.sub_visual .tit {
+  font-family: "Noto Serif KR", serif;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 640px) {
+  .sub_visual {
+    height: 200px;
+  }
+  .sub_visual .sub_visual_bg {
+    height: 100%;
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+  .sub_visual .location {
+    padding: 150px 0 0 0;
+  }
+  .sub_visual .location span {
+    margin-right: 15px;
+  }
+  .sub_visual .location span::after {
+    right: -10px;
+    top: 7px;
+  }
+  .sub_visual .tit {
+    font-size: 30px;
+  }
+}
+.lnb {
+  height: 80px;
+}
+.lnb .lnb_wrap ul {
+  margin: 13px 0 0 0;
+}
+.lnb .lnb_wrap ul li {
+  float: left;
+}
+.lnb .lnb_wrap ul li a {
+  display: block;
+  padding: 0 20px;
+  color: #999;
+  font-size: 30px;
+  font-weight: 700;
+}
+.lnb .lnb_wrap ul li:first-child a {
+  padding-left: 0;
+}
+.lnb .lnb_wrap ul li.active a {
+  position: relative;
+  color: #3d3d3d;
+}
+.lnb .lnb_wrap ul li.active a::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 2px;
+  background-color: #777;
+  content: "";
 }
