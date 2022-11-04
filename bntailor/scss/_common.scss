@@ -131,13 +131,7 @@ html, body {
             }
         }
     }
-    &.fixed { // header.fixed header에 fixed 클래스가 추가됐을 때 - header 고정
-        position: fixed;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px); // 브라우저 호환성 때문에
-        background-color: rgba(0, 0, 0, 0.2);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
+    
 }
 
 @media screen and (max-width:1440px){
