@@ -7,6 +7,7 @@
     top: calc(50% - 160px);
     color: #fff;
     /* transform: translate(-50%, -50%); */
+    line-height: 1.2;
     text-align: left;
 }
 .popup ul li .txt strong {
@@ -28,16 +29,101 @@
     height: 100%;
     object-fit: cover;
 }
-.popup .btn_wrap {
+.popup .btn_paging {
     position: absolute;
     top: 50%;
+    transform: translate(0, -25%);
     z-index: 10;
     right: 0;
+    left: auto;
+    width: auto;
+    color: #fff;
 }
-.popup .btn_wrap p {
-    font-size: 0;
-    line-height: 0;
-}
-.popup .btn_wrap button {
+.popup .btn_paging .swiper-pagination-bullet {
     display: block;
+    position: relative;
+    height: 50px;
+    width: 300px;
+    padding: 0 58px 0 40px;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 0 5px 0;
+    color: #fff;
+    opacity: 1;
+    font-weight: 400;
+    text-align: left;
 }
+.popup .btn_paging span {
+    position: relative;
+    margin: 0 80px 0 0;
+    color: #fff;
+}
+.popup .btn_paging span::before {
+    position: absolute;
+    left: 32px;
+    top: 11px;
+    width: 40px;
+    height: 1px;
+    background-color: #fff;
+    content: "";
+}
+.popup .btn_paging button:hover {
+    background-color: rgba(0, 160, 64, 0.4);
+}
+.popup .btn_paging .swiper-pagination-bullet-active,
+.popup .btn_paging .swiper-pagination-bullet-active span {
+    color: #00A040;
+    font-weight: 700;
+}
+.popup .btn_paging .swiper-pagination-bullet-active span::before {
+    background-color: #00A040;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
