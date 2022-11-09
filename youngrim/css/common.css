@@ -115,7 +115,7 @@ html, body {
 }
 .header .gnb {
     float: right;
-    margin: 0 260px 0 0;
+    margin: 0 180px 0 0;
 }
 .header .gnb .gnb_open {
     display: none;
@@ -128,7 +128,7 @@ html, body {
 }
 .header .gnb ul li a {
     display: block;
-    padding: 0 42px;
+    padding: 0 35px;
     font-size: 25px;
     line-height: 100px; /* header의 높이값, 글자를 위아래 가운데 배치하기 위해 */
 }
@@ -136,7 +136,7 @@ html, body {
 .header .tnb {
     position: absolute;
     right: 0;
-    top: 40px;
+    top: 35px;
 }
 .header .tnb a {
     display: block;
@@ -153,13 +153,17 @@ html, body {
 
 /* header가 고정일 때 */
 .header.fixed {
+    position: fixed;
     border-bottom: 1px solid #cccccc;
-    /* background-color: #ffffff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
-    color: #1d1d1d;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #3d3d3d;
 }
 .header.fixed .logo a {
     background-image: url(../images/common/logo.svg);
+}
+.header.fixed .tnb a i {
+    color: rgba(0, 0, 0, 0.7);
 }
 
 /*
@@ -169,10 +173,40 @@ html, body {
     800 - 
     640 - 
 */
-@media screen and (max-width:1200px){
+
+@media screen and (max-width:1440px){
+    .header .gnb {
+        margin: 0 150px 0 0;
+    }
     .header .gnb ul li a {
         padding: 0 30px;
         font-size: 20px;
+    }
+    .header .tnb a {
+        margin: 0 35px 0 0;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .header .logo {
+        margin: 25px 0 0 30px;
+    }
+    .header .logo a img {
+        width: 40px;
+        height: 45px;
+    }
+    .header .gnb {
+        margin: 0 130px 0 0;
+    }
+    .header .gnb ul li a {
+        padding: 0 25px;
+        font-size: 15px;
+    }
+    .header .tnb a {
+        margin: 5px 30px 0 0;
+    }
+    .header .tnb a i {
+        font-size: 25px;
     }
 }
 
@@ -184,111 +218,81 @@ html, body {
         margin: 15px 0 0 20px;
     }
     .header .logo a {
-        width: 128px;
-        height: 26px;
+        width: 25px;
+        height: 30px;
+    }
+    .header .logo a img {
+        width: 25px;
+        height: 30px;
     }
     .header .gnb {
         margin: 0;
     }
     .header .gnb .gnb_open {
         display: block;
-        padding: 22px 20px 18px 20px;
+        padding: 20px 20px 18px 20px;
     }
     .header .gnb .gnb_open span {
-        display: block;
-        width: 20px;
-        height: 2px;
-        margin-bottom: 4px;
-        border-radius: 1px; /* 높이의 절반 */
-        background-color: #ffffff;
-        font-size: 0;
-        line-height: 0;
-
+        display: none
     }
     .header .gnb ul {
         display: none;
     }
-    .header.black .gnb .gnb_open span {
-        background-color: #1d1d1d;
-    }
-}
-
-@media screen and (max-width:640px){
-    .header.fixed {
-        border-bottom: 0;
-        background-color: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-    }
-    .header.fixed .logo a,
-    .header.fixed.black .logo a {
-        background-image: url(../images/common/logo.svg);
-    }
-    .header.fixed .gnb .gnb_open span,
-    .header.fixed.black .gnb .gnb_open span {
-        background-color: #1d1d1d;
+    .header .tnb {
+        display: none;
     }
 }
 
 .footer {
-    border-top: 1px solid #cccccc;
-}
-.footer .fnav {
-    float: right;
-    margin: 42px 0 87px 0;
-}
-.footer .fnav li a {
-    display: block;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1.5;
-    text-align: right;
+    padding: 34px 0 64px 0;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #3B3B3B;
 }
 .footer .inner {
-    float: left;
-    margin: 57px 0 0 0;
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid #999;
+
 }
-.footer .flogo {
-    width: 90px;
-    height: 95px;
-    background-image: url(../images/common/logo.svg);
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: auto 95px;;
+.footer .inner .flogo {
+    float: left;
+}
+.footer .inner .flogo img {
+    width: 40px;
+}
+.footer .inner .private {
+    float: right;
+    padding: 10px 0 0 0;
+}
+.footer .inner .private ul li {
+    position: relative;
+    float: right;
+    margin: 0 36px 0 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+.footer .inner .private ul li:first-child {
+    font-weight: 700;
+    color: #fff;
+}
+.footer .inner .private ul li::before {
+    position: absolute;
+    left: -16px;
+    top: 6px;
+    width: 1px;
+    height: 10px;
+    background-color: #707070;
+    content: "";
+}
+.footer .inner .private ul li:last-child::before {
+    display: none;
+}
+.footer .finfo {
+    padding: 40px 0 20px 0;
+}
+.footer .finfo span {
+    font-size: 20px;
+    margin: 0 48px 10px 0;
 }
 .footer .copyright {
-    margin: 20px 0 0 0;
-    color: #666666;
-}
-
-@media screen and (max-width:1000px){
-    .footer .fnav li a {
-        font-size: 25px;
-    }
-    .footer .flogo {
-        width: 70px;
-        height: 75px;
-        background-size: auto 75px;;
-    }
-}
-
-@media screen and (max-width:640px){
-    .footer .fnav {
-        float: none;
-        margin: 60px 0 40px 0;
-    }
-    .footer .fnav li a {
-        font-size: 20px;
-    }
-    .footer .inner {
-        float: none;
-        margin: 0;
-    }
-    .footer .flogo {
-        display: none;
-    }
-    .footer .copyright {
-        margin: 0 0 93px 0;
-        text-align: right;
-    }
+    font-size: 20px;
+    color: #999999;
 }

@@ -44,10 +44,10 @@
     position: relative;
     height: 50px;
     width: 300px;
+    margin: 0 0 5px 0;
     padding: 0 58px 0 40px;
     border-radius: 0;
     background-color: rgba(255, 255, 255, 0.1);
-    margin: 0 0 5px 0;
     color: #fff;
     opacity: 1;
     font-weight: 400;
@@ -79,51 +79,99 @@
     background-color: #00A040;
 }
 
+@media screen and (max-width:1440px){
+    .popup ul li .txt {
+        left: calc(50% - 600px);
+        top: calc(50% - 100px);
+        /* transform: translate(-50%, -50%); */
+    }
+    .popup ul li .txt strong {
+        font-size: 80px;
+    }
+    .popup ul li .txt span {
+        font-size: 50px;
+    }
+}
 
+@media screen and (max-width:1200px){
+    .popup ul li .txt {
+        left: calc(50% - 500px);
+        top: calc(40%);
+        /* transform: translate(-50%, -50%); */
+    }
+    .popup ul li .txt strong {
+        font-size: 60px;
+    }
+    .popup ul li .txt span {
+        font-size: 30px;
+    }
+}
 
+@media screen and (max-width:1000px){
+    .popup {
+        height: 960px;
+    }
+    .popup ul li .txt {
+        left: 20px;
+        top: calc(50%);
+        transform: translate(0, -50%);
+        line-height: 1.2;
+        text-align: left;
+    }
+    .popup ul li .txt strong {
+        margin: 0 0 5px 0;
+        font-size: 50px;
+    }
+    .popup ul li .txt span {
+        font-size: 40px;
+    }
+    .popup .btn_paging {
+        margin: 170px 0 0 22px;
+        top: 50%;
+        transform: translate(0, -25%);
+        right: auto;
+        left: 0;
+        width: auto;
+        color: #fff;
+    }
+    .popup .btn_paging .swiper-pagination-bullet {
+        float: left;
+        margin: 0 5px 0 0;
+        padding: 0;
+        height: 2px;
+        width: 80px;
+        border-radius: 0;
+        background-color: #fff;
+    }
+    .popup .btn_paging span {
+        display: none;
+    }
+    .popup .btn_paging span::before {
+        display: none;
+    }
+    .popup .btn_paging strong {
+        display: none;
+    }
+    .popup .btn_paging button:hover {
+        background-color: #00A040;
+    }
+    .popup .btn_paging .swiper-pagination-bullet-active {
+        background-color: #00A040;
+        font-weight: 700;
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (max-width:640px){
+    .popup ul li .txt strong {
+        font-size: 40px;
+    }
+    .popup ul li .txt span {
+        font-size: 35px;
+    }
+    .popup .btn_paging {
+        margin: 160px 0 0 22px;
+    }
+    .popup .btn_paging .swiper-pagination-bullet {
+        width: 60px;
+    }
+}

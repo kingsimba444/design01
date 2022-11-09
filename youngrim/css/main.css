@@ -3,8 +3,10 @@
 @import url(popup.css);
 
 .vision {
+    position: relative;
     padding: 120px 0 165px 0;
-    background-image: url(../images/main/vision_bg.png);
+    /* height: 2700px; */
+    background: url(../images/main/vision_bg.png) no-repeat center center / cover;
     color: #fff;
 }
 .vision h2 {
@@ -12,18 +14,246 @@
     font-weight: 700;
     margin: 0 0 150px 0;
 }
-.vision .tit {
+.vision .inner {
+    position: relative;
+}
+.vision .inner .tit strong {
+    position: absolute;
+    float: left;
+    top: 0;
+    left: calc(50% - 700px);
     font-size: 45px;
     font-weight: 700;
     line-height: 1.2;
 }
-.vision .tit span {
+.vision .inner .tit strong.fixed {
+    position: fixed;
+    top: 130px;
+}
+.vision .inner .tit strong.end {
+    position: absolute;
+    top: auto;
+    bottom: 10px;
+}
+.vision .inner .tit span {
     display: block;
 }
-.vision .vison_sub span {
+
+.vision .inner .list {
+    margin-left: 480px;
+}
+.vision .inner .list span {
+    float: right;
+    width: 920px;
     margin: 0 0 160px 0;
     color: #999999;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.2;
+}
+.vision .inner .list ul {
+    margin: 100px 0 0 0;
+}
+.vision .inner .list ul li {
+    width: 360px;
+    margin: 0 0 280px 0;
+}
+.vision .inner .list ul li:nth-child(1),
+.vision .inner .list ul li:nth-child(3) {
+    float: left;
+}
+.vision .inner .list ul li:nth-child(3) {
+    margin: 0;
+}
+.vision .inner .list ul li:nth-child(2) {
+    float: right;
+    margin-top: 380px;
+}
+.vision .inner .list ul li a {
+    display: block;
+}
+.vision .inner .list ul li a .pic {
+    margin: 0 0 20px 0;
+}
+.vision .inner .list ul li a strong {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.vision .inner .list ul li a p {
+    margin: 10px 0 20px 0;
+    font-size: 15px;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.6);
+}
+.vision .inner .list ul li a i {
+    color: rgba(255, 255, 255, 0.6);
+}
+.vision .inner .list ul li a:hover i {
+    margin-left: 5px;
+    transition: 0.5s;
+}
+
+@media screen and (max-width:640px){
+    .vision {
+        padding: 40px 0 80px 0;
+        /* height: 2700px; */
+    }
+    .vision h2 {
+        display: none;
+    }
+    .vision .inner .tit {
+        float: none;
+        margin: 0;
+    }
+    .vision .inner .tit strong {
+        position: relative;
+        float: none;
+        top: auto;
+        left: auto;
+        font-size: 25px;
+    }
+    .vision .inner .tit strong.fixed {
+        position: relative;
+        top: auto;
+    }
+    .vision .inner .tit strong.end {
+        position: relative;
+        bottom: auto;
+    }
+    .vision .inner .tit strong span {
+        display: inline-block;
+    }
+    
+    .vision .inner .list {
+        margin-left: 0;
+    }
+    .vision .inner .list span {
+        float: none;
+        display: block;
+        width: auto;
+        margin: 25px 0 25px 0;
+        color: #999999;
+        font-size: 20px;
+    }
+    .vision .inner .list ul {
+        margin: 0;
+    }
+    .vision .inner .list ul li {
+        width: 320px;
+        margin: 0;
+    }
+    .vision .inner .list ul li:nth-child(1),
+    .vision .inner .list ul li:nth-child(3) {
+        float: none;
+    }
+    .vision .inner .list ul li:nth-child(3) {
+        margin: 0;
+    }
+    .vision .inner .list ul li:nth-child(2) {
+        float: none;
+        margin-top: 0;
+    }
+    .vision .inner .list ul li a {
+        display: block;
+    }
+    .vision .inner .list ul li a .pic {
+        margin: 0 0 20px 0;
+    }
+    .vision .inner .list ul li a strong {
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .vision .inner .list ul li a p {
+        margin: 10px 0 20px 0;
+        font-size: 15px;
+        line-height: 1.2;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .vision .inner .list ul li a i {
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .vision .inner .list ul li a:hover i {
+        margin-left: 5px;
+        transition: 0.5s;
+    }
+}
+
+.project {
+    padding: 80px 0 50px 0;
+}
+.project h2 {
+    margin: 0 0 20px 0;
+    font-size: 70px;
+    font-weight: 700;
+}
+.project .pro_pic ul {
+    float: left;
+    margin: 0 40px 0 0;
+}
+.project .pro_pic ul:last-child {
+    margin: 0;
+}
+.project .pro_pic ul li {
+    margin: 0 0 74px 0;
+}
+.project .pro_pic ul li a .pic {
+    display: block;
+    overflow: hidden;
+}
+.project .pro_pic ul li a .pic img {
+    width: 100%;
+    transition: 0.5s;
+}
+.project .pro_pic ul li a:hover .pic img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.project .pro_pic ul li a strong {
+    padding: 10px 0 0 0;
+}
+
+.asking {
+    height: 380px;
+    background: url(../images/main/asking_bg.png) no-repeat center center / cover;
+    color: #fff;
+    text-align: center;
+}
+.asking h2 {
+    padding: 60px 0 0 0;
+    font-size: 45px;
+}
+.asking p {
+    margin: 15px 0 55px 0;
+    font-size: 20px;
+}
+.asking a {
+    position: relative;
+    display: block;
+    padding: 13px 0 0 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 300px;
+    height: 80px;
+    border: 1px solid #fff;
+    overflow: hidden;
+}
+.asking a::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00A040;
+    transform: translateX(-105%);
+    transition: 0.5s;
+    content: "";
+}
+.asking a span {
+    position: relative;
+    z-index: 1;
+    font-size: 30px;
+}
+.asking a:hover::before {
+    transform: translateX(0%);
 }

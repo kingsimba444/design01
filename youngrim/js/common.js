@@ -1,28 +1,48 @@
-$(document).ready(function(){
-    let winW = $(window).width()
-    let docW = $(document).width()
+$(document).ready(function() {
+
+    let winW;
+    let pcMobile;
+
+    $(window).resize(function(){
+        deviceChk()
+    });
+
+    function deviceChk(){
+        winW = $(window).width;
+
+        if(winW > 640){
+            pcMobile = 'pc';
+        }
+        else {
+            pcMobile = 'mobile';
+        }
+
+    } // function deviceChk
 
 
     /*
-        header에
-        조건 1 - 스크롤 값이 0보다 크면 header에 fixed 클래스 추가
-        조건 2 - 스크롤 값이 0이면 header에 fixed 클래스를 삭제
+        브라우저가 스크롤을 할때 스크롤값이 0보다 크면
+        header에 fixed라는 클래스를 줄 예정
+        스크롤값이 0이면 header에 fixed라는 클래스 삭제
     */
-    /* 로딩했을 때 맨 처음에만 실행을 단 한 번 */
-    let scrolling
-    headerFixed() // 함수의 실행
-    
-    /* 스크롤 할 때마다 실행 - 스크롤 안하면 실행X */
+    let scrolling;
+    scrollChk();
+
     $(window).scroll(function(){
-        headerFixed() // 함수의 실행
-    })
-    function headerFixed(){ // 함수의 선언
-        scrolling = $(window).scrollTop()
-        if (scrolling > 100){
+        scrollChk();
+    });
+
+    function scrollChk(){
+        scrolling = $(window).scrollTop();
+        console.log(scrolling);
+        if (scrolling > 0){
             $('header').addClass('fixed')
         }
         else {
             $('header').removeClass('fixed')
         }
+
     }
-}
+    
+
+}); // document.ready
