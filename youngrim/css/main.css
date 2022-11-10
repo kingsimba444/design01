@@ -73,7 +73,17 @@
     display: block;
 }
 .vision .inner .list ul li a .pic {
+    display: block;
+    width: 100%;
+    height: 535px;
     margin: 0 0 20px 0;
+    overflow: hidden;
+}
+.vision .inner .list ul li a .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .vision .inner .list ul li a strong {
     font-size: 35px;
@@ -92,6 +102,153 @@
 .vision .inner .list ul li a:hover i {
     margin-left: 5px;
     transition: 0.5s;
+}
+
+@media screen and (max-width:1440px){
+    .vision .inner .tit strong {
+        left: calc(50% - 600px);
+        font-size: 40px;
+    }
+    .vision .inner .list {
+        margin-left: 450px;
+    }
+    .vision .inner .list span {
+        float: right;
+        width: 850px;
+        margin: 0 0 140px 0;
+    }
+    .vision .inner .list ul {
+        margin: 70px 0 0 0;
+    }
+
+    .vision .inner .list ul li {
+        width: 320px;
+        margin: 0 0 200px 0;
+    }
+    .vision .inner .list ul li:nth-child(2) {
+        margin-top: 330px;
+    }
+    .vision .inner .list ul li a .pic {
+        width: 320px;
+        height: 500px;
+        margin: 0 0 20px 0;
+    }
+
+}
+
+@media screen and (max-width:1200px){
+    .vision h2 {
+        font-size: 50px;
+        margin: 0 0 100px 0;
+    }
+    .vision .inner .tit strong {
+        left: calc(50% - 500px);
+        font-size: 30px;
+    }
+    .vision .inner .list {
+        margin-left: 280px;
+    }
+    .vision .inner .list span {
+        width: 680px;
+        margin: 0 0 80px 0;
+        font-size: 18px;
+    }
+    .vision .inner .list ul {
+        margin: 50px 0 0 0;
+    }
+
+    .vision .inner .list ul li {
+        width: 300px;
+        margin: 0 0 100px 0;
+    }
+    .vision .inner .list ul li:nth-child(2) {
+        margin-top: 300px;
+    }
+    .vision .inner .list ul li a .pic {
+        width: 300px;
+        height: 450px;
+        margin: 0 0 20px 0;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .vision h2 {
+        font-size: 40px;
+        margin: 0 0 80px 0;
+    }
+    .vision .inner .tit strong {
+        left: calc(50% - 400px);
+        font-size: 25px;
+    }
+    .vision .inner .list {
+        margin-left: 140px;
+    }
+    .vision .inner .list span {
+        width: 550px;
+        margin: 0 0 50px 0;
+        font-size: 15px;
+    }
+    .vision .inner .list ul {
+        margin: 40px 0 0 0;
+    }
+
+    .vision .inner .list ul li {
+        width: 280px;
+        margin: 0 0 90px 0;
+    }
+    .vision .inner .list ul li a .pic {
+        width: 280px;
+        height: 430px;
+        margin: 0 0 20px 0;
+    }
+
+    .vision .inner .list ul li a strong {
+        font-size: 25px;
+    }
+    .vision .inner .list ul li a p {
+        margin: 8px 0 15px 0;
+        font-size: 13px;
+    }
+    .vision .inner .list ul li a i {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .vision h2 {
+        font-size: 35px;
+        margin: 0 0 50px 0;
+    }
+    .vision .inner .tit strong {
+        left: calc(50% - 330px);
+        font-size: 20px;
+    }
+    .vision .inner .list {
+        margin-left: 120px;
+    }
+    .vision .inner .list span {
+        width: 500px;
+        margin: 0 0 40px 0;
+    }
+    .vision .inner .list ul {
+        margin: 30px 0 0 0;
+    }
+
+    .vision .inner .list ul li {
+        width: 230px;
+        margin: 0 0 80px 0;
+    }
+    .vision .inner .list ul li a .pic {
+        width: 230px;
+        height: 400px;
+        margin: 0;
+    }
+    .vision .inner .list ul li a p {
+        margin: 8px 0 10px 0;
+    }
+    .vision .inner .list ul li a i {
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-width:640px){
@@ -124,7 +281,6 @@
     .vision .inner .tit strong span {
         display: inline-block;
     }
-    
     .vision .inner .list {
         margin-left: 0;
     }
@@ -134,49 +290,39 @@
         width: auto;
         margin: 25px 0 25px 0;
         color: #999999;
-        font-size: 20px;
+        font-size: 13px;
     }
+
     .vision .inner .list ul {
-        margin: 0;
+        margin: 25px 0 0 0;
     }
     .vision .inner .list ul li {
-        width: 320px;
-        margin: 0;
+        width: auto;
+        margin-bottom: 30px;
     }
     .vision .inner .list ul li:nth-child(1),
     .vision .inner .list ul li:nth-child(3) {
         float: none;
     }
-    .vision .inner .list ul li:nth-child(3) {
-        margin: 0;
-    }
     .vision .inner .list ul li:nth-child(2) {
         float: none;
         margin-top: 0;
     }
-    .vision .inner .list ul li a {
-        display: block;
-    }
     .vision .inner .list ul li a .pic {
-        margin: 0 0 20px 0;
+        margin: 0 0 10px 0;
+        overflow: hidden;
+        height: 120px;
+        width: auto;
     }
     .vision .inner .list ul li a strong {
-        font-size: 35px;
-        font-weight: 700;
-        line-height: 1.2;
+        margin: 0;
+        font-size: 20px;
     }
     .vision .inner .list ul li a p {
-        margin: 10px 0 20px 0;
-        font-size: 15px;
-        line-height: 1.2;
-        color: rgba(255, 255, 255, 0.6);
+        display: none;
     }
     .vision .inner .list ul li a i {
-        color: rgba(255, 255, 255, 0.6);
-    }
-    .vision .inner .list ul li a:hover i {
-        margin-left: 5px;
-        transition: 0.5s;
+        display: none;
     }
 }
 
@@ -191,19 +337,26 @@
 .project .pro_pic ul {
     float: left;
     margin: 0 40px 0 0;
+    width: calc(33.3% - 27px);
 }
 .project .pro_pic ul:last-child {
-    margin: 0;
+    margin-right: 0;
 }
 .project .pro_pic ul li {
     margin: 0 0 74px 0;
+}
+.project .pro_pic ul li a {
+    display: block;
 }
 .project .pro_pic ul li a .pic {
     display: block;
     overflow: hidden;
 }
 .project .pro_pic ul li a .pic img {
+    display: block;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: 0.5s;
 }
 .project .pro_pic ul li a:hover .pic img {
@@ -211,6 +364,52 @@
 }
 .project .pro_pic ul li a strong {
     padding: 10px 0 0 0;
+}
+
+@media screen and (max-width:1000px){
+    .project {
+        padding: 70px 0 40px 0;
+    }
+    .project h2 {
+        font-size: 60px;
+    }
+    .project .pro_pic ul {
+        margin: 0 40px 0 0;
+        width: calc(50% - 20px);
+    }
+    .project .pro_pic ul:nth-child(2) {
+        margin-right: 0;
+    }
+    .project .pro_pic ul:last-child {
+        display: none;
+    }
+    .project .pro_pic ul li {
+        margin: 0 0 55px 0;
+    }
+    
+}
+
+@media screen and (max-width:640px){
+    .project {
+        padding: 40px 0 30px 0;
+    }
+    .project h2 {
+        margin: 0 0 10px 0;
+        font-size: 25px;
+    }
+    .project .pro_pic ul {
+        float: none;
+        margin: 0;
+        width: auto;
+    }
+    .project .pro_pic ul li {
+        margin: 0 0 50px 0;
+        height: 250px;
+    }
+    .project .pro_pic ul li a .pic {
+        height: 250px;
+        margin:  0 0 5px 0;
+    }
 }
 
 .asking {
@@ -256,4 +455,48 @@
 }
 .asking a:hover::before {
     transform: translateX(0%);
+}
+
+@media screen and (max-width:1000px){
+    .asking {
+        height: 300px;
+    }
+    .asking h2 {
+        padding: 30px 0 0 0;
+        font-size: 40px;
+    }
+    .asking p {
+        margin: 15px 0 40px 0;
+        font-size: 15px;
+    }
+    .asking a {
+        padding: 12px 0 0 0;
+        width: 280px;
+        height: 70px;
+    }
+    .asking a span {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width:640px){
+    .asking {
+        height: 170px;
+    }
+    .asking h2 {
+        padding: 40px 0 15px 0;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .asking p {
+        display: none;
+    }
+    .asking a {
+        padding: 3px 0 0 0;
+        width: 130px;
+        height: 40px;
+    }
+    .asking a span {
+        font-size: 20px;
+    }
 }

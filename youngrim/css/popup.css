@@ -109,7 +109,7 @@
 
 @media screen and (max-width:1000px){
     .popup {
-        height: 960px;
+        height: 600px;
     }
     .popup ul li .txt {
         left: 20px;
@@ -126,7 +126,7 @@
         font-size: 40px;
     }
     .popup .btn_paging {
-        margin: 170px 0 0 22px;
+        margin: 130px 0 0 22px;
         top: 50%;
         transform: translate(0, -25%);
         right: auto;
@@ -169,7 +169,7 @@
         font-size: 35px;
     }
     .popup .btn_paging {
-        margin: 160px 0 0 22px;
+        margin: 120px 0 0 22px;
     }
     .popup .btn_paging .swiper-pagination-bullet {
         width: 60px;

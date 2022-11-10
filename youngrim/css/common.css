@@ -289,10 +289,63 @@ html, body {
     padding: 40px 0 20px 0;
 }
 .footer .finfo span {
-    font-size: 20px;
+    font-size: 15px;
     margin: 0 48px 10px 0;
 }
 .footer .copyright {
-    font-size: 20px;
+    font-size: 15px;
     color: #999999;
+}
+
+@media screen and (max-width:1000px){
+    .footer .inner .flogo img {
+        width: 40px;
+    }
+    .footer .finfo {
+        padding: 15px 0 25px 0;
+    }
+    .footer .finfo span {
+        display: block;
+        margin: 0;
+    }
+    .footer .finfo .mo_no {
+        display: none;
+    }
+}
+
+@media screen and (max-width:640px){
+    .footer {
+        padding: 22px 0 50px 0;
+    }
+    .footer .inner {
+        padding: 0 0 13px 0;
+    }
+    .footer .inner .flogo {
+        float: none;
+    }
+    .footer .inner .flogo img {
+        width: 30px;
+    }
+    .footer .inner .private {
+        float: none;
+        padding: 5px 0 0 0;
+    }
+    .footer .inner .private ul li {
+        float: left;
+        margin: 0 16px 0 0;
+    }
+    .footer .inner .private ul li::before {
+        display: none;
+    }
+    .footer .finfo {
+        padding: 10px 0 20px 0;
+    }
+    .footer .finfo span {
+        display: block;
+        margin: 0;
+        font-size: 13px;
+    }
+    .footer .copyright {
+        font-size: 13px;
+    }
 }
