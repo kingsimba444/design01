@@ -46,9 +46,8 @@
 .vision .inner .list {
     margin-left: 480px;
 }
-.vision .inner .list span {
+.vision .inner .list p {
     float: right;
-    width: 920px;
     margin: 0 0 160px 0;
     color: #999999;
     font-size: 20px;
@@ -94,7 +93,8 @@
     font-weight: 700;
     line-height: 1.2;
 }
-.vision .inner .list ul li a p {
+.vision .inner .list ul li a span {
+    display: block;
     margin: 10px 0 20px 0;
     font-size: 15px;
     line-height: 1.2;
@@ -116,9 +116,8 @@
     .vision .inner .list {
         margin-left: 450px;
     }
-    .vision .inner .list span {
+    .vision .inner .list p {
         float: right;
-        width: 850px;
         margin: 0 0 140px 0;
     }
     .vision .inner .list ul {
@@ -152,8 +151,7 @@
     .vision .inner .list {
         margin-left: 280px;
     }
-    .vision .inner .list span {
-        width: 680px;
+    .vision .inner .list p {
         margin: 0 0 80px 0;
         font-size: 18px;
     }
@@ -187,8 +185,7 @@
     .vision .inner .list {
         margin-left: 140px;
     }
-    .vision .inner .list span {
-        width: 550px;
+    .vision .inner .list p {
         margin: 0 0 50px 0;
         font-size: 15px;
     }
@@ -209,7 +206,7 @@
     .vision .inner .list ul li a strong {
         font-size: 25px;
     }
-    .vision .inner .list ul li a p {
+    .vision .inner .list ul li a span {
         margin: 8px 0 15px 0;
         font-size: 13px;
     }
@@ -230,8 +227,7 @@
     .vision .inner .list {
         margin-left: 120px;
     }
-    .vision .inner .list span {
-        width: 500px;
+    .vision .inner .list p {
         margin: 0 0 40px 0;
     }
     .vision .inner .list ul {
@@ -247,7 +243,7 @@
         height: 400px;
         margin: 0;
     }
-    .vision .inner .list ul li a p {
+    .vision .inner .list ul li a span {
         margin: 8px 0 10px 0;
     }
     .vision .inner .list ul li a i {
@@ -288,7 +284,7 @@
     .vision .inner .list {
         margin-left: 0;
     }
-    .vision .inner .list span {
+    .vision .inner .list p {
         float: none;
         display: block;
         width: auto;
@@ -370,12 +366,15 @@
     padding: 10px 0 0 0;
 }
 
+@media screen and (max-width:1200px){
+    .project h2 {
+        font-size: 50px;
+    }
+}
+
 @media screen and (max-width:1000px){
     .project {
         padding: 70px 0 40px 0;
-    }
-    .project h2 {
-        font-size: 60px;
     }
     .project .pro_pic ul {
         margin: 0 40px 0 0;
@@ -391,6 +390,12 @@
         margin: 0 0 55px 0;
     }
     
+}
+
+@media screen and (max-width:800px){
+    .project h2 {
+        font-size: 35px;
+    }
 }
 
 @media screen and (max-width:640px){
@@ -430,12 +435,13 @@
     margin: 15px 0 55px 0;
     font-size: 20px;
 }
+.asking .request {
+    text-align: center;
+}
 .asking a {
     position: relative;
-    display: block;
+    display: inline-block;
     padding: 13px 0 0 0;
-    left: 50%;
-    transform: translate(-50%, 0);
     width: 300px;
     height: 80px;
     border: 1px solid #fff;

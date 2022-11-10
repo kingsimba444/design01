@@ -160,7 +160,7 @@ html, body {
     color: #3d3d3d;
 }
 .header.fixed .logo a {
-    background-image: url(../images/common/logo.svg);
+    /* background-image: url(../images/common/logo.svg); */
 }
 .header.fixed .tnb a i {
     color: rgba(0, 0, 0, 0.7);
