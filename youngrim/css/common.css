@@ -248,6 +248,9 @@ html, body {
     color: rgba(255, 255, 255, 0.8);
     background-color: #3B3B3B;
 }
+.footer h2 {
+    display: none;
+}
 .footer .inner {
     padding: 0 0 15px 0;
     border-bottom: 1px solid #999;

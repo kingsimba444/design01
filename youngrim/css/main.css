@@ -2,6 +2,10 @@
 @import url(common.css);
 @import url(popup.css);
 
+.visual h2 {
+    display: none;
+}
+
 .vision {
     position: relative;
     padding: 120px 0 165px 0;
