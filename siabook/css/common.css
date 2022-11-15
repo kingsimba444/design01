@@ -1,10 +1,11 @@
 /* 모든 페이지에 공통으로 들어가는 스타일 (header/footer) */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap');
 
 html, body {
     color: #3d3d3d;
     line-height: 1.5;
-    font-family: "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-family: "Noto Serif KR", "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     font-size: 15px;
     font-weight: 400;
     /* letter-spacing: -0.05em; */
@@ -85,270 +86,163 @@ html, body {
     브라우저에서 글자를 드래그했을 때 드래그한 영역의 색과 글자색
     -moz- -webkit- 이 앞에 붙은 속성은 표준화되지 않은 속성
 */
-::selection{background:#ED1B2D;color:#fff;}
+/* ::selection{background:#ED1B2D;color:#fff;}
 ::-moz-selection{background:#ED1B2D;color:#fff;}
-::-webkit-selection{background:#ED1B2D;color:#fff;} 
+::-webkit-selection{background:#ED1B2D;color:#fff;} */
 
 .header {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     z-index: 100;
     width: 100%;
     height: 100px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    /* border-bottom: solid 1px rgba(0, 0, 0, 0.2); */
+    color: #3d3d3d;
 }
 .header .logo {
     float: left;
-    margin: 21px 0 0 60px;
+    margin: 28px 0 0 0;
 }
 .header .logo a {
     display: block;
-    width: 50px;
-    height: 60px;
-    background-position: center center;
+    width: 100px;
+    height: 40px;
+    background-image: url(../images/common/logo_b.svg);
     background-repeat: no-repeat;
+    background-position: center center;
     background-size: contain;
     font-size: 0;
     line-height: 0;
 }
 .header .gnb {
-    float: right;
-    margin: 0 180px 0 0;
+    position: relative;
 }
 .header .gnb .gnb_open {
     display: none;
 }
-.header .gnb .gnb_close {
-    display: none;
+.header .gnb .gnb_wrap > ul {
+    display: flex;
+    justify-content: flex-end;
 }
-.header .gnb ul li {
-    float: left;
-}
-.header .gnb ul li a {
-    display: block;
-    padding: 0 35px;
-    font-size: 25px;
-    line-height: 100px; /* header의 높이값, 글자를 위아래 가운데 배치하기 위해 */
-}
-
-.header .tnb {
-    position: absolute;
-    right: 0;
-    top: 35px;
-}
-.header .tnb a {
-    display: block;
-    float: left;
-    margin: 0 40px 0 0;
-}
-.header .tnb a span {
-    display: none;
-}
-.header .tnb a i {
-    font-size: 30px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-/* header가 고정일 때 */
-.header.fixed {
-    position: fixed;
-    border-bottom: 1px solid #cccccc;
-    background-color: #ffffff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    color: #3d3d3d;
-}
-.header.fixed .logo a {
-    /* background-image: url(../images/common/logo.svg); */
-}
-.header.fixed .tnb a i {
-    color: rgba(0, 0, 0, 0.7);
-}
-
-/*
-    1440 - 
-    1200 - 
-    1000 - 
-    800 - 
-    640 - 
-*/
-
-@media screen and (max-width:1440px){
-    .header .gnb {
-        margin: 0 150px 0 0;
-    }
-    .header .gnb ul li a {
-        padding: 0 30px;
-        font-size: 20px;
-    }
-    .header .tnb a {
-        margin: 0 35px 0 0;
-    }
-}
-
-@media screen and (max-width:1200px){
-    .header .logo {
-        margin: 25px 0 0 30px;
-    }
-    .header .logo a img {
-        width: 40px;
-        height: 45px;
-    }
-    .header .gnb {
-        margin: 0 130px 0 0;
-    }
-    .header .gnb ul li a {
-        padding: 0 25px;
-        font-size: 15px;
-    }
-    .header .tnb a {
-        margin: 5px 30px 0 0;
-    }
-    .header .tnb a i {
-        font-size: 25px;
-    }
-}
-
-@media screen and (max-width:800px){
-    .header {
-        height: 60px;
-    }
-    .header .logo {
-        margin: 15px 0 0 20px;
-    }
-    .header .logo a {
-        width: 25px;
-        height: 30px;
-    }
-    .header .logo a img {
-        width: 25px;
-        height: 30px;
-    }
-    .header .gnb {
-        margin: 0;
-    }
-    .header .gnb .gnb_open {
-        display: block;
-        padding: 20px 20px 18px 20px;
-    }
-    .header .gnb .gnb_open span {
-        display: none
-    }
-    .header .gnb ul {
-        display: none;
-    }
-    .header .tnb {
-        display: none;
-    }
-}
-
-.footer {
-    padding: 34px 0 64px 0;
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #3B3B3B;
-}
-.footer h2 {
-    display: none;
-}
-.footer .inner {
-    padding: 0 0 15px 0;
-    border-bottom: 1px solid #999;
-
-}
-.footer .inner .flogo {
-    float: left;
-}
-.footer .inner .flogo img {
-    width: 40px;
-}
-.footer .inner .private {
-    float: right;
-    padding: 10px 0 0 0;
-}
-.footer .inner .private ul li {
+.header .gnb .gnb_wrap > ul > li {
     position: relative;
-    float: right;
-    margin: 0 36px 0 0;
-    color: rgba(255, 255, 255, 0.7);
+    width: 170px;
+    text-align: center;
 }
-.footer .inner .private ul li:first-child {
+.header .gnb .gnb_wrap > ul > li:hover > a {
     font-weight: 700;
-    color: #fff;
 }
-.footer .inner .private ul li::before {
+.header .gnb .gnb_wrap > ul > li > a {
+    display: block;
+    font-size: 20px;
+    line-height: 100px;
+}
+.header .gnb .gnb_wrap > ul > li > a span {
+    position: relative;
+}
+.header .gnb .gnb_wrap > ul > li:hover > a span::before {
     position: absolute;
-    left: -16px;
-    top: 6px;
-    width: 1px;
-    height: 10px;
-    background-color: #707070;
+    left: 0;
+    top: 64px;
+    width: 100%;
+    height: 1px;
+    background-color: #3d3d3d;
     content: "";
 }
-.footer .inner .private ul li:last-child::before {
+.header .gnb .gnb_wrap > ul > li > ul {
+    position: absolute;
     display: none;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 220px;
+    padding: 35px 0 0 0;
 }
-.footer .finfo {
-    padding: 40px 0 20px 0;
-}
-.footer .finfo span {
+.header .gnb .gnb_wrap > ul > li > ul > li > a {
+    display: block;
     font-size: 15px;
-    margin: 0 48px 10px 0;
+    line-height: 40px;
 }
-.footer .copyright {
-    font-size: 15px;
-    color: #999999;
+.header .gnb .gnb_wrap > ul > li > ul > li:hover > a {
+    font-weight: 700;
 }
 
-@media screen and (max-width:1000px){
-    .footer .inner .flogo img {
-        width: 40px;
+@media screen and (min-width:641px){
+    .header.menu_open::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 350px;
+        z-index: -1;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        content: "";
     }
-    .footer .finfo {
-        padding: 15px 0 25px 0;
+    .header.menu_open .logo a {
+        background-image: url(../images/common/logo.svg);
     }
-    .footer .finfo span {
+    .header.menu_open .gnb > .gnb_wrap > ul > li > ul {
         display: block;
-        margin: 0;
-    }
-    .footer .finfo .mo_no {
-        display: none;
     }
 }
 
 @media screen and (max-width:640px){
-    .footer {
-        padding: 22px 0 50px 0;
+    .header {
+        height: 60px;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.5);
     }
-    .footer .inner {
-        padding: 0 0 13px 0;
+    .header .logo {
+        margin: 15px 0 0 0;
     }
-    .footer .inner .flogo {
-        float: none;
+    .header .logo a {
+        width: 60px;
+        height: 25px;
     }
-    .footer .inner .flogo img {
-        width: 30px;
+    .header .gnb .gnb_open {
+        position: relative;
+        display: block;
+        float: right;
+        width: 60px;
+        height: 60px;
     }
-    .footer .inner .private {
-        float: none;
-        padding: 5px 0 0 0;
-    }
-    .footer .inner .private ul li {
-        float: left;
-        margin: 0 16px 0 0;
-    }
-    .footer .inner .private ul li::before {
+    .header .gnb .gnb_open strong {
         display: none;
     }
-    .footer .finfo {
-        padding: 10px 0 20px 0;
+    .header .gnb .gnb_open span {
+        position: absolute;
+        right: 20px;
+        width: 20px;
+        height: 1px;
+        background-color: #3d3d3d;
     }
-    .footer .finfo span {
-        display: block;
-        margin: 0;
-        font-size: 13px;
+    .header .gnb .gnb_open span.line1 {
+        top: 23px;
     }
-    .footer .copyright {
-        font-size: 13px;
+    .header .gnb .gnb_open span.line2 {
+        top: 32px;
+    }
+    .header .gnb .gnb_wrap {
+        display: none;
+    }
+    .header.mobile_open::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        content: "";
+    }
+    .header.mobile_open .gnb .gnb_open span.line1 {
+        top: 30px;
+        transform: rotate(45deg);
+    }
+    .header.mobile_open .gnb .gnb_open span.line2 {
+        top: 30px;
+        transform: rotate(-45deg);
     }
 }
