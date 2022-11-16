@@ -99,3 +99,293 @@
 .visual .inner ul li:hover a strong {
     color: #1d1d1d;
 }
+
+.intro {
+    padding: 70px 0 0 130px;
+    height: 680px;
+    background-color: #FDFAF4;
+}
+.intro .inner {
+    height: 530px;
+    border-bottom: 1px solid rgba(192,190,186, 0.5);
+}
+.intro .inner h2 {
+    position: relative;
+    float: left;
+    margin:  0 100px 0 0;
+    font-size: 70px;
+}
+.intro .inner h2::after {
+    position: absolute;
+    left: 255px;
+    top: 40px;
+    width: 1px;
+    height: 30px;
+    background-color: #707070;
+    content: "";
+}
+.intro .inner .intro_sub {
+    float: left;
+    margin: 15px 0 0 0;
+}
+.intro .inner .intro_sub strong {
+    font-size: 50px;
+    color: #868475;
+}
+.intro .inner .intro_sub span {
+    display: block;
+    margin: 30px 0;
+    font-size: 25px;
+    color: #868475;
+}
+.intro .inner .intro_sub p {
+    font-size: 25px;
+    line-height: 3;
+}
+.intro .inner .intro_sub p .pc_no {
+    display: none;
+}
+
+
+.book {
+    padding: 70px 0 100px 0;
+}
+.book h2 {
+    margin: 0 0 64px 0;
+    font-size: 70px;
+    text-align: center;
+}
+.book .swiper {
+    width: 100%;
+    height: 100%;
+  }
+.book .swiper .swiper-slide {
+    width: 300px;
+    text-align: center;
+    font-size: 25px;
+    /* background: #fff; */
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.book .swiper .swiper-slide a .pic {
+    display: block;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+.book .swiper .swiper-slide a .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.book .book_intro ul li a strong {
+    display: block;
+    margin: 10px 0;
+}
+.book .book_intro ul li a span {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Noto Sans KR";
+}
+.book .book_intro .intro_bot {
+    display: block;
+    margin: 60px 0 0 0;
+    text-align: center;
+}
+.book .book_intro .intro_bot .btn {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 30px 0;
+}
+.book .book_intro .intro_bot .btn .btn_prev,
+.book .book_intro .intro_bot .btn .btn_next {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #999;
+    border-radius: 50%;
+    font-size: 0;
+    line-height: 0;
+}
+.book .book_intro .intro_bot .btn .btn_prev {
+    right: 15px;
+}
+.book .book_intro .intro_bot .btn .btn_next {
+    left: 15px;
+}
+.book .book_intro .intro_bot .btn .btn_prev::before,
+.book .book_intro .intro_bot .btn .btn_next::before {
+    position: absolute;
+    top: 9px;
+    width: 10px;
+    height: 20px;
+    background: url(../images/main/btn_arrow.svg) no-repeat center center / contain;
+    content: "";
+}
+.book .book_intro .intro_bot .btn .btn_prev::before {
+    left: 13px;
+}
+.book .book_intro .intro_bot .btn .btn_next::before {
+    right: 13px;
+    transform: rotate(180deg);
+}
+.book .book_intro .intro_bot .more {
+    margin: 20px 0 0 0;
+}
+.book .book_intro .intro_bot .more a {
+    display: inline-block;
+    text-align: center;
+}
+.book .book_intro .intro_bot .more a span {
+    display: block;
+    float: left;
+    color: #999;
+    font-family: "Noto Sans KR";
+}
+.book .book_intro .intro_bot .more a i {
+    float: left;
+    margin: 1px 0 0 3px;
+    font-size: 20px;
+    color: #999;
+}
+.book .book_intro .intro_bot .more a:hover i {
+    margin: 1px 0 0 10px;
+    transition: 0.5s;
+}
+
+.process {
+    padding: 70px 0 100px 0;
+    color: rgba(255, 255, 255, 0.9);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.process[data-bg="bg1"] {
+    background-image: url(../images/main/bg1.png);
+}
+.process[data-bg="bg2"] {
+    background-image: url(../images/main/bg2.png);
+}
+.process[data-bg="bg3"] {
+    background-image: url(../images/main/bg3.png);
+}
+.process[data-bg="bg4"] {
+    background-image: url(../images/main/bg4.png);
+}
+.process[data-bg="bg5"] {
+    background-image: url(../images/main/bg5.png);
+}
+.process[data-bg="bg6"] {
+    background-image: url(../images/main/bg6.png);
+}
+.process h2 {
+    margin: 0 0 325px 0;
+    font-size: 70px;
+}
+.process ul {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.process ul li {
+    float: left;
+    margin: 0;
+    width: 233px;
+    height: 260px;
+    border-left: 1px solid #999;
+}
+.process ul li:first-child {
+    border-left: 0;
+}
+.process ul li button {
+    width: 100%;
+    height: 100%;
+}
+.process ul li button i {
+    font-size: 40px;
+}
+.process ul li button strong {
+    display: block;
+    margin: 18px 0 5px 0;
+    font-size: 20px;
+}
+.process ul li button span {
+    font-size: 15px;
+}
+.process ul li .sub_text {
+    display: none;
+}
+.process ul li.active button {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #3d3d3d;
+}
+.process ul li.active .sub_text {
+    position: absolute;
+    display: block;
+    top: 180px;
+    left: 95px;
+    font-family: "Noto Sans KR";
+}
+.process ul li.active .sub_text > strong {
+    display: inline-block;
+    margin: 0 20px 30px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.process ul li.active .sub_text > strong::after {
+    position: absolute;
+    top: 38px;
+    left: -43px;
+    width: 30px;
+    height: 1px;
+    background-color: #707070;
+    content: "";
+}
+.process ul li.active .sub_text .num {
+    position: absolute;
+    top: 30px;
+    left: -85px;
+    font-size: 10px;
+    transform: rotate(-90deg);
+}
+.process ul li.active .sub_text .num strong {
+    font-weight: 700;
+}
+.process ul li.active .sub_text .num span {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.make {
+    position: relative;
+    height: 465px;
+}
+.make::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: ;
+    height: ;
+    background: url(../images/main/make_pic.png) no-repeat center center / cover;
+    content: "";
+}
+.make::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: ;
+    height: ;
+    content: "";
+}

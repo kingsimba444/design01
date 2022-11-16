@@ -1,36 +1,27 @@
 $(document).ready(function(){
-
-    let winW;
-    let pcMobile;
-    deviceChk();
-
-    $(window).resize(function(){
-        deviceChk()
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 100,
+        centeredSlides: true,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+            nextEl: '.btn_next',
+            prevEl: '.btn_prev',
+        },
     });
 
-    function deviceChk() {
-        winW = $(window).width();
+    let bg_name;
 
-        if(winW > 640) {
-            pcMobile = 'pc';
-        }
-        else {
-            pcMobile = 'mobile';
-        }
-    }
-
-    $('.header .gnb .gnb_wrap > ul > li').on('mouseenter focusin', function(){
-        if(pcMobile = 'pc') {
-            $('header').addClass('menu_open')
-        }
-    });
-
-    $('.header').on('mouseleave', function(){
-        $('.header').removeClass('menu_open')
-    });
-
-    $('.header .gnb .gnb_wrap > ul > li:last-child > ul > li:last-child > a').on('focusout', function(){
-        $('.header').removeClass('menu_open')
+    $('.process ul li').on('click', function(){
+        $('.process ul li').removeClass('active');
+        $(this).addClass('active');
+        bg_name = $(this).attr('data-bg');
+        console.log(bg_name);
+        $('.process').attr('data-bg', bg_name);
     });
 
 });
