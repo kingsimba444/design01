@@ -306,6 +306,7 @@
     width: 233px;
     height: 260px;
     border-left: 1px solid #999;
+    font-family: "Noto Sans KR";
 }
 .process ul li:first-child {
     border-left: 0;
@@ -370,22 +371,191 @@
 
 .make {
     position: relative;
-    height: 465px;
+    height: 480px;
 }
 .make::before {
     position: absolute;
     top: 0;
-    left: 0;
-    width: ;
-    height: ;
-    background: url(../images/main/make_pic.png) no-repeat center center / cover;
+    height: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: url(../images/main/make_bg.png) no-repeat center center / cover;
     content: "";
 }
 .make::after {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    width: ;
-    height: ;
+    width: 100%;
+    height: 300px;
+    z-index: -1;
+    background-color: #FBD2BD;
     content: "";
 }
+.make img {
+    float: left;
+    margin: 80px 0 0 300px;
+    width: 490px;
+    height: 340px;
+    object-fit: cover;
+}
+.make .self {
+    margin: 180px 0 0 100px;
+    float: left;
+}
+.make .self h2 {
+    font-size: 50px;
+    font-weight: 700;
+}
+.make .self strong {
+    display: block;
+    margin: 15px 0 35px 0;
+    font-size: 30px;
+    font-family: "Noto Sans KR";
+}
+.make .self .more {
+    position: relative;
+    width: 342px;
+    height: 64px;
+    color: #fff;
+    font-family: "Noto Sans KR";
+}
+.make .self .more::after {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    border: 1px solid #1d1d1d;
+    content: "";
+}
+.make .self .more a {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #1D1D1D;
+    transition: 0.5s;
+}
+.make .self .more a:hover {
+    transform: translate(11px, 11px);
+}
+.make .self .more a span {
+    display: block;
+    float: left;
+    font-size: 25px;
+}
+.make .self .more a i {
+    float: left;
+    margin: 2px 0 0 0;
+    font-size: 30px;
+}
+
+.store {
+    position: relative;
+    height: 610px;
+    padding: 70px 0 0 0;
+}
+.store h2 {
+    font-size: 70px;
+}
+.store .bg_pic {
+    position: absolute;
+    top: 250px;
+}
+.store .bg_pic .pic_wrap {
+    left: 0;
+    overflow: hidden;
+    -webkit-animation-name: bg_txt_ani;
+            animation-name: bg_txt_ani;
+    -webkit-animation-duration: 30s;
+            animation-duration: 30s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+}
+
+@-webkit-keyframes bg_txt_ani {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50.05%);
+    }
+    /*
+        무조건 html에서 글자를 동일한 글자를 두 번 입력
+        css 애니메이션으로 절반을 이동
+        그럼 두 번째 단락의 글자 다시 나타남
+    */
+}
+  
+@keyframes bg_txt_ani {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50.05%);
+    }
+    /*
+        무조건 html에서 글자를 동일한 글자를 두 번 입력
+        css 애니메이션으로 절반을 이동
+        그럼 두 번째 단락의 글자 다시 나타남
+    */
+}
+
+.store .bg_pic .pic_wrap ul {
+    white-space: nowrap;
+}
+.store .bg_pic .pic_wrap ul li {
+    position: relative;
+    display: inline-block;
+    margin: 0 20px;
+    width: 220px;
+    height: 220px;
+    border-radius: 110px;
+}
+.store .bg_pic .pic_wrap ul li:nth-child(1),
+.store .bg_pic .pic_wrap ul li:nth-child(11) {
+    background-color: #D60812;
+}
+.store .bg_pic .pic_wrap ul li:nth-child(3),
+.store .bg_pic .pic_wrap ul li:nth-child(13) {
+    background-color: #003975;
+}
+.store .bg_pic .pic_wrap ul li:nth-child(5),
+.store .bg_pic .pic_wrap ul li:nth-child(15) {
+    background-color: #906945;
+}
+.store .bg_pic .pic_wrap ul li:nth-child(7),
+.store .bg_pic .pic_wrap ul li:nth-child(17) {
+    background-color: #073772;
+}
+.store .bg_pic .pic_wrap ul li:nth-child(9),
+.store .bg_pic .pic_wrap ul li:nth-child(9) {
+    background-color: #E53641;
+}
+.store .bg_pic .pic_wrap ul li:nth-child(2),
+.store .bg_pic .pic_wrap ul li:nth-child(4),
+.store .bg_pic .pic_wrap ul li:nth-child(6),
+.store .bg_pic .pic_wrap ul li:nth-child(8),
+.store .bg_pic .pic_wrap ul li:nth-child(10),
+.store .bg_pic .pic_wrap ul li:nth-child(12),
+.store .bg_pic .pic_wrap ul li:nth-child(14),
+.store .bg_pic .pic_wrap ul li:nth-child(16),
+.store .bg_pic .pic_wrap ul li:nth-child(18),
+.store .bg_pic .pic_wrap ul li:nth-child(20) {
+    border: 1px solid #3d3d3d;    
+}
+.store .bg_pic .pic_wrap ul li img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+

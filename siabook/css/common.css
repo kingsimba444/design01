@@ -317,3 +317,66 @@ html, body {
         content: "\e5ce";
     }
 }
+
+.footer {
+    padding: 100px 0 0 0;
+    background-color: #1D1D1D;
+    color: rgba(255, 255, 255, 0.8);
+}
+.footer .sns {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.footer .sns h2 {
+    margin: 0 0 0 20px;
+}
+.footer .sns ul {
+    margin: 20px 0 0 0;
+
+}
+.footer .sns ul li {
+    float: left;
+    margin: 0 0 0 20px;
+}
+.footer .sns ul li a {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+.footer .flogo {
+    float: left;
+    margin: 0 100px 0 0;
+}
+.footer .flogo img {
+    width: 100px;
+}
+.footer .inner {
+    float: left;
+}
+.footer .inner ul li {
+    float: left;
+    margin: 0 40px 0 0;
+}
+.footer .inner ul li.privacy {
+    font-weight: 700;
+    color: #fff;
+}
+.footer .finfo {
+    margin: 30px 0;
+}
+.footer .finfo span {
+    display: inline-block;
+    margin: 0 56px 0 0;
+}
+.footer .copyright {
+    padding: 0 0 160px 0;
+}
+.footer .contact {
+    position: absolute;
+    bottom: 165px;
+    right: 0;
+}
+.footer .contact p {
+    font-size: 25px;
+}
