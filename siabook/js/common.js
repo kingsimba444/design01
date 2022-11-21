@@ -35,7 +35,23 @@ $(document).ready(function(){
     });
 
 
+    let scrolling;
+    scrollChk();
     
+    $(window).scroll(function(){
+        scrollChk();
+        if(scrolling > 0) {
+            $('header').addClass('fixed');
+        }
+        else {
+            $('header').removeClass('fixed');
+        }
+    });
+
+    function scrollChk(){
+        scrolling = $(window).scrollTop();
+        console.log(scrolling);
+    }
     
     
     let gnbStu;
