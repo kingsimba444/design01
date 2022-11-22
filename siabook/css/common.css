@@ -14,12 +14,11 @@ html, body {
 #wrap { /* id="wrap" */
     overflow: hidden;
     position: relative;
-    min-width: 320px;
+    min-width: 1440px;
 }
 /* 컨텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
 .wrapper {
-    width: 100%;
-    max-width: 1440px;
+    width: 1440px;
     padding: 0 20px;
     margin: 0 auto;
     /*
@@ -33,12 +32,6 @@ html, body {
     */
 }
 
-@media screen and (max-width:1000px){
-    html, body {
-       font-size: 14px;
-    }
-}
-
 @media screen and (max-width:640px){
     /* 640px 이하의 디바이스에서만 아래 css가 적용
       pc에서는 1280px이라는 콘텐츠 고정 넓이가 존재했지만
@@ -46,6 +39,13 @@ html, body {
       구현방식이 달라서 고정값을 모두 삭제 */
     html, body {
         font-size: 13px;
+    }
+    #wrap { /* id="wrap" */
+        min-width: 350px;
+    }
+    /* 컨텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
+    .wrapper {
+        width: auto;
     }
 } /* media 종료 */
 
@@ -117,7 +117,7 @@ html, body {
 }
 .header .gnb {
     position: relative;
-    float: right;
+    float: none;
 }
 .header .gnb .gnb_open {
     display: none;
@@ -390,4 +390,73 @@ html, body {
 }
 .footer .contact p {
     font-size: 25px;
+}
+
+@media screen and (max-width:640px){
+    .footer {
+        padding: 20px 0 50px 0;
+    }
+    .footer .sns {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .footer .sns::before {
+        position: absolute;
+        left: 0;
+        top: 120px;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.5);
+        content: "";
+    }
+    .footer .sns h2 {
+        display: block;
+        margin: 0;
+        text-align: center;
+    }
+    .footer .sns ul {
+        margin: 10px 0 0 77px;
+    }
+    .footer .sns ul li {
+        margin: 0 0 0 25px;
+    }
+    .footer .sns ul li a {
+        width: 40px;
+        height: 40px;
+    }
+    .footer .flogo {
+        display: block;
+        text-align: center;
+        float: none;
+        margin: 100px 0 10px 0;
+    }
+    .footer .flogo img {
+        width: 80px;
+    }
+    .footer .inner {
+        float: none;
+    }
+    .footer .inner ul li {
+        float: none;
+        margin: 0 40px 0 0;
+    }
+    .footer .finfo {
+        margin: 20px 0;
+    }
+    .footer .finfo span {
+        display: inline-block;
+        margin: 0 25px 0 0;
+    }
+    .footer .copyright {
+        padding: 0 0 160px 0;
+    }
+    .footer .contact {
+        position: absolute;
+        bottom: 20px;
+        left: 16px;
+    }
+    .footer .contact p {
+        font-size: 20px;
+    }
 }

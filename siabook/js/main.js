@@ -1,7 +1,13 @@
 $(document).ready(function(){
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
-        spaceBetween: 100,
+    var swiper = new Swiper(".book .book_intro", {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        breakpoints: {
+            1400: {     /* 1400px 이상일때 적용 */
+                slidesPerView: 4,
+                spaceBetween: 100,
+            },
+        },
         centeredSlides: true,
         loop: true,
         pagination: {

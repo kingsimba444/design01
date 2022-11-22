@@ -103,7 +103,7 @@
 
 @media screen and (max-width:640px){
     .visual {
-        height: 970px;
+        height: 930px;
     }
     .visual h2 {
         width: 100%;
@@ -113,20 +113,21 @@
         font-size: 40px;
         letter-spacing: 0;
     }
-    .visual .inner ul {
-        float: none;
-        padding: 130px 0 0 0;
-    }
     .visual .inner ul li {
         display: block;
     }
     .visual .inner ul li a {
         display: block;
-        width: 284px;
+        width: auto;
         height: 100px;
     }
     .visual .inner ul li a .pic {
+        margin: 0;
         opacity: 1;
+    }
+    .visual .inner ul:nth-child(1) {
+        float: none;
+        padding: 130px 0 0 0;
     }
     .visual .inner ul:nth-child(1) li:nth-child(1) {
         margin: 30px 0 0 0;
@@ -135,46 +136,58 @@
         width: 100%;
         height: 100%;
     }
+    .visual .inner ul:nth-child(1) li:nth-child(1) a strong {
+        display: block;
+        text-align: right;
+    }
     .visual .inner ul:nth-child(1) li:nth-child(2) {
-        margin: 30px 0 0 0;
+        margin: 50px 0 0 0;
     }
     .visual .inner ul:nth-child(1) li:nth-child(2) a .pic {
-        width: 270px;
-        height: 210px;
+        width: 100%;
+        height: 100%;
+    }
+    .visual .inner ul:nth-child(2),
+    .visual .inner ul:nth-child(3) {
+        padding-top: 20px;
+        margin-top: 30px;
     }
     .visual .inner ul:nth-child(2) {
-        margin: 0 175px 0 125px;
+        float: none;
+        padding-top: 50px;
+        margin: 0;
     }
     .visual .inner ul:nth-child(2) li {
-        margin: 165px 0 0 0;
+        margin: 0;
     }
     .visual .inner ul:nth-child(2) li a .pic {
-        width: 360px;
-        height: 380px;
+        width: 100%;
+        height: 100%;
+    }
+    .visual .inner ul:nth-child(2) li a strong {
+        display: block;
+        text-align: right;
+    }
+    .visual .inner ul:nth-child(3) {
+        float: none;
     }
     .visual .inner ul:nth-child(3) li:nth-child(1) {
-        margin: 82px 0 0 0;
+        margin: 0;
     }
     .visual .inner ul:nth-child(3) li:nth-child(1) a .pic {
-        width: 205px;
-        height: 235px;
+        width: 100%;
+        height: 100%;
     }
     .visual .inner ul:nth-child(3) li:nth-child(2) {
-        margin: 44px 0 0 0;
+        margin-top: 50px;
     }
     .visual .inner ul:nth-child(3) li:nth-child(2) a .pic {
-        width: 200px;
-        height: 230px;
+        width: 100%;
+        height: 100%;
     }
-    .visual .inner ul li a:hover {
-        transform: translate(0, -20px);
-    }
-    .visual .inner ul li a:hover .pic {
-        opacity: 1;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    }
-    .visual .inner ul li a:hover strong {
-        color: #1d1d1d;
+    .visual .inner ul:nth-child(3) li:nth-child(2) a strong {
+        display: block;
+        text-align: right;
     }
 }
 
@@ -224,6 +237,44 @@
     display: none;
 }
 
+@media screen and (max-width:640px){
+    .intro {
+        padding: 20px 0 50px 0;
+        height: 420px;
+    }
+    .intro .inner {
+        height: 0;
+        border-bottom: 0;
+    }
+    .intro .inner h2 {
+        float: none;
+        margin:  0 ;
+        font-size: 50px;
+        text-align: center;
+    }
+    .intro .inner h2::after {
+        display: none;
+    }
+    .intro .inner .intro_sub {
+        float: none;
+        margin: 0;
+    }
+    .intro .inner .intro_sub strong {
+        display: none;
+    }
+    .intro .inner .intro_sub span {
+        margin: 10px 0 20px 0;
+        font-size: 15px;
+        text-align: center;
+    }
+    .intro .inner .intro_sub p {
+        font-size: 13px;
+        line-height: 2.5;
+    }
+    .intro .inner .intro_sub p .pc_no {
+        display: block;
+    }
+}
 
 .book {
     padding: 70px 0 100px 0;
@@ -351,6 +402,76 @@
     color: #3d3d3d;
 }
 
+@media screen and (max-width:640px){
+    .book {
+        padding: 40px 0 40px 0;
+    }
+    .book h2 {
+        margin: 0 0 10px 0;
+        font-size: 50px;
+    }
+    .book .swiper {
+        width: 100%;
+        height: 100%;
+      }
+    .book .swiper .swiper-slide {
+        width: 208px;
+        font-size: 20px;
+    }
+    .book .swiper .swiper-slide a .pic {
+        height: 280px;
+    }
+    .book .book_intro ul li a strong {
+        margin: 5px 0;
+        overflow: hidden;
+        line-height: 1.2;
+        height: 1.2em;
+    }
+    .book .book_intro ul li a span {
+        font-size: 13px;
+    }
+    .book .book_intro .intro_bot {
+        margin: 0;
+    }
+    .book .book_intro .intro_bot .btn {
+        margin: 0;
+    }
+    .book .book_intro .intro_bot .btn .btn_prev,
+    .book .book_intro .intro_bot .btn .btn_next {
+        top: 0;
+        width: 30px;
+        height: 30px;
+    }
+    .book .book_intro .intro_bot .btn .btn_prev {
+        right: 5px;
+    }
+    .book .book_intro .intro_bot .btn .btn_next {
+        left: 5px;
+    }
+    .book .book_intro .intro_bot .btn .btn_prev::before,
+    .book .book_intro .intro_bot .btn .btn_next::before {
+        top: 3px;
+        width: 7px;
+        height: 21px;
+    }
+    .book .book_intro .intro_bot .btn .btn_prev::before {
+        left: 10px;
+    }
+    .book .book_intro .intro_bot .btn .btn_next::before {
+        right: 10px;
+    }
+    .book .book_intro .intro_bot .more {
+        margin: 35px 0 0 0;
+    }
+    .book .book_intro .intro_bot .more a i {
+        margin: 2px 0 0 5px;
+        font-size: 15px;
+    }
+    .book .book_intro .intro_bot .more a:hover i {
+        margin: 2px 0 0 10px;
+    }
+}
+
 .process {
     padding: 70px 0 100px 0;
     color: rgba(255, 255, 255, 0.9);
@@ -453,6 +574,53 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
+@media screen and (max-width:640px){
+    .process {
+        padding: 40px 0 40px 0;
+    }
+    .process h2 {
+        margin: 0 0 200px 0;
+        font-size: 50px;
+    }
+    .process ul {
+        border: 0;
+    }
+    .process ul li {
+        width: 50%;
+        height: 170px;
+        border-left: 0;
+    }
+    .process ul li button strong {
+        margin: 18px 0 5px 0;
+        font-size: 15px;
+    }
+    .process ul li button span {
+        font-size: 13px;
+    }
+    .process ul li.active .sub_text {
+        top: 130px;
+        left: 16px;
+    }
+    .process ul li.active .sub_text > strong {
+        margin: 0 0 10px 0;
+        font-size: 30px;
+    }
+    .process ul li.active .sub_text > strong::after {
+        top: -28px;
+        left: 43px;
+        width: 40px;
+        background-color: #fff;
+    }
+    .process ul li.active .sub_text > span {
+        display: none;
+    }
+    .process ul li.active .sub_text .num {
+        top: -35px;
+        left: 0;
+        transform: rotate(0);
+    }
+}
+
 .make {
     position: relative;
     height: 480px;
@@ -479,7 +647,7 @@
 }
 .make img {
     float: left;
-    margin: 80px 0 0 300px;
+    margin: 80px 0 0 60px;
     width: 490px;
     height: 340px;
     object-fit: cover;
@@ -538,6 +706,41 @@
     float: left;
     margin: 2px 0 0 0;
     font-size: 30px;
+}
+
+@media screen and (max-width:640px){
+    .make {
+        height: 320px;
+    }
+    .make::after {
+        display: none;
+    }
+    .make img {
+        display: none;
+    }
+    .make .self {
+        padding: 40px 0 0 16px;
+        margin: 0;
+        float: none;
+    }
+    .make .self h2 {
+        font-size: 30px;
+    }
+    .make .self strong {
+        margin: 10px 0 30px 0;
+        font-size: 20px;
+    }
+    .make .self .more {
+        width: 235px;
+        height: 50px;
+    }
+    .make .self .more a span {
+        font-size: 15px;
+    }
+    .make .self .more a i {
+        margin: 0;
+        font-size: 25px;
+    }
 }
 
 .store {
@@ -643,3 +846,30 @@
     transform: translate(-50%, -50%);
 }
 
+@media screen and (max-width:640px){
+    .store {
+        height: 340px;
+        padding: 40px 0 0 0;
+    }
+    .store h2 {
+        font-size: 50px;
+    }
+    .store .bg_pic {
+        top: 130px;
+    }
+    
+    .store .bg_pic .pic_wrap ul li {
+        margin: 0 9px;
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+    }
+    .store .bg_pic .pic_wrap ul li img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+    }
+}
